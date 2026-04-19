@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIVET — Impact Report 2021–2025</title>
+<meta name="description" content="Accelerate the Youth Revolution. For Good. RIVET's 2021–2025 impact report: funding the first yes, protecting youth ownership, building the infrastructure change needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RIVET · IMPACT REPORT 2021–2025
+   ============================================ */
+
+:root{
+  --yellow:#E9F958;
+  --purple:#6B62F2;
+  --red:#FF4A53;
+  --white:#FFFFFF;
+  --black:#000000;
+  --grey:#EDEDED;
+  --bebas:'Bebas Neue',Impact,Haettenschweiler,sans-serif;
+  --inter:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --nav-h:64px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--inter);
+  color:var(--black);
+  background:var(--white);
+  line-height:1.55;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+ul{list-style:none}
+
+h1,h2,h3,h4{font-family:var(--bebas);font-weight:400;line-height:.92;letter-spacing:.01em}
+h1{font-size:clamp(4.2rem,14vw,14rem)}
+h2{font-size:clamp(2.6rem,7vw,6.5rem)}
+h3{font-size:clamp(1.6rem,3.2vw,2.6rem)}
+p{font-size:clamp(1rem,1.15vw,1.125rem)}
+
+section{
+  padding:clamp(80px,10vw,160px) clamp(20px,5vw,80px);
+  position:relative;
+  scroll-margin-top:var(--nav-h);
+}
+
+.section-label{
+  font-family:var(--inter);
+  font-weight:700;
+  font-size:.75rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  display:inline-block;
+  margin-bottom:1.5rem;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  font-family:var(--inter);
+  font-weight:700;
+  font-size:.75rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-bottom:2rem;
+}
+.eyebrow .dot{width:8px;height:8px;background:currentColor;border-radius:50%}
+
+.container{max-width:1400px;margin:0 auto}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding:.45rem 1rem;
+  border:2px solid currentColor;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  line-height:1;
+}
+
+/* ============================================
+   REVEAL ANIMATION
+   ============================================ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.delay-1{transition-delay:.08s}
+.reveal.delay-2{transition-delay:.16s}
+.reveal.delay-3{transition-delay:.24s}
+.reveal.delay-4{transition-delay:.32s}
+.reveal.delay-5{transition-delay:.4s}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  height:var(--nav-h);
+  padding:0 clamp(16px,4vw,40px);
+  color:var(--white);
+  background:transparent;
+  transition:background .35s ease,color .35s ease,border-color .35s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.solid{background:var(--black);color:var(--white);border-bottom-color:rgba(255,255,255,.08)}
+.nav-brand{display:flex;align-items:center;gap:.55rem}
+.nav-brand .mark{width:26px;height:26px;color:currentColor}
+.nav-brand .wordmark{
+  font-family:var(--bebas);
+  font-size:1.55rem;
+  letter-spacing:.22em;
+  line-height:1;
+  color:currentColor;
+}
+.nav-links{display:flex;align-items:center;gap:clamp(10px,1.5vw,26px)}
+.nav-links a{
+  font-family:var(--inter);
+  font-weight:700;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:6px 0;
+  position:relative;
+  color:currentColor;
+  opacity:.88;
+  transition:opacity .2s;
+}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{
+  content:"";
+  position:absolute;inset:auto 0 -2px 0;
+  height:3px;background:var(--yellow);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform .3s var(--ease);
+}
+.nav-links a.active::after,.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{opacity:1}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .nav-brand .wordmark{font-size:1.35rem}
+}
+
+/* ============================================
+   §01 HERO
+   ============================================ */
+.hero{
+  background:var(--black);color:var(--white);
+  min-height:100vh;
+  padding-top:calc(var(--nav-h) + 40px);
+  padding-bottom:0;
+  display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;
+  position:relative;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  grid-auto-rows:180px;
+  color:var(--yellow);
+  opacity:.06;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-bg svg{width:120px;height:120px;margin:auto;animation:spin 40s linear infinite}
+.hero-bg svg:nth-child(3n){animation-duration:55s;animation-direction:reverse}
+.hero-bg svg:nth-child(5n){animation-duration:30s}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.hero-inner{
+  position:relative;z-index:2;
+  padding:clamp(40px,6vw,80px) clamp(20px,5vw,80px) 0;
+  max-width:1400px;margin:0 auto;width:100%;
+  flex:1;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.hero h1{
+  color:var(--white);
+  line-height:.86;
+  font-size:clamp(4.6rem,17vw,17rem);
+  letter-spacing:-.01em;
+}
+.hero h1 .accent{color:var(--yellow)}
+.hero-sub{
+  max-width:640px;
+  margin-top:2.2rem;
+  font-size:clamp(1rem,1.3vw,1.25rem);
+  color:rgba(255,255,255,.82);
+  line-height:1.5;
+}
+.hero-strip{
+  position:relative;z-index:2;
+  background:var(--yellow);
+  color:var(--black);
+  padding:1.1rem clamp(20px,5vw,80px);
+  font-family:var(--bebas);
+  letter-spacing:.15em;
+  font-size:clamp(1rem,1.8vw,1.6rem);
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:2px solid var(--black);
+}
+.hero-strip-track{
+  display:flex;gap:3rem;align-items:center;
+  animation:ticker 28s linear infinite;
+  width:max-content;
+}
+.hero-strip-track span{display:inline-flex;align-items:center;gap:3rem}
+.hero-strip-track svg{width:22px;height:22px;color:var(--black)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+.hero-meta{
+  position:relative;z-index:2;
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding:2rem clamp(20px,5vw,80px) 2.5rem;
+  max-width:1400px;margin:0 auto;width:100%;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);font-weight:700;
+}
+.hero-meta .scroll-hint{display:flex;align-items:center;gap:.6rem}
+.hero-meta .scroll-hint::after{
+  content:"";width:50px;height:1px;background:var(--yellow);
+  animation:slide 2s ease-in-out infinite;
+}
+@keyframes slide{0%,100%{transform:scaleX(.5);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
+
+/* ============================================
+   §02 FOREWORD
+   ============================================ */
+.foreword{
+  background:var(--white);color:var(--black);
+  border-left:18px solid var(--black);
+}
+.foreword-inner{max-width:1100px;margin:0 auto}
+.foreword .section-label{color:var(--black)}
+.foreword-quote{
+  font-family:var(--bebas);
+  color:var(--red);
+  font-size:clamp(2.8rem,7.5vw,7.4rem);
+  line-height:.92;
+  margin:1.2rem 0 3rem;
+}
+.foreword-quote em{font-style:normal;color:var(--black);background:var(--yellow);padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.foreword-body{
+  display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;
+  margin-bottom:3rem;
+}
+.foreword-body p{font-size:1.05rem;line-height:1.7;color:#222}
+.foreword-byline{
+  display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  font-family:var(--inter);font-weight:700;font-size:1rem;
+  border-bottom:4px solid var(--yellow);
+  padding-bottom:.4rem;display:inline-flex;margin-bottom:4rem;
+}
+.foreword-byline span{color:#555;font-weight:400}
+.truths{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+  margin-top:2rem;
+}
+.truth{
+  background:var(--black);color:var(--white);
+  padding:2rem;
+  border-top:4px solid var(--yellow);
+}
+.truth .num{
+  font-family:var(--bebas);
+  font-size:3rem;
+  color:var(--yellow);
+  line-height:1;
+  display:block;margin-bottom:.8rem;
+}
+.truth p{font-size:.95rem;line-height:1.5;color:#eee}
+.truth strong{color:var(--white)}
+
+@media (max-width:860px){
+  .foreword{border-left-width:10px}
+  .foreword-body{grid-template-columns:1fr;gap:1.2rem}
+  .truths{grid-template-columns:1fr}
+}
+
+/* ============================================
+   §03 ABOUT
+   ============================================ */
+.about{
+  background:var(--yellow);color:var(--black);
+  overflow:hidden;
+}
+.about-inner{max-width:1400px;margin:0 auto}
+.about h2{margin-bottom:3rem;max-width:14ch}
+.about-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin:3rem 0;
+}
+.about-card{
+  background:var(--black);color:var(--white);
+  padding:2.4rem 2rem;
+  display:flex;flex-direction:column;gap:1rem;
+  min-height:260px;
+}
+.about-card .mark{color:var(--yellow);width:34px;height:34px}
+.about-card h3{font-size:1.8rem;line-height:1}
+.about-card p{color:rgba(255,255,255,.85);font-size:.96rem;line-height:1.55}
+.about-areas{
+  display:flex;flex-wrap:wrap;gap:.7rem;
+  margin:2.5rem 0 3rem;
+}
+.about-areas .pill{color:var(--black);border-color:var(--black);background:rgba(0,0,0,.04)}
+.who-box{
+  background:var(--black);color:var(--white);
+  padding:2.2rem;
+  display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:center;
+  border-top:6px solid var(--red);
+}
+.who-box .label{
+  font-family:var(--bebas);
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
+  color:var(--yellow);
+  line-height:1;
+}
+.who-box p{font-size:1rem;line-height:1.55;color:#eee}
+.who-box strong{color:var(--white)}
+
+@media (max-width:860px){
+  .about-grid{grid-template-columns:1fr}
+  .who-box{grid-template-columns:1fr;gap:1rem}
+}
+
+/* ============================================
+   §04 CAPITAL PATHWAY
+   ============================================ */
+.capital{
+  background:var(--black);color:var(--white);
+  overflow:hidden;
+}
+.capital-inner{max-width:1400px;margin:0 auto}
+.capital h2{color:var(--white);margin-bottom:1rem}
+.capital-intro{max-width:720px;color:rgba(255,255,255,.78);margin-bottom:3.5rem}
+.tiers{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+  margin-bottom:5rem;
+}
+.tier{
+  background:#111;color:var(--white);
+  padding:2.2rem 1.8rem 2.4rem;
+  border-top:6px solid var(--yellow);
+  position:relative;
+  transition:background .35s var(--ease),transform .35s var(--ease),color .35s var(--ease);
+  min-height:320px;
+  display:flex;flex-direction:column;
+}
+.tier[data-tier="boost"]{border-top-color:var(--purple)}
+.tier[data-tier="scale"]{border-top-color:var(--red)}
+.tier:hover{transform:translateY(-6px)}
+.tier[data-tier="access"]:hover{background:var(--yellow);color:var(--black)}
+.tier[data-tier="boost"]:hover{background:var(--purple);color:var(--white)}
+.tier[data-tier="scale"]:hover{background:var(--red);color:var(--white)}
+.tier .tier-label{
+  font-family:var(--inter);font-weight:700;
+  font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
+  color:inherit;opacity:.7;margin-bottom:1rem;
+}
+.tier h3{
+  font-family:var(--bebas);
+  font-size:clamp(2rem,3vw,2.8rem);
+  margin-bottom:.4rem;
+  letter-spacing:.04em;
+}
+.tier .range{
+  font-family:var(--bebas);
+  font-size:clamp(1.6rem,2.5vw,2.2rem);
+  color:var(--yellow);
+  margin-bottom:1.4rem;
+}
+.tier[data-tier="boost"] .range{color:var(--purple)}
+.tier[data-tier="scale"] .range{color:var(--red)}
+.tier:hover .range{color:inherit}
+.tier p{color:inherit;opacity:.85;font-size:.98rem;line-height:1.55;margin-top:auto}
+
+.trust-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+  margin-top:2rem;
+}
+.trust-copy h3{
+  font-family:var(--bebas);font-size:clamp(2.2rem,4vw,3.4rem);
+  color:var(--yellow);margin-bottom:1rem;
+}
+.trust-copy p{color:rgba(255,255,255,.82);margin-bottom:1rem;max-width:46ch}
+
+.trust-cycle{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:0 auto}
+.trust-cycle svg{width:100%;height:100%;overflow:visible}
+.trust-node{
+  position:absolute;transform:translate(-50%,-50%);
+  width:clamp(90px,11vw,140px);
+  text-align:center;
+  font-size:.74rem;line-height:1.15;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+  transition:color .6s var(--ease),transform .6s var(--ease);
+}
+.trust-node .dot{
+  display:block;width:14px;height:14px;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  margin:0 auto .5rem;
+  transition:background .6s var(--ease),box-shadow .6s var(--ease),transform .6s var(--ease);
+}
+.trust-cycle.active .trust-node{color:var(--white)}
+.trust-cycle.active .trust-node .dot{background:var(--yellow);box-shadow:0 0 0 6px rgba(233,249,88,.18);transform:scale(1.2)}
+.trust-cycle.active .trust-node:nth-child(1) .dot{transition-delay:0s}
+.trust-cycle.active .trust-node:nth-child(2) .dot{transition-delay:.25s}
+.trust-cycle.active .trust-node:nth-child(3) .dot{transition-delay:.5s}
+.trust-cycle.active .trust-node:nth-child(4) .dot{transition-delay:.75s}
+.trust-cycle.active .trust-node:nth-child(5) .dot{transition-delay:1s}
+.trust-cycle.active .trust-node:nth-child(6) .dot{transition-delay:1.25s}
+.trust-cycle .ring{
+  fill:none;stroke:var(--yellow);stroke-width:2;
+  stroke-dasharray:1000;stroke-dashoffset:1000;
+  transition:stroke-dashoffset 2s ease;
+  opacity:.6;
+}
+.trust-cycle.active .ring{stroke-dashoffset:0}
+
+@media (max-width:860px){
+  .tiers{grid-template-columns:1fr}
+  .trust-wrap{grid-template-columns:1fr;gap:2rem}
+  .trust-cycle{max-width:360px}
+}
+
+/* ============================================
+   §05 PARTNERSHIPS
+   ============================================ */
+.partnerships{background:var(--grey);color:var(--black)}
+.partnerships-inner{max-width:1400px;margin:0 auto}
+.partnerships h2{margin-bottom:3rem;max-width:14ch}
+.partner-row{
+  display:grid;grid-template-columns:260px 1fr;gap:2rem;
+  padding:2.2rem 0;
+  border-top:1px solid rgba(0,0,0,.18);
+}
+.partner-row:last-of-type{border-bottom:1px solid rgba(0,0,0,.18)}
+.partner-row h3{
+  font-family:var(--bebas);
+  font-size:clamp(1.6rem,2.4vw,2.2rem);
+  line-height:1;
+}
+.partner-row h3 .num{color:var(--red);display:block;font-size:.85em;letter-spacing:.05em}
+.partner-row .badges{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.brand-pill{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.55rem 1.1rem;
+  background:var(--black);color:var(--white);
+  border-radius:999px;
+  font-weight:700;font-size:.85rem;letter-spacing:.06em;
+  transition:background .25s,color .25s;
+}
+.brand-pill:hover{background:var(--yellow);color:var(--black)}
+.partner-note{
+  font-size:.95rem;color:#444;line-height:1.55;max-width:60ch;margin-top:.8rem;
+}
+.tow-quote{
+  margin-top:1.2rem;
+  padding:1.2rem 1.4rem;
+  border-left:4px solid var(--red);
+  font-style:italic;color:#222;font-size:1rem;line-height:1.5;
+  background:rgba(255,255,255,.6);
+}
+.tow-quote cite{display:block;font-style:normal;font-weight:700;margin-top:.6rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#111}
+.network-quote{
+  margin-top:4rem;
+  background:var(--purple);color:var(--white);
+  padding:clamp(2rem,4vw,3.5rem);
+  display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;
+}
+.network-quote blockquote{
+  font-family:var(--bebas);
+  font-size:clamp(1.8rem,4vw,3.6rem);
+  line-height:1.02;letter-spacing:.01em;
+}
+.network-quote cite{
+  display:block;font-family:var(--inter);font-style:normal;
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  margin-top:1.2rem;font-weight:700;opacity:.78;
+}
+.network-quote .mark-big{width:80px;height:80px;color:var(--yellow);flex-shrink:0}
+
+@media (max-width:860px){
+  .partner-row{grid-template-columns:1fr;gap:1rem}
+  .network-quote{grid-template-columns:1fr;gap:1rem}
+  .network-quote .mark-big{width:52px;height:52px}
+}
+
+/* ============================================
+   §06 BY THE NUMBERS
+   ============================================ */
+.numbers{background:var(--black);color:var(--white);overflow:hidden}
+.numbers-inner{max-width:1400px;margin:0 auto}
+.numbers h2{color:var(--white);margin-bottom:1rem}
+.numbers h2 .accent{color:var(--yellow)}
+.numbers-intro{color:rgba(255,255,255,.72);max-width:720px;margin-bottom:4rem}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.stat{
+  padding:2.6rem 1.4rem;
+  border-right:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.12);
+  position:relative;
+  min-height:260px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.stat:nth-child(3n){border-right:0}
+.stat .counter{
+  font-family:var(--bebas);
+  font-size:clamp(3.5rem,8vw,7.5rem);
+  line-height:.9;
+  letter-spacing:.01em;
+  color:var(--yellow);
+}
+.stat:nth-child(2) .counter{color:var(--white)}
+.stat:nth-child(3) .counter{color:var(--red)}
+.stat:nth-child(4) .counter{color:var(--purple)}
+.stat:nth-child(5) .counter{color:var(--yellow)}
+.stat:nth-child(6) .counter{color:var(--white)}
+.stat .label{
+  font-family:var(--inter);font-weight:700;font-size:.95rem;
+  line-height:1.4;color:rgba(255,255,255,.88);
+  margin-top:1.2rem;
+}
+.stat .tag{
+  position:absolute;top:1rem;right:1.2rem;
+  font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);font-weight:700;
+}
+
+.breakdowns{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  margin-top:5rem;
+}
+.breakdown h3{
+  font-family:var(--bebas);font-size:clamp(1.6rem,2.5vw,2.2rem);
+  color:var(--yellow);margin-bottom:1.4rem;letter-spacing:.04em;
+}
+
+.gender-bar{
+  display:flex;height:56px;width:100%;
+  border:1px solid rgba(255,255,255,.2);
+  overflow:hidden;
+}
+.gender-bar .seg{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--bebas);font-size:1.2rem;color:var(--black);
+  transition:flex-basis 1.6s var(--ease);
+  flex-basis:0;
+}
+.gender-bar.animate .seg.m{flex-basis:53%}
+.gender-bar.animate .seg.w{flex-basis:42%}
+.gender-bar.animate .seg.nb{flex-basis:3%}
+.gender-bar.animate .seg.p{flex-basis:2%}
+.gender-bar .seg.m{background:var(--yellow)}
+.gender-bar .seg.w{background:var(--red);color:var(--white)}
+.gender-bar .seg.nb{background:var(--purple);color:var(--white)}
+.gender-bar .seg.p{background:var(--white)}
+.gender-legend{
+  display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1rem;
+  font-size:.78rem;color:rgba(255,255,255,.72);letter-spacing:.05em;
+}
+.gender-legend span::before{
+  content:"";display:inline-block;width:10px;height:10px;margin-right:.4rem;vertical-align:middle;
+}
+.gender-legend .m::before{background:var(--yellow)}
+.gender-legend .w::before{background:var(--red)}
+.gender-legend .nb::before{background:var(--purple)}
+.gender-legend .p::before{background:var(--white)}
+
+.bars{margin-top:.5rem}
+.bar{
+  display:grid;grid-template-columns:1fr 58px;
+  align-items:center;gap:1rem;
+  padding:.6rem 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.bar-label{font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.bar-track{
+  grid-column:1/-1;grid-row:2;
+  height:14px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;
+}
+.bar-fill{
+  position:absolute;inset:0 auto 0 0;
+  width:0;
+  background:var(--yellow);
+  transition:width 1.5s var(--ease);
+}
+.bar:nth-child(1) .bar-fill{background:var(--yellow)}
+.bar:nth-child(2) .bar-fill{background:var(--red)}
+.bar:nth-child(3) .bar-fill{background:var(--purple)}
+.bar:nth-child(4) .bar-fill{background:var(--white)}
+.bar:nth-child(5) .bar-fill{background:var(--yellow)}
+.bar-pct{font-family:var(--bebas);font-size:1.4rem;color:var(--yellow);text-align:right;letter-spacing:.02em}
+
+.global-reach{
+  margin-top:5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  align-items:center;
+}
+.global-reach h3{
+  font-family:var(--bebas);font-size:clamp(1.8rem,3vw,2.6rem);
+  color:var(--yellow);margin-bottom:1rem;
+}
+.region-list{display:flex;flex-direction:column;gap:.55rem;margin-top:1.4rem}
+.region-list li{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.1);
+  font-size:.95rem;font-weight:700;letter-spacing:.04em;
+}
+.region-list .pct{
+  font-family:var(--bebas);font-size:1.4rem;color:var(--yellow);
+}
+.map-wrap{
+  background:#0a0a0a;border:1px solid rgba(255,255,255,.1);
+  padding:1.5rem;aspect-ratio:2/1;position:relative;
+}
+.map-wrap svg{width:100%;height:100%}
+.map-wrap .land{fill:rgba(255,255,255,.12);stroke:rgba(255,255,255,.22);stroke-width:.5}
+.map-dot{
+  fill:var(--yellow);opacity:0;
+  transform-origin:center;
+  animation:dotPulse 3s var(--ease) infinite;
+}
+.map-wrap.active .map-dot{opacity:1}
+.map-wrap.active .map-dot:nth-child(2){animation-delay:.4s;fill:var(--red)}
+.map-wrap.active .map-dot:nth-child(3){animation-delay:.8s;fill:var(--purple)}
+.map-wrap.active .map-dot:nth-child(4){animation-delay:1.2s;fill:var(--yellow)}
+.map-wrap.active .map-dot:nth-child(5){animation-delay:1.6s;fill:var(--white)}
+.map-wrap.active .map-dot:nth-child(6){animation-delay:2s;fill:var(--red)}
+@keyframes dotPulse{
+  0%{r:4;opacity:.2}
+  50%{r:9;opacity:1}
+  100%{r:4;opacity:.2}
+}
+
+.catalytic{
+  margin-top:5rem;
+  background:var(--yellow);color:var(--black);
+  padding:clamp(2rem,4vw,3.5rem);
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+}
+.catalytic h3{
+  font-family:var(--inter);font-weight:700;font-size:.78rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  margin-bottom:1.2rem;color:var(--black);
+}
+.ratio{
+  font-family:var(--bebas);
+  font-size:clamp(4rem,9vw,8.4rem);
+  line-height:.85;
+  letter-spacing:-.01em;
+  display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;
+}
+.ratio .arrow{color:var(--red)}
+.catalytic p{font-size:1.05rem;line-height:1.6;max-width:52ch}
+.catalytic .stanley{
+  background:var(--black);color:var(--white);
+  padding:1.4rem 1.6rem;margin-top:1.2rem;
+  border-left:4px solid var(--red);
+  font-size:.95rem;
+}
+.catalytic .stanley strong{color:var(--yellow)}
+
+@media (max-width:860px){
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:0}
+  .breakdowns{grid-template-columns:1fr;gap:2rem}
+  .global-reach{grid-template-columns:1fr;gap:1.5rem}
+  .catalytic{grid-template-columns:1fr;gap:1.5rem}
+}
+
+/* ============================================
+   §07 STORIES
+   ============================================ */
+.stories{background:var(--white);color:var(--black);overflow:hidden}
+.stories-inner{max-width:1400px;margin:0 auto}
+.stories h2{margin-bottom:.8rem}
+.stories-sub{font-size:1.1rem;color:#555;margin-bottom:2.5rem;max-width:60ch}
+.filters{
+  display:flex;flex-wrap:wrap;gap:.55rem;
+  margin-bottom:2.4rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid rgba(0,0,0,.12);
+}
+.filter-btn{
+  padding:.55rem 1.1rem;
+  border:2px solid var(--black);
+  border-radius:999px;
+  font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--white);color:var(--black);
+  transition:background .25s,color .25s,transform .2s;
+}
+.filter-btn:hover{transform:translateY(-2px)}
+.filter-btn.active{background:var(--black);color:var(--yellow)}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.card{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.12);
+  border-top:6px solid var(--yellow);
+  padding:1.6rem 1.6rem 1.8rem;
+  display:flex;flex-direction:column;gap:.8rem;
+  transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease),opacity .35s var(--ease);
+  position:relative;
+}
+.card[data-area="sustainability"]{border-top-color:#2dbe5f}
+.card[data-area="health"]{border-top-color:var(--red)}
+.card[data-area="education"]{border-top-color:var(--purple)}
+.card[data-area="poverty"]{border-top-color:var(--yellow)}
+.card[data-area="inclusion"]{border-top-color:#ff8a3d}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,.12)}
+.card .meta{
+  display:flex;align-items:center;gap:.6rem;
+  font-family:var(--inter);font-weight:700;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;color:#555;
+}
+.card .flag{font-size:1.15rem}
+.card .name{font-family:var(--inter);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+.card .project{font-family:var(--bebas);font-size:clamp(1.8rem,2.2vw,2.2rem);line-height:1;letter-spacing:.02em}
+.card p{font-size:.96rem;line-height:1.55;color:#333}
+.card .quote{
+  font-style:italic;font-size:.9rem;line-height:1.5;color:#111;
+  padding:.8rem 0 .2rem;border-top:1px dashed rgba(0,0,0,.15);
+  margin-top:.3rem;
+}
+.card .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.8rem}
+.card .tags .tag{
+  font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  padding:.3rem .6rem;background:#f4f4f4;color:#222;border-radius:4px;
+}
+.cards[data-filter]:not([data-filter="all"]) .card{display:none}
+.cards[data-filter="sustainability"] .card[data-area="sustainability"],
+.cards[data-filter="health"] .card[data-area="health"],
+.cards[data-filter="education"] .card[data-area="education"],
+.cards[data-filter="poverty"] .card[data-area="poverty"],
+.cards[data-filter="inclusion"] .card[data-area="inclusion"]{display:flex}
+
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+
+/* ============================================
+   §08 YEAR IN REVIEW
+   ============================================ */
+.year{background:var(--purple);color:var(--white);overflow:hidden}
+.year-inner{max-width:1400px;margin:0 auto}
+.year h2{color:var(--white);margin-bottom:1rem;max-width:16ch}
+.year-byline{
+  display:flex;flex-wrap:wrap;gap:1.5rem;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  color:rgba(255,255,255,.78);margin-bottom:3.5rem;
+  border-top:1px solid rgba(255,255,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
+  padding:1rem 0;
+}
+.year-byline strong{color:var(--yellow)}
+.pillars{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+  margin-bottom:4rem;
+}
+.pillar{
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.18);
+  padding:2rem 1.8rem 2.4rem;
+  min-height:300px;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.pillar .num{
+  font-family:var(--bebas);font-size:4.6rem;color:var(--yellow);
+  line-height:.85;letter-spacing:-.02em;
+}
+.pillar h3{font-family:var(--bebas);font-size:clamp(1.6rem,2.3vw,2rem);line-height:1.04}
+.pillar p{font-size:.96rem;line-height:1.55;color:rgba(255,255,255,.85)}
+.year-quote{
+  font-family:var(--bebas);
+  font-size:clamp(2.2rem,5vw,4.4rem);
+  line-height:.98;
+  color:var(--yellow);
+  max-width:28ch;
+  padding-left:2rem;
+  border-left:6px solid var(--yellow);
+}
+@media (max-width:860px){
+  .pillars{grid-template-columns:1fr}
+}
+
+/* ============================================
+   §09 LOOKING AHEAD
+   ============================================ */
+.ahead{background:var(--yellow);color:var(--black);overflow:hidden}
+.ahead-inner{max-width:1400px;margin:0 auto}
+.ahead h2{margin-bottom:1rem;max-width:12ch}
+.ahead-sub{font-size:1.1rem;margin-bottom:3rem;max-width:50ch}
+.priorities{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+  margin-bottom:4rem;
+}
+.priority{
+  background:var(--black);color:var(--white);
+  padding:2rem 1.8rem 2.4rem;
+  min-height:300px;
+  display:flex;flex-direction:column;gap:1rem;
+  position:relative;
+}
+.priority .num{
+  font-family:var(--bebas);font-size:5rem;color:var(--yellow);
+  line-height:.85;letter-spacing:-.02em;
+}
+.priority h3{font-family:var(--bebas);font-size:clamp(1.6rem,2.3vw,2rem);line-height:1.04;color:var(--white)}
+.priority p{font-size:.96rem;line-height:1.55;color:rgba(255,255,255,.82)}
+.ahead-close{
+  font-family:var(--bebas);
+  font-size:clamp(2.4rem,5.5vw,5rem);
+  line-height:.98;
+  max-width:22ch;
+  border-top:4px solid var(--black);
+  padding-top:2rem;
+}
+.ahead-close em{font-style:normal;background:var(--black);color:var(--yellow);padding:0 .2em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media (max-width:860px){
+  .priorities{grid-template-columns:1fr}
+}
+
+/* ============================================
+   §10 CTA
+   ============================================ */
+.cta{background:var(--black);color:var(--white);overflow:hidden}
+.cta-inner{max-width:1400px;margin:0 auto}
+.cta h2{color:var(--white);margin-bottom:3rem;max-width:18ch}
+.cta h2 em{font-style:normal;color:var(--yellow)}
+.cta-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;
+  margin-bottom:4rem;
+}
+.cta-card{
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.1);
+  border-top:6px solid var(--yellow);
+  padding:1.8rem 1.6rem 2.2rem;
+  min-height:240px;
+  display:flex;flex-direction:column;gap:.8rem;
+  transition:transform .35s var(--ease),background .35s var(--ease);
+}
+.cta-card:hover{transform:translateY(-6px);background:#151515}
+.cta-card[data-color="purple"]{border-top-color:var(--purple)}
+.cta-card[data-color="red"]{border-top-color:var(--red)}
+.cta-card[data-color="white"]{border-top-color:var(--white)}
+.cta-card .who{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:700;color:rgba(255,255,255,.55);
+}
+.cta-card h3{font-family:var(--bebas);font-size:clamp(1.6rem,2.2vw,2rem);line-height:1.05}
+.cta-card p{font-size:.92rem;color:rgba(255,255,255,.78);line-height:1.5;margin-top:auto}
+.cta-close{
+  font-family:var(--bebas);
+  font-size:clamp(2.4rem,6vw,5.2rem);
+  line-height:1;
+  color:var(--white);
+  max-width:20ch;
+  margin-bottom:2rem;
+}
+.cta-close em{font-style:normal;color:var(--yellow)}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  padding:1.1rem 2.2rem;
+  background:var(--yellow);color:var(--black);
+  font-family:var(--bebas);font-size:1.6rem;letter-spacing:.08em;
+  transition:transform .3s var(--ease),background .3s var(--ease);
+}
+.cta-btn:hover{transform:translateY(-3px);background:var(--white)}
+.cta-btn svg{width:22px;height:22px}
+
+@media (max-width:1000px){.cta-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cta-grid{grid-template-columns:1fr}}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.foot{
+  background:var(--black);color:var(--white);
+  padding:3rem clamp(20px,5vw,80px);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.foot-inner{
+  max-width:1400px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.foot .nav-brand{color:var(--white)}
+.foot .copy{font-size:.82rem;color:rgba(255,255,255,.55);letter-spacing:.05em}
+.foot .copy a{color:var(--yellow);font-weight:700}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+  .hero-bg svg{animation:none}
+}
+
+/* small screen nav tweaks */
+@media (max-width:560px){
+  :root{--nav-h:56px}
+  section{padding-left:18px;padding-right:18px}
+  .foreword{border-left-width:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAV
+     ============================================ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="nav-brand" href="#hero" aria-label="RIVET home">
+    <svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+      <g transform="translate(24,24)">
+        <rect x="-3" y="-20" width="6" height="20" rx="3"/>
+        <rect x="-3" y="0" width="6" height="20" rx="3"/>
+        <rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/>
+        <rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/>
+        <rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/>
+        <rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/>
+        <circle r="4" fill="currentColor"/>
+      </g>
+    </svg>
+    <span class="wordmark">RIVET</span>
+  </a>
+  <div class="nav-links">
+    <a href="#foreword">Foreword</a>
+    <a href="#about">About</a>
+    <a href="#capital">Impact</a>
+    <a href="#partnerships">Partnerships</a>
+    <a href="#numbers">Numbers</a>
+    <a href="#stories">Stories</a>
+    <a href="#ahead">2026</a>
+  </div>
+</nav>
+
+<!-- ============================================
+     §01 HERO
+     ============================================ -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true">
+    <!-- 18 rotating asterisks fill the grid -->
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+    <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot" style="background:var(--yellow)"></span>01 / Impact Report · 2021–2025</div>
+    <h1 id="hero-title">IMPACT<br>REPORT<br><span class="accent">2021–2025</span></h1>
+    <p class="hero-sub">Funding the first yes. Protecting youth ownership. Building the infrastructure change needs.</p>
+  </div>
+  <div class="hero-meta">
+    <div>RIVET · Youth Innovation Platform</div>
+    <div class="scroll-hint">Scroll to begin</div>
+  </div>
+  <div class="hero-strip" aria-hidden="true">
+    <div class="hero-strip-track">
+      <span>Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg></span>
+      <span>Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 48 48" fill="currentColor"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §02 FOREWORD
+     ============================================ -->
+<section class="foreword" id="foreword" aria-labelledby="foreword-title">
+  <div class="foreword-inner">
+    <div class="section-label reveal">02 / Foreword</div>
+    <h2 id="foreword-title" class="reveal" style="font-family:var(--bebas);font-size:clamp(2rem,3.5vw,3.2rem);margin-bottom:1rem">A LETTER FROM THE CEO</h2>
+    <p class="foreword-quote reveal">
+      “The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. <em>It has been access.</em>”
+    </p>
+    <div class="foreword-body">
+      <p class="reveal">Around the world, young people are already solving the problems their communities face — water scarcity, mental health, climate resilience, economic exclusion. What they lack isn't vision. It's capital, trust, and the permission to be taken seriously.</p>
+      <p class="reveal delay-1">RIVET exists to close that gap. We fund the first yes. We protect youth ownership of their work. We stand between the institutions that hold resources and the young leaders who hold the answers — and we make sure the bridge actually carries weight.</p>
+    </div>
+    <div class="foreword-byline reveal">
+      Dr. Eric D. Dawson <span>· CEO &amp; Founder</span>
+    </div>
+    <div class="truths">
+      <div class="truth reveal"><span class="num">01</span><p><strong>85%</strong> of young people live in <strong>capital deserts</strong> — regions where early-stage funding simply doesn't reach them.</p></div>
+      <div class="truth reveal delay-1"><span class="num">02</span><p>Less than <strong>0.002%</strong> of philanthropic dollars reach <strong>early-stage youth-led initiatives</strong>.</p></div>
+      <div class="truth reveal delay-2"><span class="num">03</span><p>Young people <strong>are not the future</strong>. They are already building the present.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §03 ABOUT
+     ============================================ -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="about-inner">
+    <div class="section-label reveal">03 / About</div>
+    <h2 id="about-title" class="reveal">CLOSING THE<br>INFRASTRUCTURE GAP</h2>
+    <p class="reveal" style="max-width:60ch;font-size:1.1rem;margin-bottom:2rem">RIVET is the connective tissue between three forces that rarely meet on equal ground. Our job is to make sure they do.</p>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+        <h3>Youth innovators</h3>
+        <p>Under-30 leaders with lived experience, building solutions rooted in the communities they come from.</p>
+      </div>
+      <div class="about-card reveal delay-1">
+        <svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+        <h3>Youth-serving orgs</h3>
+        <p>NGOs, collectives, and networks that already have the relationships — but not always the capital pipeline.</p>
+      </div>
+      <div class="about-card reveal delay-2">
+        <svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+        <h3>Brands &amp; funders</h3>
+        <p>Commercial and philanthropic partners who want their capital to actually move the needle — not just fund the announcement.</p>
+      </div>
+    </div>
+    <div class="section-label reveal" style="margin-top:2rem">Impact areas</div>
+    <div class="about-areas reveal">
+      <span class="pill">Health &amp; Wellness</span>
+      <span class="pill">Sustainability</span>
+      <span class="pill">Poverty Reduction</span>
+      <span class="pill">Inclusion</span>
+      <span class="pill">Education</span>
+    </div>
+    <div class="who-box reveal">
+      <div class="label">WHO<br>RIVET<br>FUNDS</div>
+      <p><strong>Under-30 leaders, globally</strong>, working on solutions aligned with the UN Sustainable Development Goals. We prioritize those who are closest to the problem, furthest from the capital, and most likely to be overlooked by traditional funders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §04 CAPITAL PATHWAY
+     ============================================ -->
+<section class="capital" id="capital" aria-labelledby="capital-title">
+  <div class="capital-inner">
+    <div class="section-label reveal" style="color:var(--yellow)">04 / The Capital Pathway</div>
+    <h2 id="capital-title" class="reveal">THREE TIERS.<br>ONE PIPELINE.</h2>
+    <p class="capital-intro reveal">Most funders force young innovators to look like institutions before they'll write the first check. RIVET flips it: meet them where they are, then grow the capital as they grow.</p>
+    <div class="tiers">
+      <article class="tier reveal" data-tier="access">
+        <div class="tier-label">Tier 01</div>
+        <h3>ACCESS</h3>
+        <div class="range">$250 – $999</div>
+        <p>Small, fast, flexible. Turns an idea into a first implementation — often the first money a young leader has ever been trusted with.</p>
+      </article>
+      <article class="tier reveal delay-1" data-tier="boost">
+        <div class="tier-label">Tier 02</div>
+        <h3>BOOST</h3>
+        <div class="range">$1,000 – $9,999</div>
+        <p>Grow, deepen, and stabilize. Moves a proven pilot into a repeatable program with staff, tools, and measurement in place.</p>
+      </article>
+      <article class="tier reveal delay-2" data-tier="scale">
+        <div class="tier-label">Tier 03</div>
+        <h3>SCALE</h3>
+        <div class="range">$10,000+</div>
+        <p>Expand and institutionalize. Backs the transition from movement to organization — with the systems, partnerships, and follow-on capital to sustain it.</p>
+      </article>
+    </div>
+
+    <div class="trust-wrap">
+      <div class="trust-copy reveal">
+        <h3>THE TRUST COMPOUNDING CYCLE</h3>
+        <p>Every small grant we deploy unlocks the next one — not just for the recipient, but for the ecosystem around them. When a young leader's first yes works, the institutions around them start paying attention.</p>
+        <p>The fastest way to accelerate youth-led change isn't a bigger first check. It's a faster second one.</p>
+      </div>
+      <div class="trust-cycle reveal" id="trustCycle" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <circle class="ring" cx="200" cy="200" r="160"/>
+        </svg>
+        <div class="trust-node" style="top:6%;left:50%">
+          <span class="dot"></span>
+          Microgrant<br>awarded
+        </div>
+        <div class="trust-node" style="top:27%;left:89%">
+          <span class="dot"></span>
+          Idea<br>launched
+        </div>
+        <div class="trust-node" style="top:73%;left:89%">
+          <span class="dot"></span>
+          Confidence<br>built
+        </div>
+        <div class="trust-node" style="top:94%;left:50%">
+          <span class="dot"></span>
+          Follow-on<br>funding
+        </div>
+        <div class="trust-node" style="top:73%;left:11%">
+          <span class="dot"></span>
+          Institutions<br>pay attention
+        </div>
+        <div class="trust-node" style="top:27%;left:11%">
+          <span class="dot"></span>
+          Next leader<br>funded faster
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §05 PARTNERSHIPS
+     ============================================ -->
+<section class="partnerships" id="partnerships" aria-labelledby="partnerships-title">
+  <div class="partnerships-inner">
+    <div class="section-label reveal">05 / Partnerships</div>
+    <h2 id="partnerships-title" class="reveal">THE NETWORK BEHIND<br>THE IMPACT</h2>
+    <p class="reveal" style="max-width:62ch;font-size:1.1rem;margin-bottom:1rem">RIVET doesn't run on RIVET alone. Our model depends on a coalition of brands, foundations, and youth-serving organizations who have each decided to move capital and attention toward the leaders already doing the work.</p>
+
+    <div class="partner-row reveal">
+      <h3>BRAND<br>PARTNERS</h3>
+      <div>
+        <div class="badges">
+          <span class="brand-pill">Adobe</span>
+          <span class="brand-pill">GoDaddy</span>
+          <span class="brand-pill">Crocs</span>
+          <span class="brand-pill">eos</span>
+          <span class="brand-pill">Funko</span>
+          <span class="brand-pill">Fossil</span>
+        </div>
+        <p class="partner-note">Partners who have replaced one-off campaign spend with multi-year, system-level investment in youth-led change.</p>
+      </div>
+    </div>
+
+    <div class="partner-row reveal">
+      <h3>INSTITUTIONAL &amp;<br>FOUNDATION</h3>
+      <div>
+        <p class="partner-note">Private foundations and institutional partners funding the infrastructure — not just the outputs.</p>
+        <div class="tow-quote">
+          "What drew us to RIVET was how clearly the pipeline was designed to protect youth ownership. We weren't funding an idea of impact — we were funding the operating system behind it."
+          <cite>— The Tow Foundation</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner-row reveal">
+      <h3>IMPACT<br>PARTNERS <span class="num">65M+ reached</span></h3>
+      <div>
+        <div class="badges">
+          <span class="brand-pill">City Year</span>
+          <span class="brand-pill">IFRC</span>
+          <span class="brand-pill">Peace First</span>
+          <span class="brand-pill">UNLEASH</span>
+          <span class="brand-pill">We Are Family Foundation</span>
+          <span class="brand-pill">Young Change Agents</span>
+        </div>
+        <p class="partner-note">Together, our impact partners have touched more than <strong>65 million young people across 190 countries</strong> — and counting.</p>
+      </div>
+    </div>
+
+    <div class="network-quote reveal">
+      <svg class="mark-big" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+      <div>
+        <blockquote>"What drew us to RIVET was the clarity of the system."</blockquote>
+        <cite>— Partner Foundation</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §06 BY THE NUMBERS
+     ============================================ -->
+<section class="numbers" id="numbers" aria-labelledby="numbers-title">
+  <div class="numbers-inner">
+    <div class="section-label reveal" style="color:var(--yellow)">06 / By the Numbers</div>
+    <h2 id="numbers-title" class="reveal">FIVE YEARS.<br><span class="accent">ONE PIPELINE.</span></h2>
+    <p class="numbers-intro reveal">Here's what the first five years of RIVET's capital pathway look like when you measure not just what we moved — but what moved because of it.</p>
+
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <span class="tag">Microgrants</span>
+        <span class="counter" data-target="1200" data-suffix="+">0</span>
+        <span class="label">Microgrants deployed globally</span>
+      </div>
+      <div class="stat reveal delay-1">
+        <span class="tag">Innovators</span>
+        <span class="counter" data-target="4000" data-prefix="~">0</span>
+        <span class="label">Youth innovators supported</span>
+      </div>
+      <div class="stat reveal delay-2">
+        <span class="tag">Reach</span>
+        <span class="counter" data-target="700000" data-suffix="+">0</span>
+        <span class="label">Direct beneficiaries served</span>
+      </div>
+      <div class="stat reveal">
+        <span class="tag">Catalytic capital</span>
+        <span class="counter" data-target="400000" data-prefix="$" data-suffix="+">0</span>
+        <span class="label">Deployed as early-stage microgrants</span>
+      </div>
+      <div class="stat reveal delay-1">
+        <span class="tag">Follow-on</span>
+        <span class="counter" data-target="3000000" data-prefix="~$">0</span>
+        <span class="label">In follow-on funding unlocked</span>
+      </div>
+      <div class="stat reveal delay-2">
+        <span class="tag">Ecosystem</span>
+        <span class="counter" data-target="70" data-suffix="+">0</span>
+        <span class="label">Ecosystem partners in 190+ countries</span>
+      </div>
+    </div>
+
+    <div class="breakdowns">
+      <div class="breakdown reveal">
+        <h3>GENDER BREAKDOWN</h3>
+        <div class="gender-bar" id="genderBar">
+          <div class="seg m">53%</div>
+          <div class="seg w">42%</div>
+          <div class="seg nb"></div>
+          <div class="seg p"></div>
+        </div>
+        <div class="gender-legend">
+          <span class="m">Men · 53%</span>
+          <span class="w">Women · 42%</span>
+          <span class="nb">Non-binary · 3%</span>
+          <span class="p">Prefer not to say · 2%</span>
+        </div>
+      </div>
+      <div class="breakdown reveal delay-1">
+        <h3>IMPACT AREAS</h3>
+        <div class="bars">
+          <div class="bar">
+            <span class="bar-label">Health &amp; Wellness</span>
+            <span class="bar-pct">23.5%</span>
+            <div class="bar-track"><div class="bar-fill" data-width="23.5"></div></div>
+          </div>
+          <div class="bar">
+            <span class="bar-label">Poverty Reduction</span>
+            <span class="bar-pct">20.9%</span>
+            <div class="bar-track"><div class="bar-fill" data-width="20.9"></div></div>
+          </div>
+          <div class="bar">
+            <span class="bar-label">Sustainability</span>
+            <span class="bar-pct">19.8%</span>
+            <div class="bar-track"><div class="bar-fill" data-width="19.8"></div></div>
+          </div>
+          <div class="bar">
+            <span class="bar-label">Inclusion</span>
+            <span class="bar-pct">18.0%</span>
+            <div class="bar-track"><div class="bar-fill" data-width="18.0"></div></div>
+          </div>
+          <div class="bar">
+            <span class="bar-label">Education</span>
+            <span class="bar-pct">12.8%</span>
+            <div class="bar-track"><div class="bar-fill" data-width="12.8"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="global-reach">
+      <div class="reveal">
+        <h3>GLOBAL REACH</h3>
+        <p style="color:rgba(255,255,255,.78);max-width:40ch">Funding reaches where youth-led change is already happening — weighted toward regions the sector still systematically overlooks.</p>
+        <ul class="region-list">
+          <li>Sub-Saharan Africa <span class="pct">32%</span></li>
+          <li>MENA <span class="pct">26%</span></li>
+          <li>Asia <span class="pct">23%</span></li>
+          <li>North America <span class="pct">9%</span></li>
+          <li>Latin America <span class="pct">5%</span></li>
+          <li>Europe <span class="pct">5%</span></li>
+        </ul>
+      </div>
+      <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true">
+        <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+          <!-- Simplified continent silhouettes -->
+          <path class="land" d="M150,90 L300,80 L420,100 L460,140 L440,200 L380,230 L320,220 L260,200 L210,180 L170,140 Z"/>
+          <path class="land" d="M470,180 L560,160 L640,175 L700,210 L680,260 L620,290 L560,300 L500,280 L470,240 Z"/>
+          <path class="land" d="M450,220 L510,230 L540,260 L550,320 L520,380 L480,400 L440,370 L420,310 L430,260 Z"/>
+          <path class="land" d="M560,260 L660,270 L740,290 L820,320 L830,370 L760,400 L680,420 L620,410 L580,370 L560,310 Z"/>
+          <path class="land" d="M840,330 L900,340 L920,370 L900,400 L850,400 L830,370 Z"/>
+          <path class="land" d="M140,180 L220,200 L260,250 L240,320 L200,380 L160,400 L120,370 L100,300 L110,230 Z"/>
+          <path class="land" d="M260,350 L320,370 L340,410 L310,440 L270,430 L250,400 Z"/>
+          <!-- Pulse dots: Sub-Saharan Africa, MENA, Asia, North America, Latin America, Europe -->
+          <circle class="map-dot" cx="530" cy="320" r="5"/>
+          <circle class="map-dot" cx="560" cy="230" r="5"/>
+          <circle class="map-dot" cx="720" cy="260" r="5"/>
+          <circle class="map-dot" cx="220" cy="180" r="5"/>
+          <circle class="map-dot" cx="230" cy="350" r="5"/>
+          <circle class="map-dot" cx="500" cy="160" r="5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="catalytic reveal">
+      <div>
+        <h3>The Catalytic Effect</h3>
+        <div class="ratio">
+          $400K <span class="arrow">→</span> $3M
+        </div>
+        <p style="margin-top:1rem">Every catalytic dollar RIVET deploys unlocks roughly <strong>20–500× its value</strong> in follow-on funding, partnerships, and institutional support.</p>
+      </div>
+      <div>
+        <div class="stanley">
+          <strong>Stanley's story</strong> · A $1,000 Access Grant to Stanley Anigbogu's LightEd in Nigeria unlocked more than <strong>$500,000</strong> in additional investment — a 500× multiplier from a single first yes.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §07 STORIES OF CHANGE
+     ============================================ -->
+<section class="stories" id="stories" aria-labelledby="stories-title">
+  <div class="stories-inner">
+    <div class="section-label reveal">07 / Stories of Change</div>
+    <h2 id="stories-title" class="reveal">STORIES OF CHANGE</h2>
+    <p class="stories-sub reveal">Youth do not work in silos. Neither does impact. Filter by impact area.</p>
+
+    <div class="filters reveal" role="tablist">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="sustainability" role="tab">Sustainability</button>
+      <button class="filter-btn" data-filter="health" role="tab">Health &amp; Wellness</button>
+      <button class="filter-btn" data-filter="education" role="tab">Education</button>
+      <button class="filter-btn" data-filter="poverty" role="tab">Poverty Reduction</button>
+      <button class="filter-btn" data-filter="inclusion" role="tab">Inclusion</button>
+    </div>
+
+    <div class="cards" id="cards" data-filter="all">
+      <article class="card reveal" data-area="sustainability">
+        <div class="meta"><span class="flag">🇳🇬</span><span>Nigeria · Sustainability</span></div>
+        <div class="name">Joshua Ichor</div>
+        <div class="project">Geotek Water Project</div>
+        <p>AI-powered water-quality sensors reaching 6,000+ people already. Goal: one million by 2026.</p>
+        <div class="quote">"I got sick because of water, but that experience gave me the vision to change how we manage it."</div>
+        <div class="tags"><span class="tag">SDG 6</span><span class="tag">SDG 9</span><span class="tag">AI</span></div>
+      </article>
+
+      <article class="card reveal delay-1" data-area="sustainability">
+        <div class="meta"><span class="flag">🇵🇰</span><span>Pakistan · Sustainability</span></div>
+        <div class="name">Laraib Khan Tahir</div>
+        <div class="project">The Green Root Project</div>
+        <p>4,000+ trees planted, irrigation canals restored, 7,000+ beneficiaries, and 20 local jobs created — rooted in community stewardship.</p>
+        <div class="quote">"A tree is not just oxygen. It is food, shade, water retention, and the foundation of social and economic resilience."</div>
+        <div class="tags"><span class="tag">SDG 13</span><span class="tag">SDG 15</span><span class="tag">SDG 8</span></div>
+      </article>
+
+      <article class="card reveal delay-2" data-area="health">
+        <div class="meta"><span class="flag">🇬🇧</span><span>UK &amp; East Africa · Health</span></div>
+        <div class="name">Hakim Kakooza</div>
+        <div class="project">MariTest</div>
+        <p>A bloodless malaria testing device designed for underserved communities — fast, affordable, and field-deployable.</p>
+        <div class="quote">"I know firsthand the pain that malaria causes."</div>
+        <div class="tags"><span class="tag">SDG 3</span><span class="tag">MedTech</span></div>
+      </article>
+
+      <article class="card reveal" data-area="health">
+        <div class="meta"><span class="flag">🇺🇸</span><span>Minnesota, USA · Health</span></div>
+        <div class="name">Emi Gaçaj</div>
+        <div class="project">Tessering Biosciences</div>
+        <p>Re-engineering a safer contraceptive compound to make a better option accessible to more women globally.</p>
+        <div class="quote">"There's a better option out there. Women just don't have access to it yet."</div>
+        <div class="tags"><span class="tag">SDG 3</span><span class="tag">SDG 5</span><span class="tag">BioTech</span></div>
+      </article>
+
+      <article class="card reveal delay-1" data-area="education">
+        <div class="meta"><span class="flag">🇹🇳</span><span>Tunisia · Education</span></div>
+        <div class="name">Rayen Bouajaja</div>
+        <div class="project">Lyceena</div>
+        <p>A digital education platform that positions students as agents of educational policy change — not just recipients of it.</p>
+        <div class="tags"><span class="tag">SDG 4</span><span class="tag">CivicTech</span></div>
+      </article>
+
+      <article class="card reveal delay-2" data-area="education">
+        <div class="meta"><span class="flag">🇺🇸</span><span>New York, USA · Education</span></div>
+        <div class="name">Victoria Flores Almazan</div>
+        <div class="project">Take Charge with Victoria</div>
+        <p>A bilingual platform helping immigrant families navigate US systems — education, healthcare, housing, and beyond.</p>
+        <div class="quote">"It keeps me motivated to keep making an impact and empower others to take charge of their lives."</div>
+        <div class="tags"><span class="tag">SDG 4</span><span class="tag">SDG 10</span></div>
+      </article>
+
+      <article class="card reveal" data-area="poverty">
+        <div class="meta"><span class="flag">🇳🇬</span><span>Nigeria · Poverty Reduction</span></div>
+        <div class="name">Stanley Anigbogu</div>
+        <div class="project">LightEd</div>
+        <p>Solar lighting built from recycled e-waste. A $1,000 RIVET Access Grant unlocked $500,000 in follow-on capital.</p>
+        <div class="quote">"The first yes was the hardest. Everything else followed."</div>
+        <div class="tags"><span class="tag">SDG 7</span><span class="tag">SDG 12</span><span class="tag">500× multiplier</span></div>
+      </article>
+
+      <article class="card reveal delay-1" data-area="poverty">
+        <div class="meta"><span class="flag">🇺🇬</span><span>Uganda · Poverty Reduction</span></div>
+        <div class="name">Walter Okwir</div>
+        <div class="project">YIEN</div>
+        <p>Reusable sanitary pad manufacturing paired with sexual and reproductive health education — reducing school absence and building local jobs.</p>
+        <div class="tags"><span class="tag">SDG 3</span><span class="tag">SDG 5</span><span class="tag">SDG 8</span></div>
+      </article>
+
+      <article class="card reveal delay-2" data-area="inclusion">
+        <div class="meta"><span class="flag">🇺🇸</span><span>Boston, USA · Inclusion</span></div>
+        <div class="name">Andrew Chang</div>
+        <div class="project">Nunchi Health</div>
+        <p>Peer-led mental health support for immigrant and minority youth. 16,000+ students served across 35+ countries.</p>
+        <div class="tags"><span class="tag">SDG 3</span><span class="tag">SDG 10</span><span class="tag">Mental Health</span></div>
+      </article>
+
+      <article class="card reveal" data-area="inclusion">
+        <div class="meta"><span class="flag">🇦🇷</span><span>Argentina &amp; UK · Inclusion</span></div>
+        <div class="name">Melany Ávila</div>
+        <div class="project">Latin Girls at Work</div>
+        <p>Professional networking, mentorship, and visibility for Latin American women building careers in the UK.</p>
+        <div class="tags"><span class="tag">SDG 5</span><span class="tag">SDG 10</span><span class="tag">Community</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §08 YEAR IN REVIEW
+     ============================================ -->
+<section class="year" id="year" aria-labelledby="year-title">
+  <div class="year-inner">
+    <div class="section-label reveal" style="color:var(--yellow)">08 / Year in Review</div>
+    <h2 id="year-title" class="reveal">2025: A YEAR OF FOUNDATION BUILDING</h2>
+    <div class="year-byline reveal">
+      <span><strong>Hayfa Sdiri</strong> · Chief Impact Officer</span>
+      <span><strong>Nadia Ali</strong> · Senior Impact Manager</span>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="num">01</span>
+        <h3>YOUTH LEADERSHIP IS THE CONNECTIVE TISSUE</h3>
+        <p>Between institutions and brands — the groups that rarely share a table — young leaders are the translators who make cross-sector action actually work.</p>
+      </div>
+      <div class="pillar reveal delay-1">
+        <span class="num">02</span>
+        <h3>IMPACT IS NOT JUST QUANTITATIVE. IT IS HUMAN.</h3>
+        <p>Beneficiary counts alone don't tell the story. Our 2025 measurement work centered lived experience alongside numbers — and it changed the way we fund.</p>
+      </div>
+      <div class="pillar reveal delay-2">
+        <span class="num">03</span>
+        <h3>INNOVATORS AND THEIR COMMUNITIES GUIDE OUR CHOICES</h3>
+        <p>Who gets funded next, what problems are worth centering, and how we structure support — these are decisions that live closest to the ground, not in our HQ.</p>
+      </div>
+    </div>
+    <blockquote class="year-quote reveal">"Youth-led innovation is already happening. Our responsibility is to ensure the systems around it are built to support it well."</blockquote>
+  </div>
+</section>
+
+<!-- ============================================
+     §09 LOOKING AHEAD
+     ============================================ -->
+<section class="ahead" id="ahead" aria-labelledby="ahead-title">
+  <div class="ahead-inner">
+    <div class="section-label reveal">09 / Looking Ahead</div>
+    <h2 id="ahead-title" class="reveal">LOOKING AHEAD TO 2026</h2>
+    <p class="ahead-sub reveal">Refining the system. Growing the capital. Preparing to scale.</p>
+    <div class="priorities">
+      <div class="priority reveal">
+        <span class="num">01</span>
+        <h3>REFINE THE SYSTEMS</h3>
+        <p>Tighter grant operations. Stronger measurement. Youth governance at decision-making tables — not just advisory seats.</p>
+      </div>
+      <div class="priority reveal delay-1">
+        <span class="num">02</span>
+        <h3>INCREASE FUNDING</h3>
+        <p>Expand brand and foundation partnerships. Convert one-off campaigns into multi-year, system-level commitments.</p>
+      </div>
+      <div class="priority reveal delay-2">
+        <span class="num">03</span>
+        <h3>SCALE WITH INTEGRITY</h3>
+        <p>Protect youth ownership of the work. Invest in partner enablement so impact partners can carry more weight, more safely.</p>
+      </div>
+    </div>
+    <p class="ahead-close reveal">Youth-led innovation isn't the experiment. The real experiment is <em>whether institutions can redesign themselves</em> fast enough to support it.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     §10 CTA
+     ============================================ -->
+<section class="cta" id="cta" aria-labelledby="cta-title">
+  <div class="cta-inner">
+    <div class="section-label reveal" style="color:var(--yellow)">10 / Work With RIVET</div>
+    <h2 id="cta-title" class="reveal">FIND YOUR ROLE<br>IN THE <em>PIPELINE.</em></h2>
+    <div class="cta-grid">
+      <article class="cta-card reveal" data-color="yellow">
+        <div class="who">If you're a brand</div>
+        <h3>DON'T JUST FUND A CAMPAIGN. BUILD THE SYSTEM.</h3>
+        <p>Move beyond one-off moments. Co-build multi-year, measurable infrastructure for youth-led change.</p>
+      </article>
+      <article class="cta-card reveal delay-1" data-color="purple">
+        <div class="who">If you're a foundation</div>
+        <h3>HELP CLOSE THE EARLY-STAGE GAP.</h3>
+        <p>Back the first yes — the capital that proves a young leader's idea can work at all, which every later funder relies on.</p>
+      </article>
+      <article class="cta-card reveal delay-2" data-color="red">
+        <div class="who">If you're a youth-serving org</div>
+        <h3>JOIN THE NETWORK.</h3>
+        <p>Plug into our grantmaking infrastructure. We'll help you move capital to the leaders you already know.</p>
+      </article>
+      <article class="cta-card reveal delay-3" data-color="white">
+        <div class="who">If you're a supporter</div>
+        <h3>OPEN A DOOR. SHARE A STORY.</h3>
+        <p>Amplify a grantee. Make an introduction. Send the report onward. Small acts compound — that's the whole point.</p>
+      </article>
+    </div>
+    <p class="cta-close reveal">When youth are trusted early, <em>everything changes.</em></p>
+    <a class="cta-btn reveal" href="https://rivet.org" target="_blank" rel="noopener noreferrer">
+      Partner with RIVET
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <a class="nav-brand" href="#hero" aria-label="RIVET home">
+      <svg class="mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><g transform="translate(24,24)"><rect x="-3" y="-20" width="6" height="20" rx="3"/><rect x="-3" y="0" width="6" height="20" rx="3"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(60)"/><rect x="-3" y="-20" width="6" height="20" rx="3" transform="rotate(120)"/><rect x="-3" y="0" width="6" height="20" rx="3" transform="rotate(120)"/><circle r="4" fill="currentColor"/></g></svg>
+      <span class="wordmark">RIVET</span>
+    </a>
+    <div class="copy">© 2025 RIVET. All rights reserved. · <a href="https://rivet.org" target="_blank" rel="noopener noreferrer">rivet.org</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Reveal observer ---------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reducedMotion){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(el=>io.observe(el));
+  } else {
+    reveals.forEach(el=>el.classList.add('visible'));
+  }
+
+  /* ---------- Counter animation ---------- */
+  function formatNumber(n, prefix, suffix){
+    let out;
+    if (n >= 1000) out = Math.round(n).toLocaleString('en-US');
+    else out = Math.round(n).toString();
+    return (prefix||'') + out + (suffix||'');
+  }
+  function animateCounter(el){
+    const target = parseFloat(el.dataset.target);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if (reducedMotion){
+      el.textContent = formatNumber(target, prefix, suffix);
+      return;
+    }
+    const duration = 1500;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min(1, (now - start)/duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatNumber(target * eased, prefix, suffix);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = formatNumber(target, prefix, suffix);
+    }
+    requestAnimationFrame(tick);
+  }
+  const counters = document.querySelectorAll('.counter');
+  if ('IntersectionObserver' in window){
+    const co = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){
+          animateCounter(e.target);
+          co.unobserve(e.target);
+        }
+      });
+    },{threshold:0.4});
+    counters.forEach(c=>co.observe(c));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  /* ---------- Bar chart fills + gender + trust cycle + map ---------- */
+  const bars = document.querySelectorAll('.bar-fill');
+  const genderBar = document.getElementById('genderBar');
+  const trustCycle = document.getElementById('trustCycle');
+  const mapWrap = document.getElementById('mapWrap');
+
+  function animateBars(){
+    bars.forEach(b=>{
+      b.style.width = (b.dataset.width || 0) + '%';
+    });
+  }
+  function animateOnce(el, cb){
+    if (!('IntersectionObserver' in window)){ cb(); return; }
+    const o = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){ cb(); o.unobserve(e.target); }
+      });
+    },{threshold:0.3});
+    o.observe(el);
+  }
+
+  if (bars[0]) animateOnce(bars[0].closest('.breakdown'), animateBars);
+  if (genderBar) animateOnce(genderBar, ()=>genderBar.classList.add('animate'));
+  if (trustCycle) animateOnce(trustCycle, ()=>trustCycle.classList.add('active'));
+  if (mapWrap) animateOnce(mapWrap, ()=>mapWrap.classList.add('active'));
+
+  /* ---------- Nav solid + active link ---------- */
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sectionIds = ['hero','foreword','about','capital','partnerships','numbers','stories','ahead'];
+  const sections = sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
+
+  function onScroll(){
+    if (window.scrollY > 80) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+
+    let current = sections[0] && sections[0].id;
+    const y = window.scrollY + 120;
+    for (const s of sections){
+      if (s.offsetTop <= y) current = s.id;
+    }
+    navLinks.forEach(a=>{
+      const href = a.getAttribute('href').replace('#','');
+      a.classList.toggle('active', href === current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Story filter ---------- */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.getElementById('cards');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b=>{
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+      });
+      cards.setAttribute('data-filter', f);
+    });
+  });
+})();
+</script>
+</body>
+</html>

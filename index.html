@@ -123,26 +123,13 @@ section{
   border-bottom:1px solid transparent;
 }
 .nav.solid{background:var(--black);color:var(--white);border-bottom-color:rgba(255,255,255,.08)}
-.nav-brand{display:flex;align-items:center;gap:.5rem}
-.nav-brand .mark{width:36px;height:36px;color:currentColor;flex-shrink:0}
-.nav-brand .wordmark{
-  font-family:var(--bebas);
-  font-size:2rem;
-  letter-spacing:.1em;
-  line-height:.85;
-  color:currentColor;
-  display:inline-flex;
-  align-items:flex-start;
+.nav-brand{display:flex;align-items:center}
+.nav-brand .nav-logo{
+  height:52px;
+  width:auto;
+  display:block;
 }
-.wordmark .tm{
-  font-family:var(--inter);
-  font-size:.45em;
-  font-weight:700;
-  letter-spacing:0;
-  margin-left:.15em;
-  transform:translateY(.1em);
-  line-height:1;
-}
+.foot .nav-brand .nav-logo{height:56px}
 .nav-links{display:flex;align-items:center;gap:clamp(10px,1.5vw,26px)}
 .nav-links a{
   font-family:var(--inter);
@@ -1000,11 +987,8 @@ section{
      NAV
      ============================================ -->
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="nav-brand" href="#hero" aria-label="RIVET home">
-    <svg class="mark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-      <use href="#rivet-mark"/>
-    </svg>
-    <span class="wordmark">RIVET<sup class="tm">&trade;</sup></span>
+  <a class="nav-brand" href="#hero" aria-label="RIVET — home">
+    <img src="rivet-logo.png" alt="RIVET" class="nav-logo" width="2194" height="1320">
   </a>
   <div class="nav-links">
     <a href="#foreword">Foreword</a>
@@ -1600,9 +1584,8 @@ section{
      ============================================ -->
 <footer class="foot">
   <div class="foot-inner">
-    <a class="nav-brand" href="#hero" aria-label="RIVET home">
-      <svg class="mark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><use href="#rivet-mark"/></svg>
-      <span class="wordmark">RIVET<sup class="tm">&trade;</sup></span>
+    <a class="nav-brand" href="#hero" aria-label="RIVET — home">
+      <img src="rivet-logo.png" alt="RIVET" class="nav-logo" width="2194" height="1320">
     </a>
     <div class="copy">© 2025 RIVET. All rights reserved. · <a href="https://rivet.org" target="_blank" rel="noopener noreferrer">rivet.org</a></div>
   </div>

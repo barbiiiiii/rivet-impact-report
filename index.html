@@ -200,24 +200,47 @@ section{
 
 .hero-inner{
   position:relative;z-index:2;
-  padding:clamp(40px,6vw,80px) clamp(20px,5vw,80px) 0;
+  padding:clamp(24px,3.5vw,48px) clamp(20px,5vw,80px) 0;
   max-width:1400px;margin:0 auto;width:100%;
   flex:1;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;justify-content:flex-start;
 }
 .hero h1{
   color:var(--white);
   line-height:.86;
-  font-size:clamp(4.6rem,17vw,17rem);
+  font-size:clamp(3.8rem,13vw,13rem);
   letter-spacing:-.01em;
 }
 .hero h1 .accent{color:var(--yellow)}
 .hero-sub{
+  position:relative;
   max-width:640px;
-  margin-top:2.2rem;
+  margin-top:1.8rem;
   font-size:clamp(1rem,1.3vw,1.25rem);
   color:rgba(255,255,255,.82);
   line-height:1.5;
+  min-height:2.2em;
+}
+.hero-sub .sub-line{
+  position:absolute;
+  top:0;left:0;right:0;
+  opacity:0;
+  transform:translateY(8px);
+  animation:subRotate 9s infinite;
+}
+.hero-sub .sub-line:nth-child(1){animation-delay:0s}
+.hero-sub .sub-line:nth-child(2){animation-delay:3s}
+.hero-sub .sub-line:nth-child(3){animation-delay:6s}
+@keyframes subRotate{
+  0%{opacity:0;transform:translateY(8px)}
+  4%{opacity:1;transform:translateY(0)}
+  29%{opacity:1;transform:translateY(0)}
+  33%{opacity:0;transform:translateY(-8px)}
+  100%{opacity:0;transform:translateY(-8px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-sub .sub-line{position:relative;opacity:1;transform:none;animation:none;display:block;margin-bottom:.25em}
+  .hero-sub{min-height:0}
 }
 .hero-strip{
   position:relative;z-index:2;
@@ -242,18 +265,21 @@ section{
 
 .hero-meta{
   position:relative;z-index:2;
-  display:flex;justify-content:space-between;align-items:flex-end;
+  display:flex;justify-content:flex-end;align-items:flex-end;
   padding:2rem clamp(20px,5vw,80px) 2.5rem;
   max-width:1400px;margin:0 auto;width:100%;
   font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(255,255,255,.55);font-weight:700;
 }
-.hero-meta .scroll-hint{display:flex;align-items:center;gap:.6rem}
-.hero-meta .scroll-hint::after{
-  content:"";width:50px;height:1px;background:var(--yellow);
-  animation:slide 2s ease-in-out infinite;
+.hero-meta .scroll-hint{
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  text-align:center;
 }
-@keyframes slide{0%,100%{transform:scaleX(.5);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
+.hero-meta .scroll-hint::after{
+  content:"";width:1px;height:48px;background:var(--yellow);
+  animation:slideDown 2s ease-in-out infinite;
+}
+@keyframes slideDown{0%,100%{transform:scaleY(.4);transform-origin:top center}50%{transform:scaleY(1);transform-origin:top center}}
 
 /* ============================================
    §02 FOREWORD
@@ -1009,13 +1035,15 @@ section{
     <svg viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg>
   </div>
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot" style="background:var(--yellow)"></span>01 / Impact Report · 2021–2025</div>
     <h1 id="hero-title">IMPACT<br>REPORT<br><span class="accent">2021–2025</span></h1>
-    <p class="hero-sub">Funding the first yes. Protecting youth ownership. Building the infrastructure change needs.</p>
+    <div class="hero-sub" aria-live="polite">
+      <span class="sub-line">Funding the first yes.</span>
+      <span class="sub-line">Protecting youth ownership.</span>
+      <span class="sub-line">Building the infrastructure change needs.</span>
+    </div>
   </div>
   <div class="hero-meta">
-    <div>RIVET · Youth Innovation Platform</div>
-    <div class="scroll-hint">Scroll to begin</div>
+    <div class="scroll-hint">Scroll down to begin</div>
   </div>
   <div class="hero-strip" aria-hidden="true">
     <div class="hero-strip-track">
@@ -1030,7 +1058,7 @@ section{
      ============================================ -->
 <section class="foreword" id="foreword" aria-labelledby="foreword-title">
   <div class="foreword-inner">
-    <div class="section-label reveal">02 / Foreword</div>
+    <div class="section-label reveal">01 / Foreword</div>
     <h2 id="foreword-title" class="reveal" style="font-family:var(--bebas);font-size:clamp(2rem,3.5vw,3.2rem);margin-bottom:1rem">A LETTER FROM THE CEO</h2>
     <p class="foreword-quote reveal">
       “The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. <em>It has been access.</em>”
@@ -1055,7 +1083,7 @@ section{
      ============================================ -->
 <section class="about" id="about" aria-labelledby="about-title">
   <div class="about-inner">
-    <div class="section-label reveal">03 / About</div>
+    <div class="section-label reveal">02 / About</div>
     <h2 id="about-title" class="reveal">CLOSING THE<br>INFRASTRUCTURE GAP</h2>
     <p class="reveal" style="max-width:60ch;font-size:1.1rem;margin-bottom:2rem">RIVET is the connective tissue between three forces that rarely meet on equal ground. Our job is to make sure they do.</p>
     <div class="about-grid">
@@ -1095,7 +1123,7 @@ section{
      ============================================ -->
 <section class="capital" id="capital" aria-labelledby="capital-title">
   <div class="capital-inner">
-    <div class="section-label reveal" style="color:var(--yellow)">04 / The Capital Pathway</div>
+    <div class="section-label reveal" style="color:var(--yellow)">03 / The Capital Pathway</div>
     <h2 id="capital-title" class="reveal">THREE TIERS.<br>ONE PIPELINE.</h2>
     <p class="capital-intro reveal">Most funders force young innovators to look like institutions before they'll write the first check. RIVET flips it: meet them where they are, then grow the capital as they grow.</p>
     <div class="tiers">
@@ -1163,7 +1191,7 @@ section{
      ============================================ -->
 <section class="partnerships" id="partnerships" aria-labelledby="partnerships-title">
   <div class="partnerships-inner">
-    <div class="section-label reveal">05 / Partnerships</div>
+    <div class="section-label reveal">04 / Partnerships</div>
     <h2 id="partnerships-title" class="reveal">THE NETWORK BEHIND<br>THE IMPACT</h2>
     <p class="reveal" style="max-width:62ch;font-size:1.1rem;margin-bottom:1rem">RIVET doesn't run on RIVET alone. Our model depends on a coalition of brands, foundations, and youth-serving organizations who have each decided to move capital and attention toward the leaders already doing the work.</p>
 
@@ -1223,7 +1251,7 @@ section{
      ============================================ -->
 <section class="numbers" id="numbers" aria-labelledby="numbers-title">
   <div class="numbers-inner">
-    <div class="section-label reveal" style="color:var(--yellow)">06 / By the Numbers</div>
+    <div class="section-label reveal" style="color:var(--yellow)">05 / By the Numbers</div>
     <h2 id="numbers-title" class="reveal">FIVE YEARS.<br><span class="accent">ONE PIPELINE.</span></h2>
     <p class="numbers-intro reveal">Here's what the first five years of RIVET's capital pathway look like when you measure not just what we moved — but what moved because of it.</p>
 
@@ -1364,7 +1392,7 @@ section{
      ============================================ -->
 <section class="stories" id="stories" aria-labelledby="stories-title">
   <div class="stories-inner">
-    <div class="section-label reveal">07 / Stories of Change</div>
+    <div class="section-label reveal">06 / Stories of Change</div>
     <h2 id="stories-title" class="reveal">STORIES OF CHANGE</h2>
     <p class="stories-sub reveal">Youth do not work in silos. Neither does impact. Filter by impact area.</p>
 
@@ -1472,7 +1500,7 @@ section{
      ============================================ -->
 <section class="year" id="year" aria-labelledby="year-title">
   <div class="year-inner">
-    <div class="section-label reveal" style="color:var(--yellow)">08 / Year in Review</div>
+    <div class="section-label reveal" style="color:var(--yellow)">07 / Year in Review</div>
     <h2 id="year-title" class="reveal">2025: A YEAR OF FOUNDATION BUILDING</h2>
     <div class="year-byline reveal">
       <span><strong>Hayfa Sdiri</strong> · Chief Impact Officer</span>
@@ -1504,7 +1532,7 @@ section{
      ============================================ -->
 <section class="ahead" id="ahead" aria-labelledby="ahead-title">
   <div class="ahead-inner">
-    <div class="section-label reveal">09 / Looking Ahead</div>
+    <div class="section-label reveal">08 / Looking Ahead</div>
     <h2 id="ahead-title" class="reveal">LOOKING AHEAD TO 2026</h2>
     <p class="ahead-sub reveal">Refining the system. Growing the capital. Preparing to scale.</p>
     <div class="priorities">
@@ -1533,7 +1561,7 @@ section{
      ============================================ -->
 <section class="cta" id="cta" aria-labelledby="cta-title">
   <div class="cta-inner">
-    <div class="section-label reveal" style="color:var(--yellow)">10 / Work With RIVET</div>
+    <div class="section-label reveal" style="color:var(--yellow)">09 / Work With RIVET</div>
     <h2 id="cta-title" class="reveal">FIND YOUR ROLE<br>IN THE <em>PIPELINE.</em></h2>
     <div class="cta-grid">
       <article class="cta-card reveal" data-color="yellow">

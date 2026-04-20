@@ -1016,6 +1016,7 @@ section{
   top:0;right:0;bottom:0;left:0;z-index:9999;
   visibility:hidden;opacity:0;pointer-events:none;
   transition:all 0.3s ease;overflow-y:auto;
+  overscroll-behavior:contain;
   display:flex;align-items:flex-start;justify-content:center;
 }
 .modal-window:target{visibility:visible;opacity:1;pointer-events:auto;}
@@ -1812,7 +1813,7 @@ section{
 <!-- DRAWER — direct children of body for correct position:fixed stacking -->
 <div id="ceo-letter-modal" class="modal-window">
   <div class="modal-content">
-    <a href="#" class="modal-close">&#x2715;</a>
+    <a href="#foreword" class="modal-close">&#x2715;</a>
     <div style="font-family:var(--bebas);font-size:3.2rem;line-height:1.05;margin-bottom:4px;color:#000;">DR. ERIC D. DAWSON</div>
     <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:#6B62F2;text-transform:uppercase;margin-bottom:20px;">CEO &amp; Founder, RIVET</div>
     <div style="height:2px;background:#E9F958;margin-bottom:28px;"></div>

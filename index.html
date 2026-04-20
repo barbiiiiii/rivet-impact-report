@@ -431,37 +431,82 @@ section{
 .trust-copy p{color:rgba(255,255,255,.82);margin-bottom:1rem;max-width:46ch}
 
 .trust-cycle{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:0 auto}
-.trust-cycle svg{width:100%;height:100%;overflow:visible}
+.trust-cycle svg{width:100%;height:100%;overflow:visible;color:var(--yellow)}
 .trust-node{
   position:absolute;transform:translate(-50%,-50%);
-  width:clamp(90px,11vw,140px);
+  width:clamp(100px,12vw,150px);
   text-align:center;
-  font-size:.74rem;line-height:1.15;font-weight:700;
+  font-size:.74rem;line-height:1.2;font-weight:700;
   letter-spacing:.04em;text-transform:uppercase;
-  color:rgba(255,255,255,.6);
-  transition:color .6s var(--ease),transform .6s var(--ease);
+  color:rgba(255,255,255,.88);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
 }
-.trust-node .dot{
-  display:block;width:14px;height:14px;border-radius:50%;
-  background:rgba(255,255,255,.25);
-  margin:0 auto .5rem;
-  transition:background .6s var(--ease),box-shadow .6s var(--ease),transform .6s var(--ease);
+.trust-node .num{
+  display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  background:#0b0b0b;
+  border:2px solid rgba(233,249,88,.35);
+  color:rgba(255,255,255,.7);
+  font-family:var(--bebas);
+  font-size:1.25rem;letter-spacing:.04em;line-height:1;
+  padding-top:2px;
+  transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
 }
-.trust-cycle.active .trust-node{color:var(--white)}
-.trust-cycle.active .trust-node .dot{background:var(--yellow);box-shadow:0 0 0 6px rgba(233,249,88,.18);transform:scale(1.2)}
-.trust-cycle.active .trust-node:nth-child(1) .dot{transition-delay:0s}
-.trust-cycle.active .trust-node:nth-child(2) .dot{transition-delay:.25s}
-.trust-cycle.active .trust-node:nth-child(3) .dot{transition-delay:.5s}
-.trust-cycle.active .trust-node:nth-child(4) .dot{transition-delay:.75s}
-.trust-cycle.active .trust-node:nth-child(5) .dot{transition-delay:1s}
-.trust-cycle.active .trust-node:nth-child(6) .dot{transition-delay:1.25s}
+.trust-node .label{display:block}
+.trust-cycle.active .trust-node .num{
+  background:var(--yellow);
+  border-color:var(--yellow);
+  color:var(--black);
+  box-shadow:0 0 0 6px rgba(233,249,88,.14);
+}
+.trust-cycle.active .trust-node[data-step="02"] .num{transition-delay:.2s}
+.trust-cycle.active .trust-node[data-step="03"] .num{transition-delay:.4s}
+.trust-cycle.active .trust-node[data-step="04"] .num{transition-delay:.6s}
+.trust-cycle.active .trust-node[data-step="05"] .num{transition-delay:.8s}
+.trust-cycle.active .trust-node[data-step="06"] .num{transition-delay:1s}
+
+/* Start-here treatment — node 01 always glows and shows the tag */
+.trust-node--start .num{
+  background:var(--yellow);
+  border-color:var(--yellow);
+  color:var(--black);
+  box-shadow:0 0 0 8px rgba(233,249,88,.22),0 0 24px rgba(233,249,88,.4);
+  animation:startPulse 2.6s ease-in-out infinite;
+}
+@keyframes startPulse{
+  0%,100%{box-shadow:0 0 0 6px rgba(233,249,88,.22),0 0 18px rgba(233,249,88,.3)}
+  50%{box-shadow:0 0 0 12px rgba(233,249,88,.12),0 0 32px rgba(233,249,88,.55)}
+}
+.trust-node--start .start-tag{
+  display:inline-block;
+  margin-top:.2rem;
+  padding:.2rem .55rem;
+  background:var(--yellow);color:var(--black);
+  font-family:var(--inter);font-size:.6rem;letter-spacing:.22em;
+  border-radius:3px;
+}
+
+/* Ring + chevrons + pulse */
 .trust-cycle .ring{
-  fill:none;stroke:var(--yellow);stroke-width:2;
-  stroke-dasharray:1000;stroke-dashoffset:1000;
-  transition:stroke-dashoffset 2s ease;
-  opacity:.6;
+  fill:none;stroke:var(--yellow);stroke-width:1.5;
+  stroke-dasharray:4 6;
+  opacity:.45;
+  transition:opacity .8s var(--ease);
 }
-.trust-cycle.active .ring{stroke-dashoffset:0}
+.trust-cycle.active .ring{opacity:.7}
+.trust-cycle .chevrons{opacity:0;transition:opacity .9s var(--ease) .3s}
+.trust-cycle.active .chevrons{opacity:.9}
+.trust-cycle .trust-pulse{
+  opacity:0;
+  filter:drop-shadow(0 0 8px var(--yellow));
+  transition:opacity .8s var(--ease) .6s;
+}
+.trust-cycle.active .trust-pulse{opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .trust-node--start .num{animation:none}
+  .trust-cycle .trust-pulse{display:none}
+}
 
 @media (max-width:860px){
   .tiers{grid-template-columns:1fr}
@@ -1123,32 +1168,44 @@ section{
         <p>The fastest way to accelerate youth-led change isn't a bigger first check. It's a faster second one.</p>
       </div>
       <div class="trust-cycle reveal" id="trustCycle" aria-hidden="true">
-        <svg viewBox="0 0 400 400">
+        <svg viewBox="0 0 400 400" class="trust-svg">
           <circle class="ring" cx="200" cy="200" r="160"/>
+          <g class="chevrons" fill="currentColor">
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(280,61) rotate(30)"/>
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(360,200) rotate(90)"/>
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(280,339) rotate(150)"/>
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(120,339) rotate(210)"/>
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(40,200) rotate(270)"/>
+            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(120,61) rotate(330)"/>
+          </g>
+          <circle class="trust-pulse" cx="200" cy="40" r="9" fill="currentColor">
+            <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite"/>
+          </circle>
         </svg>
-        <div class="trust-node" style="top:6%;left:50%">
-          <span class="dot"></span>
-          Microgrant<br>awarded
+        <div class="trust-node trust-node--start" data-step="01" style="top:6%;left:50%">
+          <span class="num">01</span>
+          <span class="label">Microgrant<br>awarded</span>
+          <span class="start-tag">Start here</span>
         </div>
-        <div class="trust-node" style="top:27%;left:89%">
-          <span class="dot"></span>
-          Idea<br>launched
+        <div class="trust-node" data-step="02" style="top:27%;left:89%">
+          <span class="num">02</span>
+          <span class="label">Idea<br>launched</span>
         </div>
-        <div class="trust-node" style="top:73%;left:89%">
-          <span class="dot"></span>
-          Confidence<br>built
+        <div class="trust-node" data-step="03" style="top:73%;left:89%">
+          <span class="num">03</span>
+          <span class="label">Confidence<br>built</span>
         </div>
-        <div class="trust-node" style="top:94%;left:50%">
-          <span class="dot"></span>
-          Follow-on<br>funding
+        <div class="trust-node" data-step="04" style="top:94%;left:50%">
+          <span class="num">04</span>
+          <span class="label">Follow-on<br>funding</span>
         </div>
-        <div class="trust-node" style="top:73%;left:11%">
-          <span class="dot"></span>
-          Institutions<br>pay attention
+        <div class="trust-node" data-step="05" style="top:73%;left:11%">
+          <span class="num">05</span>
+          <span class="label">Institutions<br>pay attention</span>
         </div>
-        <div class="trust-node" style="top:27%;left:11%">
-          <span class="dot"></span>
-          Next leader<br>funded faster
+        <div class="trust-node" data-step="06" style="top:27%;left:11%">
+          <span class="num">06</span>
+          <span class="label">Next leader<br>funded faster</span>
         </div>
       </div>
     </div>

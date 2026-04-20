@@ -1002,26 +1002,19 @@ section{
 /* ============================================
    FOREWORD HERO CARD + DRAWER
    ============================================ */
-#fw-card{
-  position:relative;width:100%;min-height:85vh;overflow:hidden;
-  margin:1.5rem 0 0;border-radius:20px;cursor:default;
+#photo-card{
+  position:relative;width:100%;min-height:85vh;
+  overflow:hidden;border-radius:20px;margin:1.5rem 0 0;cursor:pointer;
 }
-#fw-card .fw-bg{
-  position:absolute;inset:-6%;
-  background-image:url('./Eric-Dawson.png');
-  background-size:cover;background-position:center top;
-  transition:transform 0.8s ease;
-}
-#fw-card:hover .fw-bg{transform:scale(1.06);}
-#fw-card .fw-grad{
+#photo-card:hover #photo-bg{transform:scale(1.07);}
+.fw-grad{
   position:absolute;inset:0;
   background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 60%);
   pointer-events:none;
 }
-#fw-card .fw-content{
+.fw-content{
   position:absolute;bottom:0;left:0;right:0;
-  padding:3rem 3rem 3rem 3rem;
-  display:flex;flex-direction:column;align-items:flex-start;gap:1.6rem;
+  padding:3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1.6rem;
 }
 #fw-quote{
   font-family:var(--bebas);font-style:italic;
@@ -1029,29 +1022,24 @@ section{
   color:#ffffff;line-height:1.2;margin:0;max-width:600px;
 }
 #open-drawer-btn{
-  background:#E9F958;color:#000000;
-  font-family:var(--bebas);font-size:1.1rem;
-  letter-spacing:0.1em;padding:14px 32px;
-  border:none;cursor:pointer;text-transform:uppercase;
-  transition:opacity .2s;
+  background:#E9F958;color:#000000;font-family:var(--bebas);
+  font-size:1.1rem;letter-spacing:0.1em;padding:14px 32px;
+  border:none;cursor:pointer;text-transform:uppercase;transition:opacity .2s;
 }
 #open-drawer-btn:hover{opacity:.85;}
 #drawer-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.55);
   z-index:999;opacity:0;pointer-events:none;transition:opacity 0.45s ease;
 }
-#drawer-overlay.open{opacity:1;pointer-events:all;}
 #ceo-drawer{
   position:fixed;top:0;right:0;width:480px;max-width:100vw;height:100vh;
   background:#ffffff;z-index:1000;
   transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);
-  overflow-y:auto;padding:60px 48px 60px 48px;box-sizing:border-box;
+  overflow-y:auto;padding:60px 48px;box-sizing:border-box;
 }
-#ceo-drawer.open{transform:translateX(0);}
 #close-drawer-btn{
   position:absolute;top:20px;right:24px;
-  background:none;border:none;cursor:pointer;
-  font-size:2rem;line-height:1;color:#000;
+  background:none;border:none;cursor:pointer;font-size:2rem;line-height:1;color:#000;
 }
 .drawer-name{font-family:var(--bebas);font-size:3.5rem;color:#000;line-height:1;margin:0 0 .3rem;}
 .drawer-role{
@@ -1067,7 +1055,7 @@ section{
 }
 @media(max-width:768px){
   #ceo-drawer{width:100vw;padding:32px 24px;}
-  #fw-card{min-height:70vh;}
+  #photo-card{min-height:70vh;}
 }
 </style>
 </head>
@@ -1144,8 +1132,8 @@ section{
   <div class="foreword-inner">
     <div class="section-label reveal">01 / Foreword</div>
     <h2 id="foreword-title" class="reveal" style="font-family:var(--bebas);font-size:clamp(2rem,3.5vw,3.2rem);margin-bottom:1rem">A LETTER FROM THE CEO</h2>
-    <div id=”fw-card” class=”reveal”>
-      <div class=”fw-bg”></div>
+    <div id=”photo-card” class=”reveal”>
+      <div id=”photo-bg” style=”position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('./Eric-Dawson.png');background-size:cover;background-position:center top;transition:transform 0.8s ease;”></div>
       <div class=”fw-grad”></div>
       <div class=”fw-content”>
         <p id=”fw-quote”>”The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access.”</p>
@@ -1154,32 +1142,6 @@ section{
     </div>
   </div>
 </section>
-
-<div id=”drawer-overlay”></div>
-<div id=”ceo-drawer” role=”dialog” aria-label=”CEO Letter” aria-modal=”true”>
-  <button id=”close-drawer-btn” aria-label=”Close”>&#x2715;</button>
-  <h2 class=”drawer-name”>Dr. Eric D. Dawson</h2>
-  <p class=”drawer-role”>RIVET CEO &amp; Founder</p>
-  <hr class=”drawer-rule”>
-  <div class=”drawer-letter”>
-    <p>I have spent over thirty years working alongside young people who are solving problems the rest of us are still debating. What I have learned — first as a youth organizer in Ohio, then through three decades building Peace First across 160 countries — is an uncomfortable truth:</p>
-    <p><strong>The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access.</strong></p>
-    <p>Eighty-five percent of the world's young people live in capital deserts — places where brilliant ideas die quietly because there is no early funding, no institutional trust, and no pathway to legitimacy. Less than 0.002% of global philanthropic dollars reach early-stage, youth-led initiatives. That is not a talent gap. That is an infrastructure failure. And it is one of the most consequential failures in our impact ecosystem.</p>
-    <p><strong>RIVET exists to fix that.</strong></p>
-    <p>We did not build RIVET because the world needed another nonprofit. We built it because current funding structures are built around the needs of institutions, not individuals. Around gatekeepers, not the people closest to the problems. Around slow, risk-averse processes in a world where urgency does not wait for a grant cycle.</p>
-    <p>Young people are the only group of humans talked about almost exclusively in terms of potential. We say they are the future of leadership. The future of innovation. But that framing is wrong.</p>
-    <p><strong>Young people are not the future of anything. They are already building the present.</strong></p>
-    <p>A young man in rural Uganda is changing the culture of masculinity in his village with four pedal sewing machines and a $250 grant. A young woman in Gilgit-Baltistan is restoring degraded land by rethinking what a tree means for an entire community. A young engineer in Nigeria is deploying AI-powered water monitoring systems in conflict zones. These are not experiments. These are solutions. And they exist because someone believed in them early.</p>
-    <p>That early belief is what RIVET provides. We call it catalytic capital — not because the amounts are large, but because they are first. For many of the young innovators in this report, a RIVET microgrant represents the first time their work has been formally recognized by anyone outside their own community. Our data bears this out: initial microgrants have unlocked twenty to five hundred times their value in follow-on funding. When you trust youth early, capital compounds.</p>
-    <blockquote>”If you can't be pure, be honest.”<br><small>— A young co-designer, RIVET early design call</small></blockquote>
-    <p>These words have shaped how RIVET operates. We are not perfect. We will never fund everything that deserves to be funded. But we will always be transparent about the choices we are making and why. Young people do not need us to pretend the world is simple. They need us to be honest about its complexity and to show up anyway.</p>
-    <p>This report documents what RIVET made possible. 2025 has not been a year defined by a single breakthrough — but a year of deeper, harder work: strengthening how we grant, how we partner, how we learn from data, and how we support young innovators beyond a single moment of funding. Rather than prioritizing scale, we invested in the foundations that make scale responsible.</p>
-    <p>Every young innovator in this report carries the same conviction: that those closest to the problems are also closest to the solutions. They are not waiting for permission. They are not asking the world to be ready for them. They are already doing the work.</p>
-    <p>RIVET's job is to make sure the systems around them are built to support what they are already building. We need small change at scale — not a single leader, not a single moment, but thousands of young people in every community deciding they are going to act, supported by trusted institutions ready for the journey.</p>
-    <p>RIVET is how we turn on the spigot.</p>
-    <p style=”margin-top:2rem;”><strong>Dr. Eric D. Dawson</strong><br>CEO &amp; Founder, RIVET</p>
-  </div>
-</div>
 
 <!-- ============================================
      §03 ABOUT
@@ -1851,20 +1813,21 @@ section{
   onScroll();
 
   /* ---------- CEO Letter drawer ---------- */
-  const drawer = document.getElementById('ceo-drawer');
-  const overlay = document.getElementById('drawer-overlay');
-  document.getElementById('open-drawer-btn').addEventListener('click', () => {
-    drawer.classList.add('open');
-    overlay.classList.add('open');
+  function openDrawer() {
+    document.getElementById('ceo-drawer').style.transform = 'translateX(0)';
+    document.getElementById('drawer-overlay').style.opacity = '1';
+    document.getElementById('drawer-overlay').style.pointerEvents = 'all';
     document.body.style.overflow = 'hidden';
-  });
+  }
   function closeDrawer() {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
+    document.getElementById('ceo-drawer').style.transform = 'translateX(100%)';
+    document.getElementById('drawer-overlay').style.opacity = '0';
+    document.getElementById('drawer-overlay').style.pointerEvents = 'none';
     document.body.style.overflow = '';
   }
+  document.getElementById('open-drawer-btn').addEventListener('click', openDrawer);
   document.getElementById('close-drawer-btn').addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
+  document.getElementById('drawer-overlay').addEventListener('click', closeDrawer);
 
   /* ---------- Story filter ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1881,5 +1844,32 @@ section{
   });
 })();
 </script>
+
+<!-- DRAWER — direct children of body for correct position:fixed stacking -->
+<div id="drawer-overlay"></div>
+<div id="ceo-drawer" role="dialog" aria-label="CEO Letter" aria-modal="true">
+  <button id="close-drawer-btn" aria-label="Close">&#x2715;</button>
+  <h2 class="drawer-name">Dr. Eric D. Dawson</h2>
+  <p class="drawer-role">RIVET CEO &amp; Founder</p>
+  <hr class="drawer-rule">
+  <div class="drawer-letter">
+    <p>I have spent over thirty years working alongside young people who are solving problems the rest of us are still debating. What I have learned — first as a youth organizer in Ohio, then through three decades building Peace First across 160 countries — is an uncomfortable truth:</p>
+    <p><strong>The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access.</strong></p>
+    <p>Eighty-five percent of the world's young people live in capital deserts — places where brilliant ideas die quietly because there is no early funding, no institutional trust, and no pathway to legitimacy. Less than 0.002% of global philanthropic dollars reach early-stage, youth-led initiatives. That is not a talent gap. That is an infrastructure failure. And it is one of the most consequential failures in our impact ecosystem.</p>
+    <p><strong>RIVET exists to fix that.</strong></p>
+    <p>We did not build RIVET because the world needed another nonprofit. We built it because current funding structures are built around the needs of institutions, not individuals. Around gatekeepers, not the people closest to the problems. Around slow, risk-averse processes in a world where urgency does not wait for a grant cycle.</p>
+    <p>Young people are the only group of humans talked about almost exclusively in terms of potential. We say they are the future of leadership. The future of innovation. But that framing is wrong.</p>
+    <p><strong>Young people are not the future of anything. They are already building the present.</strong></p>
+    <p>A young man in rural Uganda is changing the culture of masculinity in his village with four pedal sewing machines and a $250 grant. A young woman in Gilgit-Baltistan is restoring degraded land by rethinking what a tree means for an entire community. A young engineer in Nigeria is deploying AI-powered water monitoring systems in conflict zones. These are not experiments. These are solutions. And they exist because someone believed in them early.</p>
+    <p>That early belief is what RIVET provides. We call it catalytic capital — not because the amounts are large, but because they are first. For many of the young innovators in this report, a RIVET microgrant represents the first time their work has been formally recognized by anyone outside their own community. Our data bears this out: initial microgrants have unlocked twenty to five hundred times their value in follow-on funding. When you trust youth early, capital compounds.</p>
+    <blockquote>"If you can't be pure, be honest."<br><small>— A young co-designer, RIVET early design call</small></blockquote>
+    <p>These words have shaped how RIVET operates. We are not perfect. We will never fund everything that deserves to be funded. But we will always be transparent about the choices we are making and why. Young people do not need us to pretend the world is simple. They need us to be honest about its complexity and to show up anyway.</p>
+    <p>This report documents what RIVET made possible. 2025 has not been a year defined by a single breakthrough — but a year of deeper, harder work: strengthening how we grant, how we partner, how we learn from data, and how we support young innovators beyond a single moment of funding. Rather than prioritizing scale, we invested in the foundations that make scale responsible.</p>
+    <p>Every young innovator in this report carries the same conviction: that those closest to the problems are also closest to the solutions. They are not waiting for permission. They are not asking the world to be ready for them. They are already doing the work.</p>
+    <p>RIVET's job is to make sure the systems around them are built to support what they are already building. We need small change at scale — not a single leader, not a single moment, but thousands of young people in every community deciding they are going to act, supported by trusted institutions ready for the journey.</p>
+    <p>RIVET is how we turn on the spigot.</p>
+    <p style="margin-top:2rem;"><strong>Dr. Eric D. Dawson</strong><br>CEO &amp; Founder, RIVET</p>
+  </div>
+</div>
 </body>
 </html>

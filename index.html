@@ -871,10 +871,13 @@ section{
   padding:2.5rem 3rem 2.5rem 0;
   margin-top:2rem;
   border-radius:16px;
-  columns:3;
-  column-gap:2.5rem;
 }
-.impact-statement p{
+.impact-cols{
+  column-count:3;
+  column-gap:2.5rem;
+  margin-bottom:2rem;
+}
+.impact-cols p{
   font-family:var(--inter);
   font-size:1rem;
   font-weight:400;
@@ -884,18 +887,16 @@ section{
   break-inside:avoid;
 }
 .year-closer{
-  font-family:var(--bebas) !important;
-  font-size:clamp(1.5rem,2.2vw,2.2rem) !important;
-  color:var(--yellow) !important;
+  font-family:var(--bebas);
+  font-size:clamp(1.5rem,2.2vw,2.2rem);
+  color:var(--yellow);
   border-left:4px solid var(--yellow);
   padding-left:1.2rem;
-  line-height:1.2 !important;
-  column-span:all;
-  margin-top:2rem;
-  margin-bottom:0 !important;
+  line-height:1.2;
+  margin:0;
 }
 @media (max-width:860px){
-  .impact-statement{columns:1}
+  .impact-cols{column-count:1}
 }
 
 /* ============================================
@@ -1148,11 +1149,13 @@ section{
       <span><strong>Nadia Ali</strong> · Senior Impact Manager</span>
     </div>
     <div class="impact-statement reveal">
-      <p>Impact is often described through what is most visible: funds deployed, projects launched, people reached. These measures matter. But they rarely reflect the deeper work required to make lasting change.</p>
-      <p>For RIVET, 2025 was a year defined by that deeper work.</p>
-      <p>Throughout 2025, RIVET operated as connective tissue between youth leadership, institutions, and brands. We partnered with youth-serving organizations that bring credibility and reach within their communities. We worked with brands to unlock financial resources and non-cash support — including visibility, validation, and platforms that help young leaders be seen and taken seriously. And we listened closely to the innovators themselves, adapting our models based on what genuinely helped them move forward.</p>
-      <p>Impact is too often framed in quantitative terms that are easy to measure but difficult to feel — a proxy for the work that can obscure the human story behind grassroots change. In 2025, RIVET prioritized a more grounded understanding of impact: working to front-and-center the heart, the vision, and the drive that powers the projects we support. The people behind the project.</p>
-      <p>Our priorities have not changed. We are still building the systems and relationships that allow, grow, and hold up youth-led change. We are still working to make those systems more equitable and more accessible for those closest to the world's most urgent challenges. And we are making sure that, while we do so, it is our innovators — and their families and their communities — who guide our choices.</p>
+      <div class="impact-cols">
+        <p>Impact is often described through what is most visible: funds deployed, projects launched, people reached. These measures matter. But they rarely reflect the deeper work required to make lasting change.</p>
+        <p>For RIVET, 2025 was a year defined by that deeper work.</p>
+        <p>Throughout 2025, RIVET operated as connective tissue between youth leadership, institutions, and brands. We partnered with youth-serving organizations that bring credibility and reach within their communities. We worked with brands to unlock financial resources and non-cash support — including visibility, validation, and platforms that help young leaders be seen and taken seriously. And we listened closely to the innovators themselves, adapting our models based on what genuinely helped them move forward.</p>
+        <p>Impact is too often framed in quantitative terms that are easy to measure but difficult to feel — a proxy for the work that can obscure the human story behind grassroots change. In 2025, RIVET prioritized a more grounded understanding of impact: working to front-and-center the heart, the vision, and the drive that powers the projects we support. The people behind the project.</p>
+        <p>Our priorities have not changed. We are still building the systems and relationships that allow, grow, and hold up youth-led change. We are still working to make those systems more equitable and more accessible for those closest to the world's most urgent challenges. And we are making sure that, while we do so, it is our innovators — and their families and their communities — who guide our choices.</p>
+      </div>
       <p class="year-closer">Youth-led innovation is already happening. Our responsibility is to ensure the systems around it are built to support it well.</p>
     </div>
   </div>

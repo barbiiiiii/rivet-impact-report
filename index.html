@@ -371,15 +371,15 @@ section{
 }
 .who-box p{font-size:1rem;line-height:1.55;color:#eee}
 .who-box strong{color:var(--white)}
-.how-title{font-family:var(--bebas);font-weight:700;color:var(--purple);font-size:clamp(2.2rem,5vw,4rem);margin:3rem 0 1rem;line-height:.95;}
+.how-title{font-family:var(--bebas);font-weight:400;color:var(--purple);font-size:clamp(2.2rem,5vw,4rem);margin:3rem 0 1rem;line-height:.95;}
 .how-intro{font-family:var(--inter);font-weight:400;color:#000;font-size:1.1rem;line-height:1.75;max-width:65ch;margin-bottom:2.5rem;}
 .hw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
-.hw-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;}
+.hw-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:5/4;}
 .hw-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease;}
 .hw-card:hover img{transform:scale(1.05);}
-.hw-text{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(transparent,rgba(0,0,0,0.78));}
-.hw-text strong{display:block;font-family:var(--inter);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.3rem;}
-.hw-text span{font-family:var(--inter);font-size:1rem;font-weight:400;color:rgba(255,255,255,.88);line-height:1.4;}
+.hw-text{position:absolute;color:#fff;}
+.hw-text strong{display:block;font-family:var(--inter);font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.2;}
+.hw-text span{display:block;font-family:var(--inter);font-size:1rem;font-weight:400;color:rgba(255,255,255,.88);line-height:1.4;}
 
 @media (max-width:860px){
   .about-grid{grid-template-columns:1fr}
@@ -1219,25 +1219,25 @@ section{
       </div>
     </div>
     <div class="how-title reveal">How RIVET Works</div>
-    <p class="how-intro reveal">Existing funding systems were not designed with youth innovation in mind. They are too slow for moments that require rapid response, too risk-averse for early experimentation, too centralized to recognise local insight, and too focused on institutions rather than individuals closest to the issue. As a result, promising ideas fail before they can build the evidence base required to attract further support.<br><br>RIVET provides a toolkit of funding, support, and visibility that addresses these infrastructural gaps — giving early-stage innovators room to breathe, to build, and, where successful, to grow.<br><br>RIVET connects three forces that rarely align on their own:</p>
+    <p class="how-intro reveal">Existing funding systems were not designed with <strong>youth innovation</strong> in mind. They are too slow for moments that require rapid response, too risk-averse for early experimentation, too centralized to recognise local insight, and too focused on institutions rather than individuals closest to the issue. As a result, promising ideas fail before they can build the evidence base required to attract further support.<br><br>RIVET provides a toolkit of <strong>funding, support, and visibility</strong> that addresses these infrastructural gaps — giving early-stage innovators room to breathe, to build, and, where successful, to grow.<br><br><strong>RIVET connects three forces that rarely align on their own:</strong></p>
     <div class="hw-grid">
       <div class="hw-card reveal">
         <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Youth innovators working together" loading="lazy">
-        <div class="hw-text">
+        <div class="hw-text" style="top:0;left:0;right:0;padding:2rem;background:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,transparent 100%);">
           <strong>Youth innovators</strong>
           <span>with lived experience and local insight</span>
         </div>
       </div>
       <div class="hw-card reveal delay-1">
         <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Youth-serving organizations in community" loading="lazy">
-        <div class="hw-text">
+        <div class="hw-text" style="top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:80%;background:rgba(0,0,0,.45);padding:1.8rem 1.5rem;border-radius:10px;backdrop-filter:blur(2px);">
           <strong>Youth-serving organizations</strong>
           <span>with trust, reach, and community presence</span>
         </div>
       </div>
       <div class="hw-card reveal delay-2">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Brands and funders in professional setting" loading="lazy">
-        <div class="hw-text">
+        <div class="hw-text" style="bottom:0;left:0;right:0;padding:2rem;text-align:right;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 100%);">
           <strong>Brands and funders</strong>
           <span>with capital and platforms seeking meaningful, values-aligned impact</span>
         </div>

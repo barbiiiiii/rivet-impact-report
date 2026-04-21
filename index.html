@@ -371,6 +371,15 @@ section{
 }
 .who-box p{font-size:1rem;line-height:1.55;color:#eee}
 .who-box strong{color:var(--white)}
+.who-carousel{display:flex;align-items:center;gap:1.2rem;min-height:120px;}
+.who-slides{flex:1;}
+.who-slide{display:none;}
+.who-slide.active{display:block;animation:wSlideIn .4s ease;}
+@keyframes wSlideIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+.who-slide p{font-size:1rem;line-height:1.6;color:#eee;margin:0;}
+.who-quote{font-family:var(--bebas) !important;font-size:clamp(1.8rem,3vw,2.8rem) !important;color:var(--purple) !important;line-height:1.1 !important;}
+.who-next{background:none;border:2px solid rgba(255,255,255,.35);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;line-height:1;padding-bottom:2px;}
+.who-next:hover{background:rgba(255,255,255,.12);border-color:#fff;}
 .how-title{font-family:var(--bebas);font-weight:400;color:var(--purple);font-size:clamp(2.2rem,5vw,4rem);margin:3rem 0 1rem;line-height:.95;}
 .how-intro{font-family:var(--inter);font-weight:400;color:#000;font-size:1.1rem;line-height:1.75;max-width:65ch;margin-bottom:2.5rem;}
 .hw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
@@ -1244,8 +1253,16 @@ section{
       </div>
     </div>
     <div class="who-box reveal">
-      <div class="label">WHO<br>RIVET<br>FUNDS</div>
-      <p><strong>Under-30 leaders, globally</strong>, working on solutions aligned with the UN Sustainable Development Goals. We prioritize those who are closest to the problem, furthest from the capital, and most likely to be overlooked by traditional funders.</p>
+      <div class="label">WHO<br>RIVET<br>IS BUILT<br>FOR</div>
+      <div class="who-carousel">
+        <div class="who-slides">
+          <div class="who-slide active"><p>RIVET supports young leaders under 30 who are addressing urgent community needs, often in contexts where traditional funding is inaccessible, delayed, or overly restrictive. We operate globally because youth-led innovation is already happening everywhere. Our role is not to invent solutions — it is to recognise, resource, and strengthen the ones that already exist.</p></div>
+          <div class="who-slide"><p>We fund project leaders under 30 with a clear plan and budget — even at the earliest stage — addressing challenges aligned with the UN SDGs, who demonstrate financial need where small amounts of capital can unlock meaningful action.</p></div>
+          <div class="who-slide"><p>We are intentionally geography-agnostic and organise our portfolio across five broad impact areas that reflect what young people themselves prioritise: Health &amp; Wellness, Sustainability, Poverty Reduction, Inclusion, and Education. These are not rigid lanes. Youth do not work in silos, and neither do we.</p></div>
+          <div class="who-slide"><p class="who-quote">Youth leadership is not an auxiliary strategy. It is central to building solutions that last.</p></div>
+        </div>
+        <button class="who-next" aria-label="Next slide">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1848,6 +1865,18 @@ section{
   onScroll();
 
   /* ---------- Photo card hover zoom ---------- */
+  /* ---------- Who carousel ---------- */
+  const whoSlides = document.querySelectorAll('.who-slide');
+  const whoNext = document.querySelector('.who-next');
+  let whoIdx = 0;
+  if(whoNext && whoSlides.length){
+    whoNext.addEventListener('click', () => {
+      whoSlides[whoIdx].classList.remove('active');
+      whoIdx = (whoIdx + 1) % whoSlides.length;
+      whoSlides[whoIdx].classList.add('active');
+    });
+  }
+
   const photoInner = document.getElementById('photo-inner');
   const photoCard = document.getElementById('photo-card');
   if(photoCard && photoInner){

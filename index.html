@@ -379,6 +379,28 @@ section{
 .who-slide p{font-size:1rem;line-height:1.6;color:#eee;margin:0;}
 .who-quote{font-family:var(--bebas) !important;font-size:clamp(1.8rem,3vw,2.8rem) !important;color:var(--red) !important;line-height:1.1 !important;}
 .who-prev,.who-next{background:none;border:2px solid rgba(255,255,255,.35);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;line-height:1;padding-bottom:2px;}
+.together-highlight{background:var(--yellow);color:#000 !important;font-weight:700 !important;padding:1rem 1.8rem;display:inline-block;max-width:none !important;}
+.principles{background:#e8e8e8;border-top:5px solid var(--yellow);}
+.principles-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
+.principles-heading{font-family:var(--bebas);font-weight:400;color:#000;font-size:clamp(3.5rem,6vw,7rem);line-height:.88;position:sticky;top:calc(var(--nav-h) + 2rem);}
+.principles-heading span{display:block;}
+.principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.principle-box{background:#000;border-radius:4px;min-height:220px;position:relative;overflow:hidden;cursor:pointer;transition:background .35s ease;}
+.pb-title,.pb-text{position:absolute;inset:0;padding:2rem;display:flex;align-items:center;justify-content:center;transition:opacity .3s ease,transform .3s ease;}
+.pb-title{opacity:1;transform:translateY(0);}
+.pb-text{opacity:0;transform:translateY(14px);}
+.principle-box:hover .pb-title{opacity:0;transform:translateY(-14px);}
+.principle-box:hover .pb-text{opacity:1;transform:translateY(0);}
+.pb-title-text{font-family:var(--bebas);font-size:clamp(1.5rem,2.2vw,2.4rem);line-height:1.1;text-align:center;}
+.pb-text p{font-family:var(--inter);font-size:.95rem;font-weight:400;line-height:1.65;margin:0;}
+.pb1:hover,.pb4:hover{background:var(--yellow);}
+.pb2:hover{background:var(--purple);}
+.pb3:hover{background:var(--red);}
+@media(max-width:860px){
+  .principles-inner{grid-template-columns:1fr;}
+  .principles-grid{grid-template-columns:1fr;}
+  .principles-heading{position:static;}
+}
 .who-prev:hover,.who-next:hover{background:rgba(255,255,255,.12);border-color:#fff;}
 .how-title{font-family:var(--bebas);font-weight:400;color:var(--purple);font-size:clamp(2.2rem,5vw,4rem);margin:3rem 0 1rem;line-height:.95;}
 .how-intro{font-family:var(--inter);font-weight:400;color:#000;font-size:1.1rem;line-height:1.75;max-width:65ch;margin-bottom:2.5rem;}
@@ -1297,7 +1319,7 @@ section{
         </div>
       </div>
     </div>
-    <p class="capital-intro reveal" style="margin-bottom:3.5rem">Together, these forms of capital create the conditions for youth-led ideas to grow into durable solutions.</p>
+    <p class="capital-intro together-highlight reveal" style="margin-bottom:3.5rem">Together, these forms of capital create the conditions for youth-led ideas to grow into durable solutions.</p>
     <div class="tiers">
       <article class="tier reveal" data-tier="access">
         <div class="tier-label">Tier 01</div>
@@ -1371,7 +1393,40 @@ section{
 </section>
 
 <!-- ============================================
-     §05 PARTNERSHIPS
+     §05 PRINCIPLES
+     ============================================ -->
+<section class="principles" id="principles" aria-label="Impact Principles">
+  <div class="principles-inner">
+    <div>
+      <div class="principles-heading reveal">
+        <span>RIVET's</span>
+        <span>Impact</span>
+        <span>Principles</span>
+      </div>
+    </div>
+    <div class="principles-grid">
+      <div class="principle-box pb1 reveal">
+        <div class="pb-title"><span class="pb-title-text" style="color:var(--yellow)">We prioritise access.</span></div>
+        <div class="pb-text"><p style="color:#000">RIVET works with youth-serving organisations to radically increase access to capital and resources for young people who are least likely to be served through traditional channels, especially those in underserved communities.</p></div>
+      </div>
+      <div class="principle-box pb2 reveal delay-1">
+        <div class="pb-title"><span class="pb-title-text" style="color:var(--purple)">We are invested in the journey.</span></div>
+        <div class="pb-text"><p style="color:#fff">RIVET provides financial capital, mentorship, networking, and ongoing support — genuinely invested in each innovator's growth, not just their first grant.</p></div>
+      </div>
+      <div class="principle-box pb3 reveal delay-2">
+        <div class="pb-title"><span class="pb-title-text" style="color:var(--red)">We invest in storytelling.</span></div>
+        <div class="pb-text"><p style="color:#fff">We leverage the power of media, brand platforms, and influencers to amplify the stories of young innovators in a way that inspires new projects and further investment in youth-led change.</p></div>
+      </div>
+      <div class="principle-box pb4 reveal delay-3">
+        <div class="pb-title"><span class="pb-title-text" style="color:var(--yellow)">We are co-led by youth.</span></div>
+        <div class="pb-text"><p style="color:#000">RIVET is designed by youth, for youth. Young people co-design our strategy, sign off on brand and impact partners, vote on our board, and occupy executive leadership roles.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     §06 PARTNERSHIPS
      ============================================ -->
 <section class="partnerships" id="partnerships" aria-labelledby="partnerships-title">
   <div class="partnerships-inner">

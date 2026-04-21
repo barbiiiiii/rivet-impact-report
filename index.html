@@ -640,7 +640,7 @@ section{
 .pc-quote--y{background:var(--yellow);color:#000}
 .pc-quote--p{background:var(--purple);color:#fff}
 .pc-quote--r{background:var(--red);color:#fff}
-.pc-bottom{display:grid;grid-template-columns:3fr 2fr;gap:3rem;padding:2.2rem 2.4rem;border-radius:4px;background:#e0e0e0;min-height:137px;align-items:start}
+.pc-bottom{display:grid;grid-template-columns:3fr 2fr;gap:3rem;padding:2.2rem 2.4rem;border-radius:4px;background:#e0e0e0;align-items:start}
 .pc-bottom--full{grid-template-columns:1fr}
 .pc-bottom p{font-family:var(--inter);font-size:.97rem;line-height:1.72;color:#000;margin:0 0 .8rem}
 .pc-bottom p:last-child{margin:0}
@@ -2049,6 +2049,18 @@ section{
   const pcPrev = document.getElementById('pcPrev');
   if(pcNext) pcNext.addEventListener('click', ()=>goPC(1));
   if(pcPrev) pcPrev.addEventListener('click', ()=>goPC(-1));
+
+  /* Equalise .pc-bottom heights to slide 0 (Brand & Corporate) */
+  (function equalisePcBottoms(){
+    const allBottoms = document.querySelectorAll('.pc-bottom');
+    if(!allBottoms.length) return;
+    /* Temporarily make all slides visible to measure natural heights */
+    pcSlides.forEach(s=>{ s.style.display='flex'; s.style.visibility='hidden'; });
+    const refH = allBottoms[0].getBoundingClientRect().height;
+    pcSlides.forEach(s=>{ s.style.display=''; s.style.visibility=''; });
+    pcSlides[0].classList.add('active'); /* restore active state */
+    allBottoms.forEach(b=>{ b.style.minHeight = refH + 'px'; });
+  })();
 
   /* ---------- Fund rotator ---------- */
   const fundPhrases = document.querySelectorAll('.fund-phrase');

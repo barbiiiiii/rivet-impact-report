@@ -467,7 +467,10 @@ section{
 .tier[data-tier="boost"] .range{color:var(--purple)}
 .tier[data-tier="scale"] .range{color:var(--red)}
 .tier:hover .range{color:inherit}
-.tier p{color:inherit;opacity:.85;font-size:.98rem;line-height:1.55;margin-top:auto}
+.tier p{color:inherit;opacity:.85;font-size:.98rem;line-height:1.55;margin-top:1.2rem}
+.tier-closer{display:flex;flex-direction:column;gap:.2rem;margin-top:.5rem}
+.tier-sentence{font-family:var(--bebas);font-size:clamp(2rem,3vw,3rem);line-height:1.1;display:block}
+.ts1{color:var(--yellow)}.ts2{color:var(--purple)}.ts3{color:var(--red)}
 
 .trust-wrap{
   display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
@@ -1402,7 +1405,7 @@ section{
     </div>
   </div>
 </section>
-<section class="capital capital-continued" id="capital-tiers" aria-label="Funding tiers">
+<section class="capital capital-continued" id="capital-tiers" aria-label="Funding tiers" style="padding-top:clamp(40px,5vw,80px)">
   <div class="capital-inner">
     <div class="principles-heading reveal" style="color:#fff;position:static;margin-bottom:1.5rem">
       <span>The Capital</span><span>Pathway</span>
@@ -1413,20 +1416,30 @@ section{
         <div class="tier-label">Tier 01</div>
         <h3>ACCESS</h3>
         <div class="range">$250 – $999</div>
-        <p>Small, fast, flexible. Turns an idea into a first implementation — often the first money a young leader has ever been trusted with.</p>
+        <p>Small, fast, and flexible. Designed for youth who have proximity to a problem and a clear idea of what to try, but lack the early capital to act. This tier reduces the gap between idea and first implementation.</p>
       </article>
       <article class="tier reveal delay-1" data-tier="boost">
         <div class="tier-label">Tier 02</div>
         <h3>BOOST</h3>
         <div class="range">$1,000 – $9,999</div>
-        <p>Grow, deepen, and stabilize. Moves a proven pilot into a repeatable program with staff, tools, and measurement in place.</p>
+        <p>For growing, deepening, and stabilising. Boost grants support youth innovators who have demonstrated traction and are ready to expand their reach, formalise operations, or strengthen sustainability.</p>
       </article>
       <article class="tier reveal delay-2" data-tier="scale">
         <div class="tier-label">Tier 03</div>
         <h3>SCALE</h3>
         <div class="range">$10,000+</div>
-        <p>Expand and institutionalize. Backs the transition from movement to organization — with the systems, partnerships, and follow-on capital to sustain it.</p>
+        <p>For expanding and institutionalising. Designed for youth-led initiatives ready to grow significantly — through geographic expansion, system integration, or long-term infrastructure building.</p>
       </article>
+    </div>
+
+    <div style="max-width:720px;margin-top:3rem">
+      <p class="reveal" style="font-size:1.05rem;color:#fff;line-height:1.7;margin-bottom:1.2rem"><strong>Access enables action. Boost strengthens proof. Scale accelerates durability.</strong></p>
+      <p class="reveal" style="font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:2rem">Together, they create a pathway where youth can move from early experimentation to sustained growth, without being forced into premature scale or extractive models. RIVET turns youth ideas into initiatives that are fundable, trackable, and positioned to grow — while preserving youth ownership and contextual integrity.</p>
+      <div class="tier-closer">
+        <span class="tier-sentence ts1 reveal">We fund proximity.</span>
+        <span class="tier-sentence ts2 reveal" style="transition-delay:3s">We fund urgency.</span>
+        <span class="tier-sentence ts3 reveal" style="transition-delay:6s">We fund iteration.</span>
+      </div>
     </div>
   </div>
 </section>

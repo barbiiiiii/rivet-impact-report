@@ -377,9 +377,10 @@ section{
 .who-slide.active{display:block;animation:wSlideIn .4s ease;}
 @keyframes wSlideIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
 .who-slide p{font-size:1rem;line-height:1.6;color:#eee;margin:0;}
-.who-quote{font-family:var(--bebas) !important;font-size:clamp(1.8rem,3vw,2.8rem) !important;color:var(--purple) !important;line-height:1.1 !important;}
-.who-next{background:none;border:2px solid rgba(255,255,255,.35);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;line-height:1;padding-bottom:2px;}
-.who-next:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+.who-quote{font-family:var(--bebas) !important;font-size:clamp(1.8rem,3vw,2.8rem) !important;color:var(--red) !important;line-height:1.1 !important;}
+.who-slides{flex:1;padding-right:8%;}
+.who-prev,.who-next{background:none;border:2px solid rgba(255,255,255,.35);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;line-height:1;padding-bottom:2px;}
+.who-prev:hover,.who-next:hover{background:rgba(255,255,255,.12);border-color:#fff;}
 .how-title{font-family:var(--bebas);font-weight:400;color:var(--purple);font-size:clamp(2.2rem,5vw,4rem);margin:3rem 0 1rem;line-height:.95;}
 .how-intro{font-family:var(--inter);font-weight:400;color:#000;font-size:1.1rem;line-height:1.75;max-width:65ch;margin-bottom:2.5rem;}
 .hw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
@@ -1253,8 +1254,9 @@ section{
       </div>
     </div>
     <div class="who-box reveal">
-      <div class="label">WHO<br>RIVET<br>IS BUILT<br>FOR</div>
+      <div class="label">WHO RIVET<br>IS BUILT<br>FOR</div>
       <div class="who-carousel">
+        <button class="who-prev" aria-label="Previous slide">‹</button>
         <div class="who-slides">
           <div class="who-slide active"><p>RIVET supports young leaders under 30 who are addressing urgent community needs, often in contexts where traditional funding is inaccessible, delayed, or overly restrictive. We operate globally because youth-led innovation is already happening everywhere. Our role is not to invent solutions — it is to recognise, resource, and strengthen the ones that already exist.</p></div>
           <div class="who-slide"><p>We fund project leaders under 30 with a clear plan and budget — even at the earliest stage — addressing challenges aligned with the UN SDGs, who demonstrate financial need where small amounts of capital can unlock meaningful action.</p></div>
@@ -1868,14 +1870,15 @@ section{
   /* ---------- Who carousel ---------- */
   const whoSlides = document.querySelectorAll('.who-slide');
   const whoNext = document.querySelector('.who-next');
+  const whoPrev = document.querySelector('.who-prev');
   let whoIdx = 0;
-  if(whoNext && whoSlides.length){
-    whoNext.addEventListener('click', () => {
-      whoSlides[whoIdx].classList.remove('active');
-      whoIdx = (whoIdx + 1) % whoSlides.length;
-      whoSlides[whoIdx].classList.add('active');
-    });
+  function goWho(dir){
+    whoSlides[whoIdx].classList.remove('active');
+    whoIdx = (whoIdx + dir + whoSlides.length) % whoSlides.length;
+    whoSlides[whoIdx].classList.add('active');
   }
+  if(whoNext) whoNext.addEventListener('click', () => goWho(1));
+  if(whoPrev) whoPrev.addEventListener('click', () => goWho(-1));
 
   const photoInner = document.getElementById('photo-inner');
   const photoCard = document.getElementById('photo-card');

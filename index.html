@@ -2074,16 +2074,22 @@ section{
     fundPhrases[fundIdx].classList.add('active');
   }, 3000);
 
-  /* ---------- CEO letter modal ---------- */
-  const ceoModal = document.getElementById('ceo-letter-modal');
-  const ceoOpenBtn = document.getElementById('ceo-open-btn');
-  const ceoCloseBtn = document.getElementById('ceo-close-btn');
-  if(ceoOpenBtn && ceoModal){
-    ceoOpenBtn.addEventListener('click', ()=>{ ceoModal.classList.add('modal-open'); document.body.style.overflow='hidden'; });
-  }
-  function closeCeoModal(){ if(ceoModal){ ceoModal.classList.remove('modal-open'); document.body.style.overflow=''; } }
-  if(ceoCloseBtn) ceoCloseBtn.addEventListener('click', closeCeoModal);
-  if(ceoModal) ceoModal.addEventListener('click', e=>{ if(e.target===ceoModal) closeCeoModal(); });
+  /* ---------- Scroll position save/restore (prevents hash-jump on refresh) ---------- */
+  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+  const _savedY = sessionStorage.getItem('rivet-scroll');
+  if(_savedY) requestAnimationFrame(()=>window.scrollTo(0,parseInt(_savedY)));
+  window.addEventListener('beforeunload',()=>sessionStorage.setItem('rivet-scroll',window.scrollY));
+
+  /* ---------- CEO letter modal (modal is after </script>, so wire on load) ---------- */
+  window.addEventListener('load',()=>{
+    const ceoModal = document.getElementById('ceo-letter-modal');
+    const ceoOpenBtn = document.getElementById('ceo-open-btn');
+    const ceoCloseBtn = document.getElementById('ceo-close-btn');
+    function closeCeoModal(){ ceoModal.classList.remove('modal-open'); document.body.style.overflow=''; }
+    if(ceoOpenBtn) ceoOpenBtn.addEventListener('click',()=>{ ceoModal.classList.add('modal-open'); document.body.style.overflow='hidden'; });
+    if(ceoCloseBtn) ceoCloseBtn.addEventListener('click', closeCeoModal);
+    if(ceoModal) ceoModal.addEventListener('click',e=>{ if(e.target===ceoModal) closeCeoModal(); });
+  });
 
   const photoInner = document.getElementById('photo-inner');
   const photoCard = document.getElementById('photo-card');

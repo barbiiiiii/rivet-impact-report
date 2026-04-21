@@ -1120,7 +1120,7 @@ section{
   overscroll-behavior:contain;
   display:flex;align-items:flex-start;justify-content:center;
 }
-.modal-window.modal-open{visibility:visible;opacity:1;pointer-events:auto;}
+.modal-window:target{visibility:visible;opacity:1;pointer-events:auto;}
 .modal-content{
   width:90%;max-width:800px;margin:5vh auto;padding:40px;
   background:#fff;color:#000;position:relative;border-radius:8px;
@@ -1212,7 +1212,7 @@ section{
         <p style="font-family:var(--bebas);font-size:clamp(1.68rem,2.4vw,2.28rem);color:var(--red);margin:0 0 1rem;line-height:1.2;">"The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access."</p>
         <p style="font-family:var(--bebas);font-size:1.5rem;color:#000;margin:0 0 4px;letter-spacing:.04em;">Dr. Eric D. Dawson</p>
         <p style="font-size:.85rem;font-weight:700;color:#555;margin:0 0 1.6rem;letter-spacing:.05em;">CEO &amp; Founder, RIVET</p>
-        <button id="ceo-open-btn" style="background:#E9F958;color:#000;font-family:var(--bebas);font-size:1.1rem;letter-spacing:0.1em;padding:14px 32px;border:none;text-transform:uppercase;cursor:pointer;">Read Our CEO's Letter</button>
+        <a href="#ceo-letter-modal" style="display:inline-block;background:#E9F958;color:#000;font-family:var(--bebas);font-size:1.1rem;letter-spacing:0.1em;padding:14px 32px;text-decoration:none;text-transform:uppercase;cursor:pointer;">Read Our CEO's Letter</a>
       </div>
     </div>
   </div>
@@ -2074,17 +2074,6 @@ section{
     fundPhrases[fundIdx].classList.add('active');
   }, 3000);
 
-  /* ---------- CEO letter modal ---------- */
-  const ceoModal = document.getElementById('ceo-letter-modal');
-  const ceoOpenBtn = document.getElementById('ceo-open-btn');
-  const ceoCloseBtn = document.getElementById('ceo-close-btn');
-  if(ceoOpenBtn && ceoModal){
-    ceoOpenBtn.addEventListener('click', ()=>{ ceoModal.classList.add('modal-open'); document.body.style.overflow='hidden'; });
-  }
-  function closeCeoModal(){ if(ceoModal){ ceoModal.classList.remove('modal-open'); document.body.style.overflow=''; } }
-  if(ceoCloseBtn) ceoCloseBtn.addEventListener('click', closeCeoModal);
-  if(ceoModal) ceoModal.addEventListener('click', e=>{ if(e.target===ceoModal) closeCeoModal(); });
-
   const photoInner = document.getElementById('photo-inner');
   const photoCard = document.getElementById('photo-card');
   if(photoCard && photoInner){
@@ -2111,7 +2100,7 @@ section{
 <!-- DRAWER — direct children of body for correct position:fixed stacking -->
 <div id="ceo-letter-modal" class="modal-window">
   <div class="modal-content">
-    <button id="ceo-close-btn" class="modal-close">&#x2715;</button>
+    <a href="#foreword" class="modal-close">&#x2715;</a>
     <div style="font-family:var(--bebas);font-size:3.2rem;line-height:1.05;margin-bottom:4px;color:#000;">DR. ERIC D. DAWSON</div>
     <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:#6B62F2;text-transform:uppercase;margin-bottom:20px;">CEO &amp; Founder, RIVET</div>
     <div style="height:2px;background:#E9F958;margin-bottom:28px;"></div>

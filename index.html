@@ -1671,16 +1671,19 @@ section{
           <li data-region="europe">Europe <span class="pct">5%</span></li>
         </ul>
       </div>
-      <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true" style="position:relative;">
-        <img src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
-        <svg viewBox="0 0 1280 640" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
-          <circle class="map-dot" data-region="north-america" cx="168" cy="128" r="14"/>
-          <circle class="map-dot" data-region="europe" cx="496" cy="124" r="14"/>
-          <circle class="map-dot" data-region="asia" cx="702" cy="146" r="14"/>
-          <circle class="map-dot" data-region="mena" cx="514" cy="178" r="14"/>
-          <circle class="map-dot" data-region="africa" cx="484" cy="280" r="14"/>
-          <circle class="map-dot" data-region="latin-america" cx="252" cy="305" r="14"/>
-        </svg>
+      <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true">
+        <div style="position:relative;width:100%;line-height:0;">
+          <img src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
+          <svg viewBox="0 0 1280 640" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;">
+            <!-- equirectangular: cx=(lon+180)/360*1280  cy=(90-lat)/180*640 -->
+            <circle class="map-dot" data-region="north-america" cx="284" cy="173" r="14"/>
+            <circle class="map-dot" data-region="europe" cx="693" cy="135" r="14"/>
+            <circle class="map-dot" data-region="asia" cx="871" cy="142" r="14"/>
+            <circle class="map-dot" data-region="mena" cx="764" cy="213" r="14"/>
+            <circle class="map-dot" data-region="africa" cx="718" cy="317" r="14"/>
+            <circle class="map-dot" data-region="latin-america" cx="444" cy="373" r="14"/>
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -2000,13 +2003,22 @@ section{
       const li = document.querySelector(`.region-list li[data-region="${region}"]`);
       if (!li) return;
       const rgb = window.getComputedStyle(dot).fill.match(/\d+/g);
-      if (rgb) li.style.background = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.28)`;
+      if (rgb) {
+        li.style.background = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+        const luma = rgb[0]*0.299 + rgb[1]*0.587 + rgb[2]*0.114;
+        li.style.color = luma > 128 ? '#000' : '#fff';
+        const pct = li.querySelector('.pct');
+        if (pct) pct.style.color = luma > 128 ? '#000' : '#fff';
+      }
       li.classList.add('region-hl');
     });
     dot.addEventListener('mouseleave', () => {
       const li = document.querySelector(`.region-list li[data-region="${region}"]`);
       if (!li) return;
       li.style.background = '';
+      li.style.color = '';
+      const pct2 = li.querySelector('.pct');
+      if (pct2) pct2.style.color = '';
       li.classList.remove('region-hl');
     });
   });

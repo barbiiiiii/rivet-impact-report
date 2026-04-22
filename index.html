@@ -794,7 +794,10 @@ section{
 .map-wrap .land{fill:rgba(255,255,255,.12);stroke:rgba(255,255,255,.22);stroke-width:.5}
 .map-dot{
   opacity:0;cursor:pointer;
-  transition:opacity .3s ease, r .2s ease;
+  r:14px;
+  transition:opacity .3s ease, r .2s ease, transform .2s ease;
+  transform-box:fill-box;
+  transform-origin:center;
 }
 .map-wrap.active .map-dot{opacity:1}
 .map-dot[data-region="africa"]{fill:#E9F958}
@@ -803,7 +806,7 @@ section{
 .map-dot[data-region="north-america"]{fill:#FF4A53}
 .map-dot[data-region="latin-america"]{fill:#6B62F2}
 .map-dot[data-region="europe"]{fill:#6B62F2}
-.map-dot:hover{r:4.5}
+@media(hover:hover){.map-dot:hover{r:18px}}
 .region-list li{transition:background .2s ease;border-radius:3px;padding:.7rem .5rem;margin:0 -.5rem}
 .region-list li.region-hl .pct{color:inherit}
 

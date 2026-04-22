@@ -814,25 +814,28 @@ section{
   margin-top:5rem;
   background:var(--yellow);color:var(--black);
   padding:clamp(2rem,4vw,3.5rem);
-  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+  display:flex;flex-direction:column;gap:2rem;
 }
 .catalytic h3{
   font-family:var(--inter);font-weight:700;font-size:.78rem;
   letter-spacing:.22em;text-transform:uppercase;
-  margin-bottom:1.2rem;color:var(--black);
+  margin-bottom:0;color:var(--black);
+}
+.catalytic-top{
+  display:flex;align-items:center;gap:3rem;flex-wrap:nowrap;
 }
 .ratio{
   font-family:var(--bebas);
   font-size:clamp(4rem,9vw,8.4rem);
   line-height:.85;
   letter-spacing:-.01em;
-  display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;
+  display:flex;align-items:baseline;gap:.6rem;white-space:nowrap;flex-shrink:0;
 }
 .ratio .arrow{color:var(--red)}
-.catalytic p{font-size:1.05rem;line-height:1.6;max-width:52ch}
+.catalytic p{font-size:1.05rem;line-height:1.6;max-width:52ch;margin:0}
 .catalytic .stanley{
   background:var(--black);color:var(--white);
-  padding:1.4rem 1.6rem;margin-top:1.2rem;
+  padding:1.4rem 1.6rem;
   border-left:4px solid var(--red);
   font-size:.95rem;
 }
@@ -1691,17 +1694,15 @@ section{
     </div>
 
     <div class="catalytic reveal">
-      <div>
-        <h3>The Catalytic Effect</h3>
+      <h3>The Catalytic Effect</h3>
+      <div class="catalytic-top">
         <div class="ratio">
           $400K <span class="arrow">→</span> $3M
         </div>
-        <p style="margin-top:1rem">Every catalytic dollar RIVET deploys unlocks roughly <strong>20–500× its value</strong> in follow-on funding, partnerships, and institutional support.</p>
+        <p>Every catalytic dollar RIVET deploys unlocks roughly <strong>20–500× its value</strong> in follow-on funding, partnerships, and institutional support.</p>
       </div>
-      <div>
-        <div class="stanley">
-          <strong>Stanley's story</strong> · A $1,000 Access Grant to Stanley Anigbogu's LightEd in Nigeria unlocked more than <strong>$500,000</strong> in additional investment — a 500× multiplier from a single first yes.
-        </div>
+      <div class="stanley">
+        <strong>Stanley's story</strong> · A $1,000 Access Grant to Stanley Anigbogu's LightEd in Nigeria unlocked more than <strong>$500,000</strong> in additional investment — a 500× multiplier from a single first yes.
       </div>
     </div>
   </div>

@@ -799,13 +799,13 @@ section{
 .map-wrap.active .map-dot{opacity:1}
 .map-dot[data-region="africa"]{fill:#E9F958}
 .map-dot[data-region="mena"]{fill:#FF4A53}
-.map-dot[data-region="asia"]{fill:#6B62F2}
-.map-dot[data-region="north-america"]{fill:#ffffff}
-.map-dot[data-region="latin-america"]{fill:#FF4A53}
+.map-dot[data-region="asia"]{fill:#E9F958}
+.map-dot[data-region="north-america"]{fill:#FF4A53}
+.map-dot[data-region="latin-america"]{fill:#6B62F2}
 .map-dot[data-region="europe"]{fill:#6B62F2}
 .map-dot:hover{r:4.5}
-.region-list li{transition:color .2s ease}
-.region-list li .pct{transition:color .2s ease}
+.region-list li{transition:background .2s ease;border-radius:3px;padding:.7rem .5rem;margin:0 -.5rem}
+.region-list li.region-hl .pct{color:inherit}
 
 .catalytic{
   margin-top:5rem;
@@ -1674,12 +1674,12 @@ section{
       <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true" style="position:relative;">
         <img src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
         <svg viewBox="0 0 1280 640" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
-          <circle class="map-dot" data-region="africa" cx="718" cy="320" r="14"/>
-          <circle class="map-dot" data-region="mena" cx="764" cy="217" r="14"/>
-          <circle class="map-dot" data-region="asia" cx="960" cy="196" r="14"/>
-          <circle class="map-dot" data-region="north-america" cx="302" cy="178" r="14"/>
-          <circle class="map-dot" data-region="latin-america" cx="444" cy="356" r="14"/>
-          <circle class="map-dot" data-region="europe" cx="693" cy="135" r="14"/>
+          <circle class="map-dot" data-region="north-america" cx="168" cy="128" r="14"/>
+          <circle class="map-dot" data-region="europe" cx="496" cy="124" r="14"/>
+          <circle class="map-dot" data-region="asia" cx="702" cy="146" r="14"/>
+          <circle class="map-dot" data-region="mena" cx="514" cy="178" r="14"/>
+          <circle class="map-dot" data-region="africa" cx="484" cy="280" r="14"/>
+          <circle class="map-dot" data-region="latin-america" cx="252" cy="305" r="14"/>
         </svg>
       </div>
     </div>
@@ -1996,21 +1996,18 @@ section{
 
   document.querySelectorAll('.map-dot').forEach(dot => {
     const region = dot.dataset.region;
-    const color = getComputedStyle(dot).fill || dot.getAttribute('fill');
     dot.addEventListener('mouseenter', () => {
       const li = document.querySelector(`.region-list li[data-region="${region}"]`);
       if (!li) return;
-      const c = window.getComputedStyle(dot).fill;
-      li.style.color = c;
-      const pct = li.querySelector('.pct');
-      if (pct) pct.style.color = c;
+      const rgb = window.getComputedStyle(dot).fill.match(/\d+/g);
+      if (rgb) li.style.background = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.28)`;
+      li.classList.add('region-hl');
     });
     dot.addEventListener('mouseleave', () => {
       const li = document.querySelector(`.region-list li[data-region="${region}"]`);
       if (!li) return;
-      li.style.color = '';
-      const pct = li.querySelector('.pct');
-      if (pct) pct.style.color = '';
+      li.style.background = '';
+      li.classList.remove('region-hl');
     });
   });
 

@@ -1673,31 +1673,21 @@ section{
           <li>Europe <span class="pct">5%</span></li>
         </ul>
       </div>
-      <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true">
-        <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+      <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true" style="position:relative;">
+        <img src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
+        <svg viewBox="0 0 201 97" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
+          <!-- Sub-Saharan Africa -->
+          <circle class="map-dot" cx="114" cy="59" r="2.2"/>
+          <!-- MENA -->
+          <circle class="map-dot" cx="121" cy="37" r="2.2"/>
+          <!-- Asia -->
+          <circle class="map-dot" cx="149" cy="47" r="2.2"/>
           <!-- North America -->
-          <path class="land" d="M42,100 L64,55 L200,58 L320,60 L355,125 L305,148 L278,192 L250,202 L240,226 L210,216 L185,196 L155,168 L155,132 L120,96 Z"/>
-          <!-- Greenland -->
-          <path class="land" d="M330,28 L400,22 L422,46 L410,72 L388,82 L358,86 L333,76 L320,55 Z"/>
-          <!-- South America -->
-          <path class="land" d="M240,226 L265,218 L330,216 L405,265 L400,312 L346,346 L315,402 L296,372 L278,332 L270,286 L256,248 Z"/>
+          <circle class="map-dot" cx="44" cy="34" r="2.2"/>
+          <!-- Latin America -->
+          <circle class="map-dot" cx="63" cy="62" r="2.2"/>
           <!-- Europe -->
-          <path class="land" d="M458,106 L478,96 L502,88 L532,82 L566,88 L602,96 L622,112 L612,132 L590,142 L564,150 L538,147 L510,150 L490,157 L476,148 L464,138 L454,126 Z"/>
-          <!-- Africa -->
-          <path class="land" d="M476,148 L488,148 L530,144 L592,162 L644,216 L636,262 L616,302 L596,346 L566,382 L540,392 L514,382 L494,352 L478,312 L464,272 L452,236 L448,206 L458,184 L472,164 Z"/>
-          <!-- Asia (main landmass) -->
-          <path class="land" d="M572,144 L602,132 L642,115 L702,100 L762,92 L852,90 L952,98 L992,116 L980,152 L950,166 L920,160 L890,158 L868,172 L858,202 L838,232 L808,252 L784,250 L758,262 L728,266 L698,262 L672,272 L648,268 L634,252 L624,240 L646,218 L660,196 L644,176 L620,162 L594,148 Z"/>
-          <!-- India peninsula -->
-          <path class="land" d="M688,186 L716,190 L730,212 L718,238 L700,252 L682,236 L672,210 Z"/>
-          <!-- Australia -->
-          <path class="land" d="M816,308 L872,294 L906,278 L932,306 L926,346 L900,372 L864,376 L830,360 L812,338 Z"/>
-          <!-- Pulse dots: Sub-Saharan Africa, MENA, Asia, North America, Latin America, Europe -->
-          <circle class="map-dot" cx="565" cy="305" r="5"/>
-          <circle class="map-dot" cx="600" cy="190" r="5"/>
-          <circle class="map-dot" cx="740" cy="242" r="5"/>
-          <circle class="map-dot" cx="218" cy="174" r="5"/>
-          <circle class="map-dot" cx="312" cy="320" r="5"/>
-          <circle class="map-dot" cx="512" cy="118" r="5"/>
+          <circle class="map-dot" cx="103" cy="23" r="2.2"/>
         </svg>
       </div>
     </div>

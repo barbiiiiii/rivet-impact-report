@@ -380,6 +380,11 @@ section{
   z-index:0;
   pointer-events:none;
   transform:translate(115px,-80px);
+  animation:about-doodle-pulse 3.2s ease-in-out infinite;
+}
+@keyframes about-doodle-pulse{
+  0%,100%{transform:translate(115px,-80px) scale(1)}
+  50%{transform:translate(115px,-80px) scale(1.04)}
 }
 @media(max-width:760px){
   .about-doodle{float:none;position:static;max-width:420px;width:100%;margin:0 auto 1.5rem;display:block;transform:none}

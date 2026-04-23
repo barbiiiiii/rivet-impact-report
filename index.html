@@ -1045,6 +1045,12 @@ section{
   min-height:300px;
   display:flex;flex-direction:column;gap:1rem;
   position:relative;
+  transition:transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+}
+.priority:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 18px 40px -12px rgba(0,0,0,.45);
 }
 .priority .num{
   font-family:var(--bebas);font-size:5rem;color:var(--yellow);
@@ -1052,6 +1058,9 @@ section{
 }
 .priority h3{font-family:var(--bebas);font-size:clamp(1.6rem,2.3vw,2rem);line-height:1.04;color:var(--white)}
 .priority p{font-size:.96rem;line-height:1.55;color:rgba(255,255,255,.82)}
+.priority p .hl-purple{color:var(--purple);font-weight:700}
+.priority p .hl-yellow{color:var(--yellow);font-weight:700}
+.priority p .hl-red{color:var(--red);font-weight:700}
 .ahead-close{
   font-family:var(--bebas);
   font-size:clamp(2.4rem,5.5vw,5rem);
@@ -1881,18 +1890,18 @@ section{
     <div class="priorities">
       <div class="priority reveal">
         <span class="num">01</span>
-        <h3>REFINE THE SYSTEMS</h3>
-        <p>Tighter grant operations. Stronger measurement. Youth governance at decision-making tables — not just advisory seats.</p>
+        <h3>REFINE THE SYSTEMS<br>BEHIND THE MISSION</h3>
+        <p>We will continue strengthening RIVET's operating system so our grantmaking is more consistent, more comparable, and easier to run across partners and regions. That means <strong class="hl-purple">tightening grant operations</strong> with clearer milestones and stronger partner workflows; improving measurement instruments so they are simpler for youth and stronger for learning; upgrading our data architecture to track portfolio health and catalytic multipliers with greater integrity; and deepening youth governance so the Youth Assembly continues to be a strong decision-making body.</p>
       </div>
       <div class="priority reveal delay-1">
         <span class="num">02</span>
-        <h3>INCREASE FUNDING</h3>
-        <p>Expand brand and foundation partnerships. Convert one-off campaigns into multi-year, system-level commitments.</p>
+        <h3>INCREASE FUNDING TO<br>EXPAND WHAT'S POSSIBLE</h3>
+        <p>RIVET works because small amounts of early trust create outsized results. In 2026, we will grow the pool of catalytic funding available to youth innovators, especially those in communities most excluded from traditional capital. This includes expanding brand, foundation, and institutional partnerships; increasing non-cash capital pathways — visibility, storytelling, creative support, networks — that <strong class="hl-yellow">help youth unlock next-stage opportunities</strong>; and building stronger multi-year commitments so our support is compounding, not episodic.</p>
       </div>
       <div class="priority reveal delay-2">
         <span class="num">03</span>
-        <h3>SCALE WITH INTEGRITY</h3>
-        <p>Protect youth ownership of the work. Invest in partner enablement so impact partners can carry more weight, more safely.</p>
+        <h3>PREPARE TO SCALE WITHOUT<br>LOSING INTEGRITY</h3>
+        <p>As demand grows, our responsibility is to scale in a way that <strong class="hl-red">protects youth ownership</strong> and <strong class="hl-red">preserves contextual relevance</strong>. In 2026, we will invest in stronger partner enablement through toolkits, training, and clearer expectations; more defined portfolio pathways from Access to Boost to Scale, so youth aren't left behind after a first grant; more durable learning loops so what we fund today improves how we fund tomorrow; and a bigger visibility engine that turns results into legitimacy beyond RIVET.</p>
       </div>
     </div>
     <p class="ahead-close reveal">Youth-led innovation isn't the experiment. The real experiment is <em>whether institutions can redesign themselves</em> fast enough to support it.</p>

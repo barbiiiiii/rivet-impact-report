@@ -921,10 +921,12 @@ section{
 .global-reach::before{
   content:'';
   position:absolute;
-  inset:0;
+  top:0;bottom:0;
+  left:calc(50% - 50vw);
+  width:100vw;
   background:url('paper.png') center/cover no-repeat;
   z-index:-1;
-  border-radius:6px;
+  opacity:.5;
 }
 .global-reach > *{position:relative;z-index:1}
 .global-reach h3{

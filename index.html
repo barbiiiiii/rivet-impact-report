@@ -371,7 +371,7 @@ section{
 .about-inner{max-width:1400px;margin:0 auto}
 .about-top{
   display:grid;
-  grid-template-columns:minmax(0,1fr) clamp(220px,26vw,360px);
+  grid-template-columns:minmax(0,1fr) clamp(330px,39vw,540px);
   gap:2.5rem;
   align-items:start;
 }
@@ -382,10 +382,11 @@ section{
   width:100%;height:auto;
   display:block;
   align-self:start;
+  transform:translateY(-100px);
 }
 @media(max-width:760px){
   .about-top{grid-template-columns:1fr}
-  .about-doodle{position:static;max-width:280px;margin:0 auto}
+  .about-doodle{position:static;max-width:420px;margin:0 auto;transform:none}
 }
 .about h2{margin-bottom:1.5rem;max-width:14ch}
 .stats-block{margin:2.5rem 0 3rem;display:flex;flex-direction:column;gap:1.4rem;}

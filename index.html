@@ -268,6 +268,17 @@ section{
   content:"";width:1px;height:48px;background:var(--yellow);
   animation:slideDown 2s ease-in-out infinite;
 }
+.scroll-hint--inline{
+  display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;
+  margin-top:2.2rem;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);font-weight:700;
+}
+.scroll-hint--inline::after{
+  content:"";width:1px;height:48px;background:var(--yellow);
+  animation:slideDown 2s ease-in-out infinite;
+  transform-origin:top center;
+}
 @keyframes slideDown{0%,100%{transform:scaleY(.4);transform-origin:top center}50%{transform:scaleY(1);transform-origin:top center}}
 
 /* ============================================
@@ -1313,10 +1324,9 @@ section{
       <span class="sub-line">Protecting youth ownership.</span>
       <span class="sub-line">Building the infrastructure change needs.</span>
     </div>
+    <div class="scroll-hint scroll-hint--inline">Scroll down to begin</div>
   </div>
-  <div class="hero-meta">
-    <div class="scroll-hint">Scroll down to begin</div>
-  </div>
+  <div class="hero-meta"></div>
   <div class="hero-strip" aria-hidden="true">
     <div class="hero-strip-track">
       <span>Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg> Accelerate the Youth Revolution. For Good. <svg viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg></span>

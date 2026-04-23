@@ -1194,6 +1194,48 @@ section{
   .fw-layout{flex-direction:column;}
   #photo-card{width:100%;height:320px;}
 }
+/* §10 Appendix */
+.appendix{
+  position:relative;
+  background:#3a3a3a;
+  color:#fff;
+  border-top:6px solid var(--yellow);
+  padding:5rem 1.5rem 5.5rem;
+  overflow:hidden;
+}
+.appendix::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='80' height='80' fill='%23fff'%3E%3Cdefs%3E%3Cmask id='h'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Cpolygon points='42,50 46,43 54,43 58,50 54,57 46,57' fill='%23000'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23h)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3Cg transform='rotate(45 50 50)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:120px 120px;
+  opacity:.2;
+  pointer-events:none;
+}
+.appendix-inner{position:relative;max-width:1400px;margin:0 auto;z-index:1}
+.appendix-buttons{
+  display:flex;flex-wrap:wrap;gap:1.5rem;
+}
+.appendix-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#000;
+  padding:1.4rem 2.6rem;
+  font-family:var(--bebas);
+  font-size:clamp(1.5rem,2.4vw,2.2rem);
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+  border:3px solid;
+  transition:transform .3s var(--ease), background .3s var(--ease);
+}
+.appendix-btn:hover{transform:translateY(-4px);background:#111}
+.appendix-btn--purple{border-color:var(--purple);color:var(--purple)}
+.appendix-btn--red{border-color:var(--red);color:var(--red)}
+@media (max-width:600px){
+  .appendix-buttons{flex-direction:column}
+  .appendix-btn{width:100%}
+}
+
 /* CEO Letter Modal — :target method */
 .modal-window{
   position:fixed;background-color:rgba(0,0,0,0.85);
@@ -1983,6 +2025,20 @@ section{
 </section>
 
 <!-- ============================================
+     §10 APPENDIX
+     ============================================ -->
+<section class="appendix" id="appendix" aria-labelledby="appendix-title">
+  <div class="appendix-inner">
+    <div class="section-label reveal" style="color:#ddd">10 / Appendix</div>
+    <h2 id="appendix-title" class="reveal" style="color:#fff;margin-bottom:2.5rem">REFERENCE MATERIALS</h2>
+    <div class="appendix-buttons reveal">
+      <a href="#glossary-modal" class="appendix-btn appendix-btn--purple">Glossary of Terms</a>
+      <a href="#impact-measurement-modal" class="appendix-btn appendix-btn--red">Impact Measurement</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
      FOOTER
      ============================================ -->
 <footer class="foot">
@@ -2261,6 +2317,69 @@ section{
       <p style="margin:0 0 16px;">RIVET's job is to make sure the systems around them are built to support what they are already building. We need small change at scale — not a single leader, not a single moment, but thousands of young people in every community deciding they are going to act, supported by trusted institutions ready for the journey.</p>
       <p style="margin:0 0 24px;"><strong>RIVET is how we turn on the spigot.</strong></p>
       <p style="margin:0;"><strong>Dr. Eric D. Dawson</strong><br>CEO &amp; Founder, RIVET</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     §10 APPENDIX MODALS
+     ============================================ -->
+<div id="glossary-modal" class="modal-window">
+  <div class="modal-content">
+    <a href="#appendix" class="modal-close">&#x2715;</a>
+    <div style="font-family:var(--bebas);font-size:2.6rem;line-height:1.05;margin-bottom:4px;color:#000;">GLOSSARY OF TERMS</div>
+    <div style="height:2px;background:#6B62F2;margin:18px 0 24px;"></div>
+    <div style="font-size:14px;line-height:1.7;color:#111;">
+      <p style="margin:0 0 18px;">RIVET maintains standardised terminology across all programmes and partnerships to ensure clarity, accountability, and comparability of impact across regions and stakeholders.</p>
+      <p style="margin:0 0 12px;"><strong>Access Grant.</strong> An early-stage microgrant (&lt;USD 1,000) designed to help a youth innovator test or launch a new idea. Provides fast, flexible catalytic capital to move from concept to initial action.</p>
+      <p style="margin:0 0 12px;"><strong>Boost Grant.</strong> A mid-stage grant (USD 1,000–9,999) designed to help a youth-led initiative expand reach, strengthen execution, or refine an existing prototype. Supports growth beyond initial validation.</p>
+      <p style="margin:0 0 12px;"><strong>Scale Grant.</strong> A higher-level grant (USD 10,000+) supporting youth-led initiatives that demonstrate traction and are ready to deepen impact, expand geographically, or institutionalise their model.</p>
+      <p style="margin:0 0 12px;"><strong>Advisory Network.</strong> Senior leaders and subject-matter experts from business, philanthropy, marketing, technology, and impact spaces providing strategic guidance, credibility, and ecosystem access.</p>
+      <p style="margin:0 0 12px;"><strong>Brand Partner.</strong> A corporate partner contributing financial and/or non-cash capital to support youth-led initiatives within the RIVET ecosystem. Brand partnerships are structured to preserve youth ownership and community-rooted impact.</p>
+      <p style="margin:0 0 12px;"><strong>Catalytic Funding.</strong> Early, flexible capital designed to unlock action, reduce friction, and signal legitimacy. Often the first institutional validation of a youth-led initiative, capable of unlocking significant follow-on investment.</p>
+      <p style="margin:0 0 12px;"><strong>Direct Beneficiaries.</strong> Individuals who directly receive services, participate in programmes, or benefit from products delivered by a RIVET-supported initiative. Reflects impact delivered by youth innovators, not RIVET staff.</p>
+      <p style="margin:0 0 12px;"><strong>Follow-On Capital.</strong> Additional funding secured by a youth innovator after receiving a RIVET grant. Reflects catalytic effect and increased institutional credibility.</p>
+      <p style="margin:0 0 12px;"><strong>Imagination Capital.</strong> The belief, legitimacy, and narrative power that allows youth innovators to be taken seriously by the broader ecosystem. Generated through visibility, storytelling, and brand amplification.</p>
+      <p style="margin:0 0 12px;"><strong>Impact Partner.</strong> A youth-serving organisation embedded within a specific community that collaborates with RIVET to identify, fund, and support young innovators locally. Impact Partners source and vet initiatives, distribute grants, provide mentorship, track impact, and surface learning.</p>
+      <p style="margin:0 0 12px;"><strong>Microgrant.</strong> A defined amount of catalytic funding deployed to support a specific youth-led initiative at the Access, Boost, or Scale level. The financial unit of measurement within RIVET's grantmaking model.</p>
+      <p style="margin:0 0 12px;"><strong>RIVET Assembly.</strong> A representative body of young leaders within RIVET that holds decision-making authority over brand and impact partnerships, ensuring youth governance and accountability remain central to ecosystem design.</p>
+      <p style="margin:0 0 12px;"><strong>Youth Innovator.</strong> An individual under 30 who leads or co-leads a RIVET-supported initiative. Because many initiatives are team-based, the number of youth innovators supported may exceed the number of grants deployed.</p>
+      <p style="margin:0;"><strong>Youth-Led Initiative.</strong> A time-bound project, prototype, or early-stage solution led by at least one individual under 30 that addresses a clearly defined community need.</p>
+    </div>
+  </div>
+</div>
+
+<div id="impact-measurement-modal" class="modal-window">
+  <div class="modal-content">
+    <a href="#appendix" class="modal-close">&#x2715;</a>
+    <div style="font-family:var(--bebas);font-size:2.6rem;line-height:1.05;margin-bottom:4px;color:#000;">IMPACT MEASUREMENT</div>
+    <div style="height:2px;background:#FF4A53;margin:18px 0 24px;"></div>
+    <div style="font-size:14px;line-height:1.7;color:#111;">
+      <p style="margin:0 0 14px;">RIVET tracks impact using five clearly defined and non-overlapping units to ensure accountability and credibility:</p>
+      <ul style="margin:0 0 20px;padding-left:1.2rem;">
+        <li style="margin-bottom:6px;"><strong>Microgrants Deployed:</strong> total value of capital invested across all microgrant types</li>
+        <li style="margin-bottom:6px;"><strong>Youth-Led Initiatives Funded:</strong> number of projects or prototypes supported</li>
+        <li style="margin-bottom:6px;"><strong>Youth Innovators Supported:</strong> number of young people leading those initiatives</li>
+        <li style="margin-bottom:6px;"><strong>Direct Beneficiary Reach:</strong> number of people directly served by those initiatives</li>
+        <li style="margin-bottom:0;"><strong>Follow-On Capital Unlocked:</strong> additional funding secured post-microgrant</li>
+      </ul>
+      <p style="margin:0 0 12px;">Project data is captured using a three-stage process:</p>
+      <p style="margin:0 0 12px;"><strong>Baseline Survey:</strong> Administered at the start of a grant period to record demographic and geographic data, project scope, self-assessed leadership capacity, confidence, and resource gaps. Establishes the pre-support baseline against which growth and impact are measured.</p>
+      <p style="margin:0 0 12px;"><strong>Midline Survey:</strong> Used for longer grant cycles to capture progress, pivots, challenges, and execution gaps — allowing for rapid learning and adaptation.</p>
+      <p style="margin:0 0 20px;"><strong>Endline Survey:</strong> Captures strategic project metrics including budgetary performance, leadership development, emotional and social skills deltas, and supporting information for storytelling. Enables longitudinal comparison.</p>
+      <p style="margin:0 0 10px;font-family:var(--bebas);font-size:1.4rem;color:#000;">STRATEGIC MEASUREMENT LENSES</p>
+      <p style="margin:0 0 10px;"><strong>Output Metrics</strong> (what gets built): grants deployed, initiatives launched, services delivered, products developed, jobs created.</p>
+      <p style="margin:0 0 10px;"><strong>Outcome Metrics</strong> (who benefits): direct beneficiaries served, environmental or social improvements, communities reached.</p>
+      <p style="margin:0 0 20px;"><strong>Leadership Development Metrics</strong> (who they become): self-assessed confidence growth, leadership skills growth, collaboration capacity, resilience and agency.</p>
+      <p style="margin:0 0 20px;"><strong>Catalytic Multiplier:</strong> Follow-on capital ÷ original microgrant. Measures catalytic strength, not just funding volume. This score is assigned to every RIVET-supported project.</p>
+      <p style="margin:0 0 10px;font-family:var(--bebas);font-size:1.4rem;color:#000;">DATA INTEGRITY SAFEGUARDS</p>
+      <ul style="margin:0;padding-left:1.2rem;">
+        <li style="margin-bottom:6px;">Distinguishing direct reach from ecosystem reach</li>
+        <li style="margin-bottom:6px;">Avoiding double-counting of beneficiaries</li>
+        <li style="margin-bottom:6px;">Requiring partner verification of critical data</li>
+        <li style="margin-bottom:6px;">Tracking milestone completion and budget adherence in real time</li>
+        <li style="margin-bottom:0;">Maintaining standardised reporting instruments across all geographies</li>
+      </ul>
     </div>
   </div>
 </div>

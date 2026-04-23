@@ -1078,10 +1078,9 @@ section{
 .card[data-area="education"]:hover::before{background:rgba(107,98,242,.5)}
 .card[data-area="poverty"]:hover::before{background:rgba(233,249,88,.5)}
 .card[data-area="inclusion"]:hover::before{background:rgba(255,138,61,.5)}
-.card::after{
-  content:'READ MY STORY';
+.card-link{
   position:absolute;top:50%;left:50%;
-  transform:translate(calc(-50% + 30px),calc(-50% + 150px)) scale(.95);
+  transform:translate(calc(-50% + 60px),calc(-50% + 150px)) scale(.95);
   font-family:var(--bebas);
   font-size:1.25rem;letter-spacing:.12em;
   background:#000;color:#fff;
@@ -1090,22 +1089,18 @@ section{
   opacity:0;
   pointer-events:none;
   transition:opacity .35s ease,transform .35s ease;
-  z-index:2;
+  z-index:3;
   white-space:nowrap;
   text-transform:uppercase;
+  cursor:pointer;
+  appearance:none;-webkit-appearance:none;
 }
-.card:hover::after{opacity:1;transform:translate(calc(-50% + 30px),calc(-50% + 150px)) scale(1)}
-.card[data-area="sustainability"]::after{border-color:#2dbe5f}
-.card[data-area="health"]::after{border-color:var(--red)}
-.card[data-area="education"]::after{border-color:var(--purple)}
-.card[data-area="poverty"]::after{border-color:var(--yellow)}
-.card[data-area="inclusion"]::after{border-color:#ff8a3d}
-.card-link{
-  position:absolute;inset:0;z-index:3;
-  display:block;cursor:pointer;
-  background:transparent;border:0;padding:0;margin:0;
-  appearance:none;-webkit-appearance:none;font:inherit;
-}
+.card:hover .card-link{opacity:1;transform:translate(calc(-50% + 60px),calc(-50% + 150px)) scale(1);pointer-events:auto}
+.card[data-area="sustainability"] .card-link{border-color:#2dbe5f}
+.card[data-area="health"] .card-link{border-color:var(--red)}
+.card[data-area="education"] .card-link{border-color:var(--purple)}
+.card[data-area="poverty"] .card-link{border-color:var(--yellow)}
+.card[data-area="inclusion"] .card-link{border-color:#ff8a3d}
 .card-cover{opacity:1;z-index:1;position:relative}
 .card-story{opacity:0;z-index:2;position:relative;pointer-events:none}
 .card.story-open .card-cover{opacity:0;pointer-events:none}
@@ -2099,70 +2094,70 @@ section{
       <article class="card reveal" data-area="sustainability">
         <img class="card-cover" src="stories-covers/01-joshua.png" alt="Joshua Ichor — Geotek Water Project, Nigeria">
         <img class="card-story" src="stories-VF/1.%20Joshua%20story.png" alt="Joshua's story">
-        <button type="button" class="card-link" aria-label="Read Joshua's story"></button>
+        <button type="button" class="card-link" aria-label="Read Joshua's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="sustainability">
         <img class="card-cover" src="stories-covers/02-laraib.png" alt="Laraib Khan Tahir — The Green Root Project, Pakistan">
         <img class="card-story" src="stories-VF/2.%20Laraib%20story.png" alt="Laraib's story">
-        <button type="button" class="card-link" aria-label="Read Laraib's story"></button>
+        <button type="button" class="card-link" aria-label="Read Laraib's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="health">
         <img class="card-cover" src="stories-covers/03-hakim.png" alt="Hakim Kakooza — MariTest, UK & East Africa">
         <img class="card-story" src="stories-VF/3.%20hakim%20story.png" alt="Hakim's story">
-        <button type="button" class="card-link" aria-label="Read Hakim's story"></button>
+        <button type="button" class="card-link" aria-label="Read Hakim's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="health">
         <img class="card-cover" src="stories-covers/04-emi-v2.png" alt="Emi Gaçaj — Tessering Biosciences, USA">
         <img class="card-story" src="stories-VF/4.%20emi%20story.png" alt="Emi's story">
-        <button type="button" class="card-link" aria-label="Read Emi's story"></button>
+        <button type="button" class="card-link" aria-label="Read Emi's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="education">
         <img class="card-cover" src="stories-covers/05-rayen.png" alt="Rayen Bouajaja — Lyceena, Tunisia">
         <img class="card-story" src="stories-VF/5.%20rayen%20story.png" alt="Rayen's story">
-        <button type="button" class="card-link" aria-label="Read Rayen's story"></button>
+        <button type="button" class="card-link" aria-label="Read Rayen's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="education">
         <img class="card-cover" src="stories-covers/06-victoria.png" alt="Victoria Flores Almazan — Take Charge with Victoria, USA">
         <img class="card-story" src="stories-VF/6.%20victoria%20story.png" alt="Victoria's story">
-        <button type="button" class="card-link" aria-label="Read Victoria's story"></button>
+        <button type="button" class="card-link" aria-label="Read Victoria's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="poverty">
         <img class="card-cover" src="stories-covers/07-stanley.png" alt="Stanley Anigbogu — LightEd, Nigeria">
         <img class="card-story" src="stories-VF/7.%20stanley%20story.png" alt="Stanley's story">
-        <button type="button" class="card-link" aria-label="Read Stanley's story"></button>
+        <button type="button" class="card-link" aria-label="Read Stanley's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="poverty">
         <img class="card-cover" src="stories-covers/08-walter.png" alt="Walter Okwir — YIEN, Uganda">
         <img class="card-story" src="stories-VF/8.%20walter%20story.png" alt="Walter's story">
-        <button type="button" class="card-link" aria-label="Read Walter's story"></button>
+        <button type="button" class="card-link" aria-label="Read Walter's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="inclusion">
         <img class="card-cover" src="stories-covers/09-andrew.png" alt="Andrew Chang — Nunchi Health, USA">
         <img class="card-story" src="stories-VF/9.%20andrew%20story.png" alt="Andrew's story">
-        <button type="button" class="card-link" aria-label="Read Andrew's story"></button>
+        <button type="button" class="card-link" aria-label="Read Andrew's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="inclusion">
         <img class="card-cover" src="stories-covers/10-melany.png" alt="Melany Ávila — Latin Girls at Work, Argentina & UK">
         <img class="card-story" src="stories-VF/10.%20melany%20story.png" alt="Melany's story">
-        <button type="button" class="card-link" aria-label="Read Melany's story"></button>
+        <button type="button" class="card-link" aria-label="Read Melany's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
       <aside class="filter-info" id="filterInfo" aria-live="polite">

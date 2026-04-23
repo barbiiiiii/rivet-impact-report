@@ -439,6 +439,25 @@ section{
 .principles-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
 .principles-heading{font-family:var(--bebas);font-weight:400;color:#000;font-size:clamp(3.5rem,6vw,7rem);line-height:.88;position:sticky;top:calc(var(--nav-h) + 2rem);}
 .principles-heading span{display:block;}
+.principles-side{position:relative}
+.principles-spin-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:1;
+  overflow:hidden;
+  margin-top:2rem;
+  background:var(--black);
+}
+.principles-spin{
+  position:absolute;
+  left:-55%;
+  bottom:-55%;
+  width:130%;
+  height:130%;
+  color:var(--yellow);
+  animation:spin 22s linear infinite;
+  transform-origin:50% 50%;
+}
 .principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .principle-box{background:#000;border-radius:4px;min-height:220px;position:relative;overflow:hidden;cursor:pointer;transition:background .35s ease;}
 .pb-title,.pb-text{position:absolute;inset:0;padding:2rem;display:flex;align-items:center;justify-content:center;transition:opacity .3s ease,transform .3s ease;}
@@ -1571,11 +1590,14 @@ section{
 </section>
 <section class="principles" id="principles" aria-label="Impact Principles" style="padding-top:clamp(56px,7vw,112px);padding-bottom:clamp(56px,7vw,112px)">
   <div class="principles-inner">
-    <div>
+    <div class="principles-side">
       <div class="principles-heading reveal">
         <span>RIVET's</span>
         <span>Impact</span>
         <span>Principles</span>
+      </div>
+      <div class="principles-spin-wrap" aria-hidden="true">
+        <svg class="principles-spin" viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg>
       </div>
     </div>
     <div class="principles-grid">

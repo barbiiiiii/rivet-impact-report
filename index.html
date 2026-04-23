@@ -1197,8 +1197,8 @@ section{
 /* §10 Appendix */
 .appendix{
   position:relative;
-  background:#3a3a3a;
-  color:#fff;
+  background:#EDEDED;
+  color:#111;
   border-top:6px solid var(--yellow);
   padding:5rem 1.5rem 5.5rem;
   overflow:hidden;
@@ -1206,10 +1206,10 @@ section{
 .appendix::before{
   content:'';
   position:absolute;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='80' height='80' fill='%23fff'%3E%3Cdefs%3E%3Cmask id='h'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Cpolygon points='42,50 46,43 54,43 58,50 54,57 46,57' fill='%23000'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23h)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3Cg transform='rotate(45 50 50)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='80' height='80' fill='%23000'%3E%3Cdefs%3E%3Cmask id='h'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Cpolygon points='42,50 46,43 54,43 58,50 54,57 46,57' fill='%23000'/%3E%3C/mask%3E%3C/defs%3E%3Cg mask='url(%23h)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3Cg transform='rotate(45 50 50)'%3E%3Crect x='44' y='4' width='12' height='92'/%3E%3Crect x='4' y='44' width='92' height='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-repeat:repeat;
   background-size:120px 120px;
-  opacity:.2;
+  opacity:.05;
   pointer-events:none;
 }
 .appendix-inner{position:relative;max-width:1400px;margin:0 auto;z-index:1}
@@ -2029,8 +2029,8 @@ section{
      ============================================ -->
 <section class="appendix" id="appendix" aria-labelledby="appendix-title">
   <div class="appendix-inner">
-    <div class="section-label reveal" style="color:#ddd">10 / Appendix</div>
-    <h2 id="appendix-title" class="reveal" style="color:#fff;margin-bottom:2.5rem">REFERENCE MATERIALS</h2>
+    <div class="section-label reveal" style="color:#555">10 / Appendix</div>
+    <h2 id="appendix-title" class="reveal" style="color:#000;margin-bottom:2.5rem">REFERENCE MATERIALS</h2>
     <div class="appendix-buttons reveal">
       <a href="#glossary-modal" class="appendix-btn appendix-btn--purple">Glossary of Terms</a>
       <a href="#impact-measurement-modal" class="appendix-btn appendix-btn--red">Impact Measurement</a>
@@ -2354,32 +2354,28 @@ section{
     <a href="#appendix" class="modal-close">&#x2715;</a>
     <div style="font-family:var(--bebas);font-size:2.6rem;line-height:1.05;margin-bottom:4px;color:#000;">IMPACT MEASUREMENT</div>
     <div style="height:2px;background:#FF4A53;margin:18px 0 24px;"></div>
-    <div style="font-size:14px;line-height:1.7;color:#111;">
+    <div style="font-family:var(--inter);font-size:14px;line-height:1.7;color:#111;">
       <p style="margin:0 0 14px;">RIVET tracks impact using five clearly defined and non-overlapping units to ensure accountability and credibility:</p>
-      <ul style="margin:0 0 20px;padding-left:1.2rem;">
-        <li style="margin-bottom:6px;"><strong>Microgrants Deployed:</strong> total value of capital invested across all microgrant types</li>
-        <li style="margin-bottom:6px;"><strong>Youth-Led Initiatives Funded:</strong> number of projects or prototypes supported</li>
-        <li style="margin-bottom:6px;"><strong>Youth Innovators Supported:</strong> number of young people leading those initiatives</li>
-        <li style="margin-bottom:6px;"><strong>Direct Beneficiary Reach:</strong> number of people directly served by those initiatives</li>
-        <li style="margin-bottom:0;"><strong>Follow-On Capital Unlocked:</strong> additional funding secured post-microgrant</li>
-      </ul>
-      <p style="margin:0 0 12px;">Project data is captured using a three-stage process:</p>
+      <p style="margin:0 0 8px;"><strong>Microgrants Deployed:</strong> total value of capital invested across all microgrant types</p>
+      <p style="margin:0 0 8px;"><strong>Youth-Led Initiatives Funded:</strong> number of projects or prototypes supported</p>
+      <p style="margin:0 0 8px;"><strong>Youth Innovators Supported:</strong> number of young people leading those initiatives</p>
+      <p style="margin:0 0 8px;"><strong>Direct Beneficiary Reach:</strong> number of people directly served by those initiatives</p>
+      <p style="margin:0 0 18px;"><strong>Follow-On Capital Unlocked:</strong> additional funding secured post-microgrant</p>
+      <p style="margin:0 0 14px;">Project data is captured using a three-stage process:</p>
       <p style="margin:0 0 12px;"><strong>Baseline Survey:</strong> Administered at the start of a grant period to record demographic and geographic data, project scope, self-assessed leadership capacity, confidence, and resource gaps. Establishes the pre-support baseline against which growth and impact are measured.</p>
       <p style="margin:0 0 12px;"><strong>Midline Survey:</strong> Used for longer grant cycles to capture progress, pivots, challenges, and execution gaps — allowing for rapid learning and adaptation.</p>
-      <p style="margin:0 0 20px;"><strong>Endline Survey:</strong> Captures strategic project metrics including budgetary performance, leadership development, emotional and social skills deltas, and supporting information for storytelling. Enables longitudinal comparison.</p>
-      <p style="margin:0 0 10px;font-family:var(--bebas);font-size:1.4rem;color:#000;">STRATEGIC MEASUREMENT LENSES</p>
+      <p style="margin:0 0 18px;"><strong>Endline Survey:</strong> Captures strategic project metrics including budgetary performance, leadership development, emotional and social skills deltas, and supporting information for storytelling. Enables longitudinal comparison.</p>
+      <p style="margin:0 0 10px;"><strong>STRATEGIC MEASUREMENT LENSES</strong></p>
       <p style="margin:0 0 10px;"><strong>Output Metrics</strong> (what gets built): grants deployed, initiatives launched, services delivered, products developed, jobs created.</p>
       <p style="margin:0 0 10px;"><strong>Outcome Metrics</strong> (who benefits): direct beneficiaries served, environmental or social improvements, communities reached.</p>
-      <p style="margin:0 0 20px;"><strong>Leadership Development Metrics</strong> (who they become): self-assessed confidence growth, leadership skills growth, collaboration capacity, resilience and agency.</p>
-      <p style="margin:0 0 20px;"><strong>Catalytic Multiplier:</strong> Follow-on capital ÷ original microgrant. Measures catalytic strength, not just funding volume. This score is assigned to every RIVET-supported project.</p>
-      <p style="margin:0 0 10px;font-family:var(--bebas);font-size:1.4rem;color:#000;">DATA INTEGRITY SAFEGUARDS</p>
-      <ul style="margin:0;padding-left:1.2rem;">
-        <li style="margin-bottom:6px;">Distinguishing direct reach from ecosystem reach</li>
-        <li style="margin-bottom:6px;">Avoiding double-counting of beneficiaries</li>
-        <li style="margin-bottom:6px;">Requiring partner verification of critical data</li>
-        <li style="margin-bottom:6px;">Tracking milestone completion and budget adherence in real time</li>
-        <li style="margin-bottom:0;">Maintaining standardised reporting instruments across all geographies</li>
-      </ul>
+      <p style="margin:0 0 18px;"><strong>Leadership Development Metrics</strong> (who they become): self-assessed confidence growth, leadership skills growth, collaboration capacity, resilience and agency.</p>
+      <p style="margin:0 0 18px;"><strong>Catalytic Multiplier:</strong> Follow-on capital ÷ original microgrant. Measures catalytic strength, not just funding volume. This score is assigned to every RIVET-supported project.</p>
+      <p style="margin:0 0 10px;"><strong>DATA INTEGRITY SAFEGUARDS</strong></p>
+      <p style="margin:0 0 6px;">Distinguishing direct reach from ecosystem reach</p>
+      <p style="margin:0 0 6px;">Avoiding double-counting of beneficiaries</p>
+      <p style="margin:0 0 6px;">Requiring partner verification of critical data</p>
+      <p style="margin:0 0 6px;">Tracking milestone completion and budget adherence in real time</p>
+      <p style="margin:0;">Maintaining standardised reporting instruments across all geographies</p>
     </div>
   </div>
 </div>

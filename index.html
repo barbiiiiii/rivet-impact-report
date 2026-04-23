@@ -1006,14 +1006,22 @@ section{
    ============================================ */
 .year{background:var(--purple);color:var(--white);overflow:hidden}
 .year-inner{max-width:1400px;margin:0 auto}
-.year h2{color:var(--white);margin-bottom:1rem;max-width:16ch}
+.year h2{color:var(--white);margin-bottom:0;max-width:16ch}
+.year-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;margin-bottom:1rem;
+}
+.year-header-text{flex:1;min-width:0}
+.year-header-img{max-width:42%;height:auto;align-self:flex-end}
+@media(max-width:760px){.year-header-img{max-width:60%}}
 .year-byline{
-  display:flex;flex-wrap:wrap;gap:1.5rem;
+  display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:flex-end;
   font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
   color:rgba(255,255,255,.78);margin-bottom:3.5rem;
   border-top:1px solid rgba(255,255,255,.2);
   border-bottom:1px solid rgba(255,255,255,.2);
   padding:1rem 0;
+  text-align:right;
 }
 .year-byline strong{color:var(--yellow)}
 .pillars{
@@ -1430,8 +1438,13 @@ section{
      ============================================ -->
 <section class="year" id="year" aria-labelledby="year-title">
   <div class="year-inner">
-    <div class="section-label reveal" style="color:var(--yellow)">02 / From the Impact Team</div>
-    <h2 id="year-title" class="reveal">2025: A YEAR OF FOUNDATION BUILDING</h2>
+    <div class="year-header reveal">
+      <div class="year-header-text">
+        <div class="section-label" style="color:var(--yellow)">02 / From the Impact Team</div>
+        <h2 id="year-title">2025: A YEAR OF FOUNDATION BUILDING</h2>
+      </div>
+      <img src="impact-header.png" alt="" class="year-header-img">
+    </div>
     <div class="year-byline reveal">
       <span><strong>Hayfa Sdiri</strong> · Chief Impact Officer</span>
       <span><strong>Nadia Ali</strong> · Senior Impact Manager</span>

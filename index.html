@@ -1080,12 +1080,13 @@ section{
 .card[data-area="inclusion"]:hover::before{background:rgba(255,138,61,.5)}
 .card-link{
   position:absolute;top:50%;left:50%;
-  transform:translate(calc(-50% + 60px),calc(-50% + 150px)) scale(.95);
+  transform:translate(calc(-50% + 100px),calc(-50% + 150px)) scale(.95);
   font-family:var(--bebas);
   font-size:1.25rem;letter-spacing:.12em;
   background:#000;color:#fff;
   padding:.85rem 1.8rem;
   border:2px solid transparent;
+  border-radius:6px;
   opacity:0;
   pointer-events:none;
   transition:opacity .35s ease,transform .35s ease;
@@ -1095,7 +1096,8 @@ section{
   cursor:pointer;
   appearance:none;-webkit-appearance:none;
 }
-.card:hover .card-link{opacity:1;transform:translate(calc(-50% + 60px),calc(-50% + 150px)) scale(1);pointer-events:auto}
+.card:hover .card-link{opacity:1;transform:translate(calc(-50% + 100px),calc(-50% + 150px)) scale(1);pointer-events:auto}
+.card .card-link:hover{transform:translate(calc(-50% + 100px),calc(-50% + 150px)) scale(1.08)}
 .card[data-area="sustainability"] .card-link{border-color:#2dbe5f}
 .card[data-area="health"] .card-link{border-color:var(--red)}
 .card[data-area="education"] .card-link{border-color:var(--purple)}

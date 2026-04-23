@@ -1052,12 +1052,13 @@ section{
   border:1px solid rgba(0,0,0,.12);
   border-top:6px solid var(--yellow);
   padding:0;
-  display:flex;flex-direction:column;gap:.8rem;
+  display:grid;
+  grid-template-areas:"stack";
   transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease),opacity .35s var(--ease);
   position:relative;
   overflow:hidden;
 }
-.card img{display:block;width:100%;height:auto}
+.card img{display:block;width:100%;height:auto;grid-area:stack;transition:opacity .45s ease}
 .card[data-area="sustainability"]{border-top-color:#2dbe5f}
 .card[data-area="health"]{border-top-color:var(--red)}
 .card[data-area="education"]{border-top-color:var(--purple)}
@@ -1105,9 +1106,10 @@ section{
   background:transparent;border:0;padding:0;margin:0;
   appearance:none;-webkit-appearance:none;font:inherit;
 }
-.card-story{display:none;width:100%;height:auto}
-.card.story-open .card-cover{display:none}
-.card.story-open .card-story{display:block}
+.card-cover{opacity:1;z-index:1;position:relative}
+.card-story{opacity:0;z-index:2;position:relative;pointer-events:none}
+.card.story-open .card-cover{opacity:0;pointer-events:none}
+.card.story-open .card-story{opacity:1;pointer-events:auto}
 .card.story-open .card-link{display:none}
 .card.story-open::before{display:none}
 .card.story-open::after{display:none}

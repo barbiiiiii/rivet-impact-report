@@ -914,7 +914,19 @@ section{
   margin-top:5rem;
   display:grid;grid-template-columns:1fr 1fr;gap:3rem;
   align-items:end;
+  position:relative;
+  padding:clamp(1.5rem,3vw,3rem);
+  isolation:isolate;
 }
+.global-reach::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url('paper.png') center/cover no-repeat;
+  z-index:-1;
+  border-radius:6px;
+}
+.global-reach > *{position:relative;z-index:1}
 .global-reach h3{
   font-family:var(--bebas);font-size:clamp(1.8rem,3vw,2.6rem);
   color:var(--yellow);margin-bottom:1rem;

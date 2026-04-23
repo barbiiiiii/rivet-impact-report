@@ -872,7 +872,13 @@ section{
 .stories{background:var(--white);color:var(--black);overflow:hidden}
 .stories-inner{max-width:1400px;margin:0 auto}
 .stories h2{margin-bottom:.8rem}
-.stories-sub{font-size:1.1rem;color:#555;margin-bottom:2.5rem;max-width:60ch}
+.stories-sub{font-size:1.1rem;color:#555;margin-bottom:1.5rem;max-width:60ch}
+.stories-intro{font-family:var(--inter);font-weight:400;color:var(--black);max-width:72ch;margin-bottom:2rem;font-size:1rem;line-height:1.6}
+.stories-intro p{margin:0 0 1rem}
+.stories-intro p:last-child{margin-bottom:0}
+.stories-intro strong{font-weight:700}
+.stories-filter-cue{margin-top:1.4rem !important}
+.stories-filter-hl{background:var(--purple);color:#fff;padding:.15em .5em;font-weight:700;display:inline-block}
 .filters{
   display:flex;flex-wrap:wrap;gap:.55rem;
   margin-bottom:2.4rem;
@@ -1731,9 +1737,18 @@ section{
      ============================================ -->
 <section class="stories" id="stories" aria-labelledby="stories-title">
   <div class="stories-inner">
-    <div class="section-label reveal">07 / Stories of Change</div>
-    <h2 id="stories-title" class="reveal">STORIES OF CHANGE</h2>
-    <p class="stories-sub reveal">Youth do not work in silos. Neither does impact. Filter by impact area.</p>
+    <div class="section-label reveal">07 / Stories</div>
+    <h2 id="stories-title" class="reveal">STORIES</h2>
+    <p class="stories-sub reveal">Youth do not work in silos. Neither does impact.</p>
+
+    <div class="stories-intro reveal">
+      <p>Impact areas help us organise data. They do not define how young people build.</p>
+      <p>In practice, youth-led solutions rarely sit within a single category. A water project improves health and livelihoods. A mental health initiative strengthens education outcomes. Renewable energy access expands economic participation. Inclusion reshapes who gets to lead across every sector.</p>
+      <p>Young innovators do not separate climate from poverty, or education from identity. They respond to problems as they experience them — layered, interconnected, and urgent.</p>
+      <p>Each founder featured here is not addressing one issue. They are intervening at leverage points, shifting conditions that ripple outward.</p>
+      <p><strong>This is what youth-led systems change looks like: local in origin, interconnected in effect, compounding over time.</strong></p>
+      <p class="stories-filter-cue"><span class="stories-filter-hl">Filter by impact area👇</span></p>
+    </div>
 
     <div class="filters reveal" role="tablist">
       <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>

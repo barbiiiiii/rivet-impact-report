@@ -1289,12 +1289,15 @@ section{
   </a>
   <div class="nav-links">
     <a href="#foreword">Foreword</a>
+    <a href="#year">2025</a>
     <a href="#about">About</a>
-    <a href="#capital">Impact</a>
-    <a href="#partnerships">Partnerships</a>
+    <a href="#capital">Methodology</a>
+    <a href="#partnerships">Ecosystem</a>
     <a href="#numbers">Numbers</a>
     <a href="#stories">Stories</a>
     <a href="#ahead">2026</a>
+    <a href="#cta">Join Us</a>
+    <a href="#appendix">Appendix</a>
   </div>
 </nav>
 
@@ -2196,7 +2199,7 @@ section{
   /* ---------- Nav solid + active link ---------- */
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('.nav-links a');
-  const sectionIds = ['hero','foreword','about','capital','partnerships','numbers','stories','ahead'];
+  const sectionIds = ['hero','foreword','year','about','capital','partnerships','numbers','stories','ahead','cta','appendix'];
   const sections = sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
 
   function onScroll(){

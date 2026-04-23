@@ -678,6 +678,10 @@ section{
 .partnerships{background:var(--grey);color:var(--black)}
 .partnerships-inner{max-width:1400px;margin:0 auto}
 .partnerships h2{margin-bottom:3rem;max-width:14ch}
+.partnerships-heading-row{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.partnerships-heading-row h2{margin-bottom:0}
+.partnerships-header-img{flex:0 0 auto;width:clamp(260px,34vw,460px);height:auto}
+@media(max-width:760px){.partnerships-heading-row{flex-direction:column;align-items:flex-start}.partnerships-header-img{width:100%;max-width:360px}.partnerships-heading-row h2{margin-bottom:1.2rem}}
 .partner-row{
   display:grid;grid-template-columns:260px 1fr;gap:2rem;
   padding:2.2rem 0;
@@ -1381,6 +1385,10 @@ section{
   margin-bottom:1.6rem;
 }
 .cta-close em{font-style:normal;color:var(--yellow)}
+.cta-close-row{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.cta-close-row .cta-close{margin-bottom:0;flex:1 1 auto}
+.cta-close-img{flex:0 0 auto;width:clamp(240px,32vw,420px);height:auto;border-radius:12px}
+@media(max-width:760px){.cta-close-row{flex-direction:column;align-items:flex-start}.cta-close-img{width:100%;max-width:360px}}
 .cta-after-1{font-family:var(--inter);font-weight:400;color:var(--white);font-size:1.1rem;line-height:1.5;margin:0 0 .6rem}
 .cta-after-2{font-family:var(--inter);font-weight:700;color:var(--white);font-size:1.15rem;line-height:1.5;margin:0 0 .6rem}
 .cta-after-3{font-family:var(--inter);font-style:italic;color:var(--white);font-size:1.1rem;line-height:1.5;margin:0 0 1.4rem}
@@ -1877,7 +1885,10 @@ section{
 <section class="partnerships" id="partnerships" aria-labelledby="partnerships-title">
   <div class="partnerships-inner">
     <div class="section-label reveal">05 / Partnerships &amp; Ecosystems</div>
-    <h2 id="partnerships-title" class="reveal">THE NETWORK<br>BEHIND RIVET'S<br>IMPACT</h2>
+    <div class="partnerships-heading-row">
+      <h2 id="partnerships-title" class="reveal">THE NETWORK<br>BEHIND RIVET'S<br>IMPACT</h2>
+      <img src="network%20header.png" alt="" class="partnerships-header-img reveal" loading="lazy">
+    </div>
     <p class="reveal" style="font-size:1.1rem;margin-bottom:1rem">Together, RIVET's brand partnerships have mobilised more than <span class="usd-highlight">$400,000 USD</span> in catalytic funding, engaged corporate teams in our impact efforts, and supported some of this generation's most innovative and inspirational youth leaders. These outputs demonstrate what is possible when the private sector engages directly with youth-led innovation in a way that is both commercially grounded and impact-oriented.</p>
 
     <div class="pc-wrap reveal">
@@ -2252,7 +2263,10 @@ section{
       </article>
     </div>
     <p class="cta-truth reveal">Because this is the truth:</p>
-    <p class="cta-close reveal">When youth are trusted early, <em>everything changes.</em></p>
+    <div class="cta-close-row">
+      <p class="cta-close reveal">When youth are trusted early, <em>everything changes.</em></p>
+      <img src="join%20us%20photo.png" alt="" class="cta-close-img reveal" loading="lazy">
+    </div>
     <p class="cta-after-1 reveal">Ideas launch. Leaders grow. Capital compounds. Systems start to shift.</p>
     <p class="cta-after-2 reveal">2026 is the year we take what works and scale it.</p>
     <p class="cta-after-3 reveal">Not quietly. Not cautiously. Not someday.</p>

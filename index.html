@@ -878,7 +878,14 @@ section{
 .stories-intro p:last-child{margin-bottom:0}
 .stories-intro strong{font-weight:700}
 .stories-filter-cue{margin-top:1.4rem !important}
-.stories-filter-hl{background:var(--purple);color:#fff;padding:.15em .5em;font-weight:700;display:inline-block}
+.stories-filter-hl{
+  background:linear-gradient(to bottom,transparent 14%,var(--purple) 14%,var(--purple) 80%,transparent 80%);
+  color:#fff;
+  padding:0 .25em;
+  font-weight:700;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
 .filters{
   display:flex;flex-wrap:wrap;gap:.55rem;
   margin-bottom:2.4rem;
@@ -1738,8 +1745,8 @@ section{
 <section class="stories" id="stories" aria-labelledby="stories-title">
   <div class="stories-inner">
     <div class="section-label reveal">07 / Stories</div>
-    <h2 id="stories-title" class="reveal">STORIES</h2>
-    <p class="stories-sub reveal">Youth do not work in silos. Neither does impact.</p>
+    <h2 id="stories-title" class="reveal">STORIES OF CHANGE</h2>
+    <p class="stories-sub reveal" style="font-style:italic">Youth do not work in silos. Neither does impact.</p>
 
     <div class="stories-intro reveal">
       <p>Impact areas help us organise data. They do not define how young people build.</p>

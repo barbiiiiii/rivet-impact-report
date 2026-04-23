@@ -1099,6 +1099,25 @@ section{
 .card[data-area="education"]::after{border-color:var(--purple)}
 .card[data-area="poverty"]::after{border-color:var(--yellow)}
 .card[data-area="inclusion"]::after{border-color:#ff8a3d}
+.card-link{position:absolute;inset:0;z-index:3;display:block;cursor:pointer;text-decoration:none}
+.modal-content--story{
+  width:auto;max-width:min(92vw,720px);
+  padding:0;background:transparent;box-shadow:none;border-radius:0;
+  margin:3vh auto 3vh;
+}
+.modal-content--story img{display:block;width:100%;height:auto;border-radius:10px}
+.modal-content--story .modal-close{
+  position:absolute;top:10px;right:10px;
+  width:40px;height:40px;
+  background:#000;color:#fff;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;line-height:1;
+  z-index:2;
+  text-decoration:none;
+  transition:transform .2s ease,background .2s ease;
+}
+.modal-content--story .modal-close:hover{transform:scale(1.1);background:#222}
 .card .meta{
   display:flex;align-items:center;gap:.6rem;
   font-family:var(--inter);font-weight:700;font-size:.72rem;
@@ -2069,42 +2088,52 @@ section{
     <div class="cards" id="cards" data-filter="all">
       <article class="card reveal" data-area="sustainability">
         <img src="stories-covers/01-joshua.png" alt="Joshua Ichor — Geotek Water Project, Nigeria">
+        <a href="#story-modal-1" class="card-link" aria-label="Read Joshua's story"></a>
       </article>
 
       <article class="card reveal delay-1" data-area="sustainability">
         <img src="stories-covers/02-laraib.png" alt="Laraib Khan Tahir — The Green Root Project, Pakistan">
+        <a href="#story-modal-2" class="card-link" aria-label="Read Laraib's story"></a>
       </article>
 
       <article class="card reveal delay-2" data-area="health">
         <img src="stories-covers/03-hakim.png" alt="Hakim Kakooza — MariTest, UK & East Africa">
+        <a href="#story-modal-3" class="card-link" aria-label="Read Hakim's story"></a>
       </article>
 
       <article class="card reveal" data-area="health">
         <img src="stories-covers/04-emi-v2.png" alt="Emi Gaçaj — Tessering Biosciences, USA">
+        <a href="#story-modal-4" class="card-link" aria-label="Read Emi's story"></a>
       </article>
 
       <article class="card reveal delay-1" data-area="education">
         <img src="stories-covers/05-rayen.png" alt="Rayen Bouajaja — Lyceena, Tunisia">
+        <a href="#story-modal-5" class="card-link" aria-label="Read Rayen's story"></a>
       </article>
 
       <article class="card reveal delay-2" data-area="education">
         <img src="stories-covers/06-victoria.png" alt="Victoria Flores Almazan — Take Charge with Victoria, USA">
+        <a href="#story-modal-6" class="card-link" aria-label="Read Victoria's story"></a>
       </article>
 
       <article class="card reveal" data-area="poverty">
         <img src="stories-covers/07-stanley.png" alt="Stanley Anigbogu — LightEd, Nigeria">
+        <a href="#story-modal-7" class="card-link" aria-label="Read Stanley's story"></a>
       </article>
 
       <article class="card reveal delay-1" data-area="poverty">
         <img src="stories-covers/08-walter.png" alt="Walter Okwir — YIEN, Uganda">
+        <a href="#story-modal-8" class="card-link" aria-label="Read Walter's story"></a>
       </article>
 
       <article class="card reveal delay-2" data-area="inclusion">
         <img src="stories-covers/09-andrew.png" alt="Andrew Chang — Nunchi Health, USA">
+        <a href="#story-modal-9" class="card-link" aria-label="Read Andrew's story"></a>
       </article>
 
       <article class="card reveal" data-area="inclusion">
         <img src="stories-covers/10-melany.png" alt="Melany Ávila — Latin Girls at Work, Argentina & UK">
+        <a href="#story-modal-10" class="card-link" aria-label="Read Melany's story"></a>
       </article>
       <aside class="filter-info" id="filterInfo" aria-live="polite">
         <h3 class="filter-info-title"></h3>
@@ -2584,6 +2613,70 @@ section{
       <p style="margin:0 0 6px;">Tracking milestone completion and budget adherence in real time</p>
       <p style="margin:0;">Maintaining standardised reporting instruments across all geographies</p>
     </div>
+  </div>
+</div>
+
+<!-- ============================================
+     STORY MODALS
+     ============================================ -->
+<div id="story-modal-1" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/1.%20Joshua%20story.png" alt="Joshua's story">
+  </div>
+</div>
+<div id="story-modal-2" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/2.%20Laraib%20story.png" alt="Laraib's story">
+  </div>
+</div>
+<div id="story-modal-3" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/3.%20hakim%20story.png" alt="Hakim's story">
+  </div>
+</div>
+<div id="story-modal-4" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/4.%20emi%20story.png" alt="Emi's story">
+  </div>
+</div>
+<div id="story-modal-5" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/5.%20rayen%20story.png" alt="Rayen's story">
+  </div>
+</div>
+<div id="story-modal-6" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/6.%20victoria%20story.png" alt="Victoria's story">
+  </div>
+</div>
+<div id="story-modal-7" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/7.%20stanley%20story.png" alt="Stanley's story">
+  </div>
+</div>
+<div id="story-modal-8" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/8.%20walter%20story.png" alt="Walter's story">
+  </div>
+</div>
+<div id="story-modal-9" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/9.%20andrew%20story.png" alt="Andrew's story">
+  </div>
+</div>
+<div id="story-modal-10" class="modal-window">
+  <div class="modal-content modal-content--story">
+    <a href="#stories" class="modal-close" aria-label="Close">&#x2715;</a>
+    <img src="stories-VF/10.%20melany%20story.png" alt="Melany's story">
   </div>
 </div>
 </body>

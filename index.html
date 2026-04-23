@@ -368,21 +368,28 @@ section{
   background:var(--yellow);color:var(--black);
   overflow:hidden;
 }
-.about-inner{max-width:1400px;margin:0 auto;position:relative}
-.about-inner > *:not(.about-doodle){position:relative;z-index:1}
+.about-inner{max-width:1400px;margin:0 auto}
+.about-with-doodle{
+  display:grid;
+  grid-template-columns:clamp(396px,46.8vw,648px) minmax(0,1fr);
+  gap:2.5rem;
+  align-items:start;
+}
+.about-content-col{min-width:0;position:relative;z-index:1}
+.about-doodle-col{position:relative;align-self:stretch}
 .about-doodle{
-  float:right;
   position:sticky;
   top:calc(var(--nav-h) + 24px);
-  width:clamp(396px,46.8vw,648px);
-  height:auto;
-  margin:0 0 1.5rem 2.5rem;
+  width:100%;height:auto;
+  display:block;
   z-index:0;
   pointer-events:none;
   transform:translate(30px,-100px);
 }
-@media(max-width:760px){
-  .about-doodle{float:none;position:static;max-width:420px;width:100%;margin:0 auto 1.5rem;display:block;transform:none}
+@media(max-width:900px){
+  .about-with-doodle{grid-template-columns:1fr}
+  .about-doodle-col{order:-1}
+  .about-doodle{position:static;max-width:420px;width:100%;margin:0 auto;transform:none}
 }
 .about h2{margin-bottom:1.5rem;max-width:14ch}
 .stats-block{margin:2.5rem 0 3rem;display:flex;flex-direction:column;gap:1.4rem;}
@@ -1486,18 +1493,24 @@ section{
      ============================================ -->
 <section class="about" id="about" aria-labelledby="about-title">
   <div class="about-inner">
-    <img src="about-doodle.png" alt="" class="about-doodle">
-    <div class="section-label reveal">03 / About RIVET</div>
-    <h2 id="about-title" class="reveal" style="max-width:none"><span style="display:block">ACCELERATING YOUTH-LED</span><span style="display:block">SOCIAL INNOVATION</span><span style="display:block">AT SCALE</span></h2>
-    <p class="reveal" style="max-width:60ch;font-size:1.1rem;margin-bottom:2.5rem">Solutions to many of the world's most urgent social, political, and environmental challenges are being formulated right now by <strong style="color:var(--purple)">young people</strong> who stand to be most seriously affected by them. But these solutions are embryonic and diffuse, and the route from idea to deployment has never been more obstructed.</p>
-    <div class="stats-block">
-      <div class="stat-line reveal" style="transition-delay:.05s"><span class="stat-pill">1.8 billion</span> young people alive today — the largest youth population in history.</div>
-      <div class="stat-line reveal" style="transition-delay:.15s"><span class="stat-pill">85%</span> live in capital deserts, with limited access to financial or social capital.</div>
-      <div class="stat-line reveal" style="transition-delay:.25s"><span class="stat-pill">Less than 0.002%</span> of global philanthropic dollars reach early-stage, youth-led initiatives.</div>
-      <div class="stat-line reveal" style="transition-delay:.35s"><span class="stat-pill">$3 trillion</span> in annual spending controlled by Gen Z, reshaping how value and consumption intersect with social change.</div>
-      <div class="stat-closer reveal" style="transition-delay:.45s">
-        <p>This is not a talent gap. It is an infrastructure gap.</p>
-        <p><span class="stat-pill" style="display:inline-block;">RIVET exists to close it.</span></p>
+    <div class="about-with-doodle">
+      <div class="about-doodle-col">
+        <img src="about-doodle.png" alt="" class="about-doodle">
+      </div>
+      <div class="about-content-col">
+        <div class="section-label reveal">03 / About RIVET</div>
+        <h2 id="about-title" class="reveal" style="max-width:none"><span style="display:block">ACCELERATING YOUTH-LED</span><span style="display:block">SOCIAL INNOVATION</span><span style="display:block">AT SCALE</span></h2>
+        <p class="reveal" style="max-width:60ch;font-size:1.1rem;margin-bottom:2.5rem">Solutions to many of the world's most urgent social, political, and environmental challenges are being formulated right now by <strong style="color:var(--purple)">young people</strong> who stand to be most seriously affected by them. But these solutions are embryonic and diffuse, and the route from idea to deployment has never been more obstructed.</p>
+        <div class="stats-block">
+          <div class="stat-line reveal" style="transition-delay:.05s"><span class="stat-pill">1.8 billion</span> young people alive today — the largest youth population in history.</div>
+          <div class="stat-line reveal" style="transition-delay:.15s"><span class="stat-pill">85%</span> live in capital deserts, with limited access to financial or social capital.</div>
+          <div class="stat-line reveal" style="transition-delay:.25s"><span class="stat-pill">Less than 0.002%</span> of global philanthropic dollars reach early-stage, youth-led initiatives.</div>
+          <div class="stat-line reveal" style="transition-delay:.35s"><span class="stat-pill">$3 trillion</span> in annual spending controlled by Gen Z, reshaping how value and consumption intersect with social change.</div>
+          <div class="stat-closer reveal" style="transition-delay:.45s">
+            <p>This is not a talent gap. It is an infrastructure gap.</p>
+            <p><span class="stat-pill" style="display:inline-block;">RIVET exists to close it.</span></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="about-grid">

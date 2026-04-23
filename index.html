@@ -1019,8 +1019,22 @@ section{
    ============================================ */
 .ahead{background:var(--yellow);color:var(--black);overflow:hidden}
 .ahead-inner{max-width:1400px;margin:0 auto}
-.ahead h2{margin-bottom:1rem;max-width:12ch}
+.ahead h2{margin-bottom:1rem;max-width:none}
 .ahead-sub{font-size:1.1rem;margin-bottom:3rem;max-width:50ch}
+.ahead-sub-anim .seg{
+  background:linear-gradient(to right,var(--black) 50%,transparent 50%);
+  background-size:200% 100%;
+  background-position:right center;
+  padding:.05em .28em;
+  color:inherit;
+  transition:background-position .65s cubic-bezier(.65,0,.35,1), color .25s ease .15s;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+}
+.ahead-sub-anim .seg.lit{
+  background-position:left center;
+  color:var(--yellow);
+}
 .priorities{
   display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
   margin-bottom:4rem;
@@ -1861,9 +1875,9 @@ section{
      ============================================ -->
 <section class="ahead" id="ahead" aria-labelledby="ahead-title">
   <div class="ahead-inner">
-    <div class="section-label reveal">08 / Looking Ahead</div>
-    <h2 id="ahead-title" class="reveal">LOOKING AHEAD TO 2026</h2>
-    <p class="ahead-sub reveal">Refining the system. Growing the capital. Preparing to scale.</p>
+    <div class="section-label reveal">08 / 2026</div>
+    <h2 id="ahead-title" class="reveal">LOOKING<br>AHEAD TO 2026</h2>
+    <p class="ahead-sub ahead-sub-anim reveal"><span class="seg">Refining the system.</span> <span class="seg">Growing the capital.</span> <span class="seg">Preparing to scale.</span></p>
     <div class="priorities">
       <div class="priority reveal">
         <span class="num">01</span>
@@ -2040,6 +2054,16 @@ section{
   if (genderBar) animateOnce(genderBar, ()=>genderBar.classList.add('animate'));
   if (trustCycle) animateOnce(trustCycle, ()=>trustCycle.classList.add('active'));
   if (mapWrap) animateOnce(mapWrap, ()=>mapWrap.classList.add('active'));
+
+  const aheadSub = document.querySelector('.ahead-sub-anim');
+  if (aheadSub){
+    animateOnce(aheadSub, ()=>{
+      const segs = aheadSub.querySelectorAll('.seg');
+      segs.forEach((seg,i)=>{
+        setTimeout(()=>seg.classList.add('lit'), 250 + i*650);
+      });
+    });
+  }
 
   document.querySelectorAll('.map-dot').forEach(dot => {
     const region = dot.dataset.region;

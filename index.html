@@ -435,19 +435,22 @@ section{
 .who-prev,.who-next{background:none;border:2px solid rgba(255,255,255,.35);color:#fff;width:38px;height:38px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;line-height:1;padding-bottom:2px;}
 .together-highlight{background:var(--red);color:#fff;font-weight:700;padding:1px 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
 .usd-highlight{background:var(--yellow);color:#000;font-weight:700;padding:0px 4px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
-.principles{background:#e8e8e8;border-top:5px solid var(--yellow);border-bottom:5px solid var(--yellow);}
+.principles{background:#e8e8e8;border-top:5px solid var(--yellow);border-bottom:5px solid var(--yellow);position:relative;overflow:hidden;}
 .principles-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
 .principles-heading{font-family:var(--bebas);font-weight:400;color:#000;font-size:clamp(3.5rem,6vw,7rem);line-height:.88;}
 .principles-heading span{display:block;}
 .principles-side{position:relative}
 .principles-spin-wrap{
-  position:relative;
-  width:100%;
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:clamp(260px,28vw,420px);
   aspect-ratio:1;
   overflow:hidden;
-  margin-top:2rem;
-  transform:translateY(-150px);
+  z-index:0;
+  pointer-events:none;
 }
+.principles-inner{position:relative;z-index:1}
 .principles-spin{
   position:absolute;
   left:-55%;
@@ -1596,9 +1599,6 @@ section{
         <span>Impact</span>
         <span>Principles</span>
       </div>
-      <div class="principles-spin-wrap" aria-hidden="true">
-        <svg class="principles-spin" viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg>
-      </div>
     </div>
     <div class="principles-grid">
       <div class="principle-box pb1 reveal">
@@ -1618,6 +1618,9 @@ section{
         <div class="pb-text"><p style="color:#000">RIVET is designed by youth, for youth. Young people co-design our strategy, sign off on brand and impact partners, vote on our board, and occupy executive leadership roles.</p></div>
       </div>
     </div>
+  </div>
+  <div class="principles-spin-wrap" aria-hidden="true">
+    <svg class="principles-spin" viewBox="0 0 100 100" fill="currentColor"><use href="#rivet-mark"/></svg>
   </div>
 </section>
 <section class="capital" id="trust-compounding" aria-label="Trust Compounding Cycle" style="padding-top:clamp(24px,3vw,48px);padding-bottom:clamp(40px,5vw,80px)">

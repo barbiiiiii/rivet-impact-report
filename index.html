@@ -987,6 +987,17 @@ section{
 .cards[data-filter="poverty"] .card[data-area="poverty"],
 .cards[data-filter="inclusion"] .card[data-area="inclusion"]{display:flex}
 
+.filter-info{display:none;align-self:start;padding:1rem .5rem 1rem 1rem;opacity:0;transform:translateX(24px);transition:opacity .55s ease,transform .55s ease;}
+.cards:not([data-filter="all"]) .filter-info{display:flex;flex-direction:column;gap:1rem;opacity:1;transform:translateX(0)}
+.filter-info-title{font-family:var(--bebas);font-size:clamp(2.4rem,4vw,4rem);line-height:.95;letter-spacing:.01em;margin:0}
+.filter-info-body{font-family:var(--inter);font-weight:400;color:var(--black);font-size:1rem;line-height:1.6;margin:0}
+.filter-info-body strong{font-weight:700}
+.cards[data-filter="sustainability"] .filter-info-title{color:#2dbe5f}
+.cards[data-filter="health"] .filter-info-title{color:var(--red)}
+.cards[data-filter="education"] .filter-info-title{color:var(--purple)}
+.cards[data-filter="poverty"] .filter-info-title{color:#b8a300}
+.cards[data-filter="inclusion"] .filter-info-title{color:#ff8a3d}
+
 @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.cards{grid-template-columns:1fr}}
 
@@ -1925,7 +1936,7 @@ section{
       <button class="filter-btn" data-filter="health" role="tab">Health &amp; Wellness</button>
       <button class="filter-btn" data-filter="education" role="tab">Education</button>
       <button class="filter-btn" data-filter="poverty" role="tab">Poverty Reduction</button>
-      <button class="filter-btn" data-filter="inclusion" role="tab">Inclusion</button>
+      <button class="filter-btn" data-filter="inclusion" role="tab">Inclusion &amp; Belonging</button>
     </div>
 
     <div class="cards" id="cards" data-filter="all">
@@ -1968,6 +1979,10 @@ section{
       <article class="card reveal" data-area="inclusion">
         <img src="stories-covers/10-melany.png" alt="Melany Ávila — Latin Girls at Work, Argentina & UK">
       </article>
+      <aside class="filter-info" id="filterInfo" aria-live="polite">
+        <h3 class="filter-info-title"></h3>
+        <p class="filter-info-body"></p>
+      </aside>
     </div>
   </div>
 </section>
@@ -2301,6 +2316,31 @@ section{
   /* ---------- Story filter ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.getElementById('cards');
+  const filterInfo = document.getElementById('filterInfo');
+  const filterInfoTitle = filterInfo ? filterInfo.querySelector('.filter-info-title') : null;
+  const filterInfoBody = filterInfo ? filterInfo.querySelector('.filter-info-body') : null;
+  const filterCopy = {
+    sustainability:{
+      title:'SUSTAINABILITY',
+      body:'<strong>Building resilience where land, water, and climate intersect.</strong> Youth-led climate and environmental innovation is often framed as future-oriented. In reality, for many communities, it is about survival today. The following stories show how young leaders are building practical, systems-level responses to water scarcity, land degradation, and climate stress — and how early support transforms urgency into durable infrastructure.'
+    },
+    health:{
+      title:'HEALTH & WELLNESS',
+      body:'<strong>Redesigning care around lived experience, access, and dignity.</strong> Health inequity is rarely caused by a lack of innovation. It is caused by a lack of access: to safe diagnostics, to tolerable contraception, to systems that prioritise the people most affected. The following stories show what happens when young leaders step into those gaps — and how early belief accelerates their trajectory.'
+    },
+    education:{
+      title:'EDUCATION',
+      body:'<strong>Transforming who gets information, voice, and agency within learning systems.</strong> Education reform is often discussed at the policy level. But real change frequently begins with young people who have lived through the system — and decided to redesign it from the inside. The following stories show how youth leaders are transforming access to information, opportunity, and agency in their own contexts.'
+    },
+    poverty:{
+      title:'POVERTY REDUCTION',
+      body:'<strong>Turning vital resources into engines of economic dignity.</strong> Poverty is rarely the result of a single missing resource. It is the accumulation of structural barriers — lack of economic agency, unreliable energy, inadequate sanitation — that compound over time. Youth-led solutions often intervene at these leverage points, addressing root causes rather than symptoms.'
+    },
+    inclusion:{
+      title:'INCLUSION & BELONGING',
+      body:'<strong>Redesigning systems so identity becomes strength, not barrier.</strong> Inclusion is rarely about a single missing opportunity. It is the accumulation of invisible barriers — cultural stigma, language gaps, lack of representation, exclusion from networks — that compound over time. Youth-led solutions often intervene at these leverage points, redesigning systems from the inside. They build models where identity is not an obstacle but an asset.'
+    }
+  };
   filterBtns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const f = btn.dataset.filter;
@@ -2309,6 +2349,21 @@ section{
         b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
       });
       cards.setAttribute('data-filter', f);
+      if (filterInfo && filterCopy[f]){
+        filterInfoTitle.textContent = filterCopy[f].title;
+        filterInfoBody.innerHTML = filterCopy[f].body;
+        // restart animation
+        filterInfo.style.transition = 'none';
+        filterInfo.style.opacity = '0';
+        filterInfo.style.transform = 'translateX(24px)';
+        requestAnimationFrame(()=>{
+          requestAnimationFrame(()=>{
+            filterInfo.style.transition = '';
+            filterInfo.style.opacity = '';
+            filterInfo.style.transform = '';
+          });
+        });
+      }
     });
   });
 })();

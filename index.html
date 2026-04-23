@@ -1081,7 +1081,7 @@ section{
 .card::after{
   content:'READ MY STORY';
   position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(.95);
+  transform:translate(calc(-50% + 30px),calc(-50% + 150px)) scale(.95);
   font-family:var(--bebas);
   font-size:1.25rem;letter-spacing:.12em;
   background:#000;color:#fff;
@@ -1094,7 +1094,7 @@ section{
   white-space:nowrap;
   text-transform:uppercase;
 }
-.card:hover::after{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.card:hover::after{opacity:1;transform:translate(calc(-50% + 30px),calc(-50% + 150px)) scale(1)}
 .card[data-area="sustainability"]::after{border-color:#2dbe5f}
 .card[data-area="health"]::after{border-color:var(--red)}
 .card[data-area="education"]::after{border-color:var(--purple)}

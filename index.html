@@ -716,7 +716,7 @@ section{
 .pc-quote--y{background:var(--yellow);color:#000}
 .pc-quote--p{background:var(--purple);color:#fff}
 .pc-quote--r{background:var(--red);color:#fff}
-.pc-bottom{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:2.2rem 2.4rem;border-radius:4px;background:#e0e0e0;align-items:start;min-height:320px}
+.pc-bottom{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:1.6rem 2rem;border-radius:4px;background:#e0e0e0;align-items:start;min-height:240px}
 .pc-bottom--full{grid-template-columns:1fr}
 .pc-bottom p{font-family:var(--inter);font-size:.97rem;line-height:1.72;color:#000;margin:0 0 .8rem}
 .pc-bottom p:last-child{margin:0}
@@ -731,7 +731,8 @@ section{
 .pc-logo-composite{padding:0;display:flex;align-items:center;justify-content:center}
 .pc-logo-composite img{
   display:block;
-  width:70%;height:auto;max-width:100%;
+  width:auto;height:auto;max-width:70%;max-height:180px;
+  object-fit:contain;
   transform:translateY(-10px);
 }
 .pc-logo-pill{

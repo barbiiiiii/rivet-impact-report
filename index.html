@@ -439,6 +439,25 @@ section{
 .principles-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;}
 .principles-heading{font-family:var(--bebas);font-weight:400;color:#000;font-size:clamp(3.5rem,6vw,7rem);line-height:.88;}
 .principles-heading span{display:block;}
+.pathway-header{
+  display:flex;
+  align-items:center;
+  gap:2.5rem;
+  margin-bottom:1.5rem;
+  flex-wrap:nowrap;
+}
+.pathway-doodle{
+  flex:1;
+  min-width:0;
+  max-height:200px;
+  width:auto;
+  object-fit:contain;
+  object-position:left center;
+}
+@media(max-width:760px){
+  .pathway-header{flex-direction:column;align-items:flex-start}
+  .pathway-doodle{width:100%;max-height:140px}
+}
 .principles-side{position:relative}
 .principles-spin-wrap{
   position:absolute;
@@ -1723,8 +1742,11 @@ section{
 </section>
 <section class="capital capital-continued" id="capital-tiers" aria-label="Funding tiers" style="padding-top:clamp(40px,5vw,80px)">
   <div class="capital-inner">
-    <div class="principles-heading reveal" style="color:#fff;position:static;margin-bottom:1.5rem">
-      <span>The Capital</span><span>Pathway</span>
+    <div class="pathway-header reveal">
+      <div class="principles-heading" style="color:#fff;position:static;margin-bottom:0">
+        <span>The Capital</span><span>Pathway</span>
+      </div>
+      <img src="capital%20pathways%20doodle.png" alt="" class="pathway-doodle" aria-hidden="true">
     </div>
     <p class="reveal" style="font-family:var(--inter);font-size:1.1rem;color:rgba(255,255,255,.78);max-width:62ch;margin-bottom:2.5rem">RIVET structures funding across three tiers that reflect how youth-led innovation actually grows:</p>
     <div class="tiers">

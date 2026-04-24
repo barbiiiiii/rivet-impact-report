@@ -4,26 +4,19 @@
     "sizes": [256, 384, 640, 828, 1080, 1200, 1500, 1920, 2048, 2560],
     "formats": ["image/avif", "image/webp"],
     "minimumCacheTTL": 31536000,
-    "qualities": [60, 75, 85, 92, 100],
     "localPatterns": [
-      { "pathname": "/.*" }
+      { "pathname": "/**" }
     ]
   },
   "headers": [
     {
-      "source": "/:path*.(png|jpg|jpeg|gif|svg|webp|avif|ico)",
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|svg|webp|avif|ico)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/:path*.(css|js|woff|woff2|ttf|otf|eot)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/_vercel/image",
+      "source": "/(.*)\\.(css|js|woff|woff2|ttf|otf|eot)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

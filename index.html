@@ -607,80 +607,98 @@ section{
 .trust-copy p{color:rgba(255,255,255,.82);margin-bottom:1rem;max-width:46ch}
 
 .trust-cycle{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:0 auto}
-.trust-cycle svg{width:100%;height:100%;overflow:visible;color:var(--yellow)}
+.trust-cycle svg{width:100%;height:100%;overflow:visible}
+.trust-cycle .ring{
+  fill:none;stroke:var(--yellow);stroke-width:3;
+  stroke-dasharray:8 10;stroke-linecap:round;
+  opacity:.55;
+  transform-origin:200px 200px;
+  animation:trust-ring-spin 60s linear infinite;
+}
+@keyframes trust-ring-spin{to{transform:rotate(360deg)}}
+.trust-cycle .doodle{opacity:0;transition:opacity .9s var(--ease) .2s}
+.trust-cycle.active .doodle{opacity:1}
+.trust-cycle .doodle .sparkle{animation:twinkle 3.2s ease-in-out infinite}
+.trust-cycle .doodle .sparkle:nth-child(2){animation-delay:.4s}
+.trust-cycle .doodle .sparkle:nth-child(3){animation-delay:.8s}
+.trust-cycle .doodle .sparkle:nth-child(4){animation-delay:1.2s}
+.trust-cycle .doodle .sparkle:nth-child(5){animation-delay:1.6s}
+.trust-cycle .doodle .sparkle:nth-child(6){animation-delay:2s}
+@keyframes twinkle{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.55}}
+.trust-cycle .chevrons{opacity:0;transition:opacity .9s var(--ease) .3s}
+.trust-cycle.active .chevrons{opacity:.95}
+.trust-cycle .chevrons path{transform-box:fill-box;transform-origin:center}
+
 .trust-node{
   position:absolute;transform:translate(-50%,-50%);
-  width:clamp(100px,12vw,150px);
+  width:clamp(104px,12.5vw,156px);
   text-align:center;
-  font-size:.74rem;line-height:1.2;font-weight:700;
+  font-size:.76rem;line-height:1.2;font-weight:700;
   letter-spacing:.04em;text-transform:uppercase;
-  color:rgba(255,255,255,.88);
+  color:#fff;
   display:flex;flex-direction:column;align-items:center;gap:.5rem;
 }
 .trust-node .num{
   display:flex;align-items:center;justify-content:center;
-  width:44px;height:44px;border-radius:50%;
+  width:56px;height:56px;border-radius:50%;
   background:#0b0b0b;
-  border:2px solid rgba(233,249,88,.35);
-  color:rgba(255,255,255,.7);
+  border:3px solid var(--node-color,var(--yellow));
+  color:#fff;
   font-family:var(--bebas);
-  font-size:1.25rem;letter-spacing:.04em;line-height:1;
+  font-size:1.5rem;letter-spacing:.04em;line-height:1;
   padding-top:2px;
-  transition:background .5s var(--ease),border-color .5s var(--ease),color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
+  transition:background .5s var(--ease),color .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease);
 }
 .trust-node .label{display:block}
 .trust-cycle.active .trust-node .num{
-  background:var(--yellow);
-  border-color:var(--yellow);
+  background:var(--node-color,var(--yellow));
   color:var(--black);
-  box-shadow:0 0 0 6px rgba(233,249,88,.14);
+  box-shadow:0 0 0 6px color-mix(in srgb,var(--node-color,var(--yellow)) 22%,transparent),0 0 22px color-mix(in srgb,var(--node-color,var(--yellow)) 55%,transparent);
+  transform:rotate(var(--node-tilt,0deg));
 }
 .trust-cycle.active .trust-node[data-step="02"] .num{transition-delay:.2s}
 .trust-cycle.active .trust-node[data-step="03"] .num{transition-delay:.4s}
 .trust-cycle.active .trust-node[data-step="04"] .num{transition-delay:.6s}
 .trust-cycle.active .trust-node[data-step="05"] .num{transition-delay:.8s}
 .trust-cycle.active .trust-node[data-step="06"] .num{transition-delay:1s}
+.trust-node[data-step="01"]{--node-color:#E9F958;--node-tilt:-6deg}
+.trust-node[data-step="02"]{--node-color:#ff8a3d;--node-tilt:4deg}
+.trust-node[data-step="03"]{--node-color:#f55a5a;--node-tilt:-3deg}
+.trust-node[data-step="04"]{--node-color:#c7b6ff;--node-tilt:5deg}
+.trust-node[data-step="05"]{--node-color:#2dbe5f;--node-tilt:-4deg}
+.trust-node[data-step="06"]{--node-color:#59d7ff;--node-tilt:3deg}
 
 /* Start-here treatment — node 01 always glows and shows the tag */
 .trust-node--start .num{
-  background:var(--yellow);
-  border-color:var(--yellow);
+  background:var(--node-color);
   color:var(--black);
-  box-shadow:0 0 0 8px rgba(233,249,88,.22),0 0 24px rgba(233,249,88,.4);
+  box-shadow:0 0 0 8px color-mix(in srgb,var(--node-color) 26%,transparent),0 0 28px color-mix(in srgb,var(--node-color) 60%,transparent);
   animation:startPulse 2.6s ease-in-out infinite;
 }
 @keyframes startPulse{
-  0%,100%{box-shadow:0 0 0 6px rgba(233,249,88,.22),0 0 18px rgba(233,249,88,.3)}
-  50%{box-shadow:0 0 0 12px rgba(233,249,88,.12),0 0 32px rgba(233,249,88,.55)}
+  0%,100%{transform:rotate(-6deg) scale(1)}
+  50%{transform:rotate(-6deg) scale(1.08)}
 }
 .trust-node--start .start-tag{
   display:inline-block;
   margin-top:.2rem;
-  padding:.2rem .55rem;
+  padding:.25rem .6rem;
   background:var(--yellow);color:var(--black);
-  font-family:var(--inter);font-size:.6rem;letter-spacing:.22em;
-  border-radius:3px;
+  font-family:var(--inter);font-size:.6rem;letter-spacing:.22em;font-weight:900;
+  border-radius:999px;
+  transform:rotate(-3deg);
+  box-shadow:2px 2px 0 #000;
 }
 
-/* Ring + chevrons + pulse */
-.trust-cycle .ring{
-  fill:none;stroke:var(--yellow);stroke-width:1.5;
-  stroke-dasharray:4 6;
-  opacity:.45;
-  transition:opacity .8s var(--ease);
-}
-.trust-cycle.active .ring{opacity:.7}
-.trust-cycle .chevrons{opacity:0;transition:opacity .9s var(--ease) .3s}
-.trust-cycle.active .chevrons{opacity:.9}
 .trust-cycle .trust-pulse{
   opacity:0;
-  filter:drop-shadow(0 0 8px var(--yellow));
+  filter:drop-shadow(0 0 8px #E9F958);
   transition:opacity .8s var(--ease) .6s;
 }
 .trust-cycle.active .trust-pulse{opacity:1}
 
 @media (prefers-reduced-motion:reduce){
-  .trust-node--start .num{animation:none}
+  .trust-node--start .num,.trust-cycle .ring,.trust-cycle .doodle .sparkle{animation:none}
   .trust-cycle .trust-pulse{display:none}
 }
 
@@ -1830,15 +1848,27 @@ section{
       <div class="trust-cycle reveal" id="trustCycle" aria-hidden="true">
         <svg viewBox="0 0 400 400" class="trust-svg">
           <circle class="ring" cx="200" cy="200" r="160"/>
-          <g class="chevrons" fill="currentColor">
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(280,61) rotate(30)"/>
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(360,200) rotate(90)"/>
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(280,339) rotate(150)"/>
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(120,339) rotate(210)"/>
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(40,200) rotate(270)"/>
-            <path d="M-7,-5 L7,0 L-7,5 Z" transform="translate(120,61) rotate(330)"/>
+          <g class="chevrons">
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#ff8a3d" transform="translate(280,61) rotate(30)"/>
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#f55a5a" transform="translate(360,200) rotate(90)"/>
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#c7b6ff" transform="translate(280,339) rotate(150)"/>
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#2dbe5f" transform="translate(120,339) rotate(210)"/>
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#59d7ff" transform="translate(40,200) rotate(270)"/>
+            <path d="M-9,-6 L9,0 L-9,6 Z" fill="#E9F958" transform="translate(120,61) rotate(330)"/>
           </g>
-          <circle class="trust-pulse" cx="200" cy="40" r="9" fill="currentColor">
+          <g class="doodle">
+            <g class="sparkle" transform="translate(200,200)" fill="#E9F958"><path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z"/></g>
+            <g class="sparkle" transform="translate(68,115)" fill="#ff8a3d"><path d="M0,-8 L1.6,-1.6 L8,0 L1.6,1.6 L0,8 L-1.6,1.6 L-8,0 L-1.6,-1.6 Z"/></g>
+            <g class="sparkle" transform="translate(336,120)" fill="#c7b6ff"><path d="M0,-7 L1.4,-1.4 L7,0 L1.4,1.4 L0,7 L-1.4,1.4 L-7,0 L-1.4,-1.4 Z"/></g>
+            <g class="sparkle" transform="translate(75,290)" fill="#59d7ff"><path d="M0,-9 L1.8,-1.8 L9,0 L1.8,1.8 L0,9 L-1.8,1.8 L-9,0 L-1.8,-1.8 Z"/></g>
+            <g class="sparkle" transform="translate(330,300)" fill="#2dbe5f"><path d="M0,-7 L1.4,-1.4 L7,0 L1.4,1.4 L0,7 L-1.4,1.4 L-7,0 L-1.4,-1.4 Z"/></g>
+            <g class="sparkle" transform="translate(200,360)" fill="#f55a5a"><path d="M0,-8 L1.6,-1.6 L8,0 L1.6,1.6 L0,8 L-1.6,1.6 L-8,0 L-1.6,-1.6 Z"/></g>
+            <path d="M40,50 Q48,42 56,50 Q64,58 72,50" fill="none" stroke="#c7b6ff" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M330,55 L338,48 M338,55 L330,48 M334,60 L334,42" stroke="#E9F958" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M352,340 Q360,332 368,340" fill="none" stroke="#59d7ff" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M40,338 L48,346 M48,338 L40,346" stroke="#f55a5a" stroke-width="2.4" stroke-linecap="round"/>
+          </g>
+          <circle class="trust-pulse" cx="200" cy="40" r="10" fill="#E9F958">
             <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite"/>
           </circle>
         </svg>

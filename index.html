@@ -790,12 +790,12 @@ section{
 
 .pc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem;align-items:stretch}
 @media(max-width:860px){.pc-grid{grid-template-columns:1fr}}
-.pc-left{background:var(--purple);color:#fff;padding:clamp(2rem,3.5vw,3rem);border-radius:10px;display:flex;flex-direction:column;gap:1rem}
+.pc-left{background:var(--purple);color:#fff;padding:calc(clamp(2rem,3.5vw,3rem) - 7.5px) clamp(2rem,3.5vw,3rem);border-radius:10px;display:flex;flex-direction:column;gap:1rem}
 .pc-left h3{font-family:var(--bebas);font-weight:400;font-size:clamp(2.4rem,4vw,3.6rem);line-height:.96;color:#fff;margin:0 0 .4rem;text-transform:uppercase;letter-spacing:.01em}
 .pc-left p{font-family:var(--inter);font-weight:400;color:#fff;font-size:1rem;line-height:1.6;margin:0}
 .pc-left p strong.hl-y{color:var(--yellow);font-weight:700}
 .pc-right{
-  padding:clamp(2rem,3.5vw,3rem);border-radius:10px;
+  padding:calc(clamp(2rem,3.5vw,3rem) - 7.5px) clamp(2rem,3.5vw,3rem);border-radius:10px;
   background-color:#fff;
   background-image:linear-gradient(to right,rgba(107,98,242,.18) 1px,transparent 1px),linear-gradient(to bottom,rgba(107,98,242,.18) 1px,transparent 1px);
   background-size:24px 24px;
@@ -1021,7 +1021,7 @@ section{
 .global-reach > *{position:relative;z-index:1}
 .global-reach h3{
   font-family:var(--bebas);font-size:clamp(1.8rem,3vw,2.6rem);
-  color:var(--yellow);margin-bottom:1rem;
+  color:var(--yellow);margin-top:10px;margin-bottom:1rem;
 }
 .region-list{display:flex;flex-direction:column;gap:.55rem;margin-top:1.4rem}
 .region-list li{
@@ -1067,7 +1067,7 @@ section{
   font-family:var(--bebas);
   font-size:clamp(1.8rem,3vw,2.6rem);
   color:var(--yellow);
-  margin:5rem 0 1rem 30px;
+  margin:5rem 0 1rem 50px;
 }
 .catalytic-img{display:block;width:100%;height:auto}
 .catalytic h3{
@@ -2107,7 +2107,7 @@ section{
       </div>
 
     </div>
-    <p class="reveal" style="font-family:var(--inter);font-size:1.05rem;font-weight:400;color:#000;line-height:1.75;margin-top:2.5rem;max-width:none">At RIVET, partnerships are not one-off collaborations. They are long-term relationships built around shared responsibility for outcomes. For youth innovators, this means access to a network, not just a grant. For brands and institutions, it means participation in a credible, learning-oriented system.<br><br>One question guides how we build partnerships:<br><span style="font-family:var(--bebas);font-weight:400;font-size:1.155em;line-height:1.15;display:inline-block;margin-top:.3em" class="usd-highlight">does this relationship strengthen the system around youth-led impact?</span></p>
+    <p class="reveal" style="font-family:var(--inter);font-size:1.05rem;font-weight:400;color:#000;line-height:1.75;margin-top:2.5rem;max-width:none">At RIVET, partnerships are not one-off collaborations. They are long-term relationships built around shared responsibility for outcomes. For youth innovators, this means access to a network, not just a grant. For brands and institutions, it means participation in a credible, learning-oriented system.<br><br>One question guides how we build partnerships:<br><span style="font-family:var(--bebas);font-weight:400;font-size:1.5em;line-height:1.1;display:inline-block;margin-top:.3em" class="usd-highlight">does this relationship strengthen the system around youth-led impact?</span></p>
   </div>
 </section>
 

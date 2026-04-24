@@ -1294,12 +1294,18 @@ section{
 .year-inner{max-width:1400px;margin:0 auto}
 .year h2{color:var(--white);margin-bottom:0;max-width:16ch}
 .year-header{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  gap:2rem;flex-wrap:wrap;margin-bottom:1rem;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,1fr);
+  align-items:end;
+  gap:2rem;
+  margin-bottom:1rem;
 }
-.year-header-text{flex:1;min-width:0}
-.year-header-img{max-width:63%;height:auto;align-self:flex-end;transform:translateX(100px)}
-@media(max-width:760px){.year-header-img{max-width:90%}}
+.year-header-text{min-width:0}
+.year-header-img{width:100%;max-width:600px;height:auto;justify-self:end;transform:translateX(40px)}
+@media(max-width:900px){
+  .year-header{grid-template-columns:1fr}
+  .year-header-img{max-width:100%;justify-self:start;transform:none}
+}
 .year-byline{
   display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:flex-end;
   font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;

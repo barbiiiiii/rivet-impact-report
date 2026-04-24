@@ -1661,7 +1661,17 @@ section{
   .partnerships h2{max-width:none}
 
   /* Numbers / catalytic / Global reach */
-  .global-reach{padding:2rem 0}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .stat{min-height:140px;padding:1.2rem 1rem 1rem;justify-content:flex-start}
+  .stat .tag{position:static;margin-bottom:.5rem;text-align:left;align-self:flex-start}
+  .stat .counter{font-size:clamp(2.4rem,12vw,4rem);margin-bottom:.2rem}
+  .stat .label{margin-top:.25rem;font-size:.78rem;text-align:left}
+  .breakdowns{grid-template-columns:1fr !important;gap:2rem;margin-top:2.5rem}
+  .gender-extra-img{transform:translate(-20px,-30px) scale(1.1)}
+  .gender-extra-img:hover{transform:translate(-20px,-30px) scale(1.14)}
+  .global-reach{padding:2rem 0;grid-template-columns:1fr !important;isolation:auto}
+  .global-reach::before{left:calc(50% - 50vw);right:calc(50% - 50vw);width:100vw;z-index:-1}
+  #mapWrap,#mapWrap.reveal,#mapWrap.reveal.visible{transform:translateY(20px) !important}
   .catalytic-img-title{margin:2rem 0 1rem 0 !important;text-align:left}
   .catalytic-img{width:100%}
 
@@ -1669,6 +1679,10 @@ section{
   .stories-header-img{display:none}
   .stories-filter{flex-wrap:wrap;gap:.6rem}
   .cards{grid-template-columns:1fr !important}
+  .filter-info{order:-1 !important;transform:none !important}
+  .card .card-link{opacity:1 !important;pointer-events:auto !important;top:auto !important;bottom:14px !important;left:50% !important;transform:translateX(-50%) !important;font-size:1.05rem;padding:.7rem 1.4rem}
+  .card .card-link:hover{transform:translateX(-50%) scale(1.04) !important}
+  .card.story-open .card-link{display:none !important}
 
   /* Ahead / priorities */
   .priorities{grid-template-columns:1fr !important;gap:1rem}

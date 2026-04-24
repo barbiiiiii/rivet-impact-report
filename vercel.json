@@ -4,9 +4,7 @@
     "sizes": [256, 384, 640, 828, 1080, 1200, 1500, 1920, 2048, 2560],
     "formats": ["image/avif", "image/webp"],
     "minimumCacheTTL": 31536000,
-    "localPatterns": [
-      { "pathname": "/**" }
-    ]
+    "qualities": [60, 75, 85, 90, 100]
   },
   "headers": [
     {

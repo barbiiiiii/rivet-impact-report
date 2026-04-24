@@ -791,6 +791,7 @@ section{
 .pc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem;align-items:stretch}
 @media(max-width:860px){.pc-grid{grid-template-columns:1fr}}
 .pc-left{background:var(--purple);color:#fff;padding:calc(clamp(2rem,3.5vw,3rem) - 7.5px) clamp(2rem,3.5vw,3rem);border-radius:10px;display:flex;flex-direction:column;gap:1rem}
+.pc-slide--brand .pc-left,.pc-slide--brand .pc-right{padding-bottom:calc(clamp(2rem,3.5vw,3rem) - 27.5px)}
 .pc-left h3{font-family:var(--bebas);font-weight:400;font-size:clamp(2.4rem,4vw,3.6rem);line-height:.96;color:#fff;margin:0 0 .4rem;text-transform:uppercase;letter-spacing:.01em}
 .pc-left p{font-family:var(--inter);font-weight:400;color:#fff;font-size:1rem;line-height:1.6;margin:0}
 .pc-left p strong.hl-y{color:var(--yellow);font-weight:700}
@@ -2012,7 +2013,7 @@ section{
       </div>
 
       <!-- Slide 1: Brand & Corporate -->
-      <div class="pc-slide active">
+      <div class="pc-slide pc-slide--brand active">
         <div class="pc-grid">
           <div class="pc-left">
             <h3>Brand &amp; Corporate Partners</h3>

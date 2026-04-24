@@ -1046,8 +1046,10 @@ section{
 /* ============================================
    §07 STORIES
    ============================================ */
-.stories{background:var(--white);color:var(--black);overflow:hidden}
-.stories-inner{max-width:1400px;margin:0 auto}
+.stories{background:var(--white);color:var(--black);overflow:hidden;position:relative}
+.stories-inner{max-width:1400px;margin:0 auto;position:relative}
+.stories-header-img{position:absolute;top:clamp(16px,2.5vw,48px);right:clamp(16px,2.5vw,48px);width:clamp(180px,22vw,340px);height:auto;pointer-events:none;z-index:2}
+@media(max-width:760px){.stories-header-img{width:140px;top:12px;right:12px}}
 .stories h2{margin-bottom:.8rem}
 .stories-sub{font-size:1.1rem;color:#555;margin-bottom:1.5rem;max-width:60ch}
 .stories-intro{font-family:var(--inter);font-weight:400;color:var(--black);max-width:none;margin-bottom:2rem;font-size:1rem;line-height:1.6}
@@ -2108,6 +2110,7 @@ section{
      §07 STORIES OF CHANGE
      ============================================ -->
 <section class="stories" id="stories" aria-labelledby="stories-title">
+  <img src="stories%20header.png" alt="" class="stories-header-img" loading="lazy">
   <div class="stories-inner">
     <div class="section-label reveal">07 / Stories</div>
     <h2 id="stories-title" class="reveal">STORIES OF CHANGE</h2>

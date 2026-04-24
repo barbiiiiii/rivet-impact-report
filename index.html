@@ -600,11 +600,24 @@ section{
   display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
   margin-top:2rem;
 }
+.trust-copy{position:relative}
 .trust-copy h3{
   font-family:var(--bebas);font-size:clamp(3.5rem,6vw,7rem);line-height:.88;
-  color:var(--yellow);margin-bottom:1rem;
+  color:var(--yellow);margin-bottom:1rem;position:relative;z-index:1;
 }
-.trust-copy p{color:rgba(255,255,255,.82);margin-bottom:1rem;max-width:46ch}
+.trust-copy p{color:rgba(255,255,255,.82);margin-bottom:1rem;max-width:46ch;position:relative;z-index:1}
+.trust-copy .copy-doodles{
+  position:absolute;inset:-40px -20px -20px -60px;
+  pointer-events:none;z-index:0;overflow:visible;
+}
+.trust-copy .copy-doodles svg{position:absolute;animation:twinkle 3.6s ease-in-out infinite}
+.trust-copy .copy-doodles svg:nth-child(1){top:-6px;left:4%;width:46px;height:46px;animation-delay:.1s;transform:rotate(-12deg)}
+.trust-copy .copy-doodles svg:nth-child(2){top:14%;right:-4px;width:54px;height:54px;animation-delay:.9s;transform:rotate(14deg)}
+.trust-copy .copy-doodles svg:nth-child(3){top:46%;left:-24px;width:60px;height:60px;animation-delay:.4s}
+.trust-copy .copy-doodles svg:nth-child(4){top:52%;right:8%;width:42px;height:42px;animation-delay:1.4s;transform:rotate(-18deg)}
+.trust-copy .copy-doodles svg:nth-child(5){bottom:2%;left:6%;width:52px;height:52px;animation-delay:1.8s}
+.trust-copy .copy-doodles svg:nth-child(6){bottom:-10px;right:16%;width:48px;height:48px;animation-delay:.6s;transform:rotate(22deg)}
+.trust-copy .copy-doodles svg:nth-child(7){top:30%;left:52%;width:34px;height:34px;animation-delay:2.1s;transform:rotate(-8deg)}
 
 .trust-cycle{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:0 auto}
 .trust-cycle svg{width:100%;height:100%;overflow:visible}
@@ -1842,6 +1855,15 @@ section{
   <div class="capital-inner">
     <div class="trust-wrap">
       <div class="trust-copy reveal">
+        <div class="copy-doodles" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 3 L23.6 16.4 L37 20 L23.6 23.6 L20 37 L16.4 23.6 L3 20 L16.4 16.4 Z" fill="#E9F958"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path d="M4 20 Q12 8 20 20 Q28 32 36 20" stroke="#6B62F2" stroke-width="3.5" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 4 L24 16 L37 17 L27 25 L30 38 L20 31 L10 38 L13 25 L3 17 L16 16 Z" fill="#FF4A53"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="5" fill="#E9F958"/><circle cx="6" cy="10" r="2.4" fill="#6B62F2"/><circle cx="34" cy="28" r="2.8" fill="#FF4A53"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 10 L14 16 M14 10 L8 16 M11 6 L11 20" stroke="#E9F958" stroke-width="3" stroke-linecap="round"/><path d="M24 24 L32 32 M32 24 L24 32" stroke="#6B62F2" stroke-width="3" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path d="M6 20 Q20 6 34 20 Q20 34 6 20" stroke="#FF4A53" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="20" cy="20" r="2.4" fill="#FF4A53"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 6 L22.5 17.5 L34 20 L22.5 22.5 L20 34 L17.5 22.5 L6 20 L17.5 17.5 Z" fill="#6B62F2"/></svg>
+        </div>
         <h3>THE TRUST<br>COMPOUNDING<br>CYCLE</h3>
         <p>RIVET's model operates as a virtuous cycle, where each stage reinforces the next, generating network effects for young innovators, partners, and funders:</p>
       </div>

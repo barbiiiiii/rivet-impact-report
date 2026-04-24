@@ -426,6 +426,18 @@ section{
   display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:center;
   border-left:6px solid var(--red);
   margin-top:110px;
+  position:relative;
+  isolation:isolate;
+}
+.who-box::before{
+  content:'';
+  position:absolute;
+  top:-80px;bottom:-80px;
+  left:calc(50% - 50vw);
+  width:100vw;
+  background:url('about%20paper.png') center/cover no-repeat;
+  z-index:-1;
+  pointer-events:none;
 }
 .who-box .label{
   font-family:var(--bebas);

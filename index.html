@@ -1295,16 +1295,16 @@ section{
 .year h2{color:var(--white);margin-bottom:0;max-width:16ch}
 .year-header{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(300px,1fr);
+  grid-template-columns:minmax(0,auto) minmax(300px,1fr);
   align-items:end;
   gap:2rem;
   margin-bottom:1rem;
 }
 .year-header-text{min-width:0}
-.year-header-img{width:100%;max-width:1092px;height:auto;justify-self:end;transform:translateX(40px)}
+.year-header-img{width:100%;max-width:none;height:auto;justify-self:end;margin-right:calc(50% - 50vw);transform:translateX(-24px)}
 @media(max-width:900px){
   .year-header{grid-template-columns:1fr}
-  .year-header-img{max-width:100%;justify-self:start;transform:none}
+  .year-header-img{max-width:100%;justify-self:start;margin-right:0;transform:none}
 }
 .year-byline{
   display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:flex-end;

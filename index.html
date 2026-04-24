@@ -1642,9 +1642,15 @@ section{
   /* Capital / Principles / Trust Cycle */
   .principles-inner{grid-template-columns:1fr !important;gap:2rem}
   .trust-wrap{grid-template-columns:1fr !important;gap:calc(1.6rem + 10px)}
-  .fund-rotator{height:clamp(3.84rem,6.4vw,5.76rem);margin-top:-15px}
-  .fund-phrase{font-size:clamp(3.2rem,4.8vw,4.8rem)}
+  .fund-rotator{height:clamp(4.4rem,18vw,6.4rem);margin-top:-15px}
+  .fund-phrase{font-size:clamp(2.6rem,11vw,4.2rem);white-space:normal}
   .fund-closer{margin-top:10px !important}
+  .tiers{margin-bottom:1rem !important}
+  .tier{min-height:auto !important}
+  .tier:hover{transform:none !important;background:inherit}
+  .tier[data-tier="access"]:hover{background:inherit;color:inherit}
+  .tier[data-tier="boost"]:hover{background:inherit;color:inherit}
+  .tier[data-tier="scale"]:hover{background:inherit;color:inherit}
   .stories{margin-top:calc(-20px - 30px) !important}
   .year-byline{margin-bottom:1.75rem !important}
   .impact-statement{margin-top:1rem !important}

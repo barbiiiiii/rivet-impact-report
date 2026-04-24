@@ -518,8 +518,8 @@ section{
   object-position:left center;
 }
 @media(max-width:760px){
-  .pathway-header{flex-direction:column;align-items:flex-start}
-  .pathway-doodle{width:100%;max-height:140px}
+  .pathway-header{flex-direction:row;align-items:center;gap:1rem;flex-wrap:nowrap;overflow:hidden}
+  .pathway-doodle{flex:0 0 auto;width:auto;max-width:60vw;max-height:120px;margin-right:calc(50% - 50vw - 18px);object-position:right center}
 }
 .principles-side{position:relative}
 .principles-spin-wrap{
@@ -548,8 +548,8 @@ section{
 .pb-title,.pb-text{position:absolute;inset:0;padding:2rem;display:flex;align-items:center;justify-content:center;transition:opacity .3s ease,transform .3s ease;}
 .pb-title{opacity:1;transform:translateY(0);}
 .pb-text{opacity:0;transform:translateY(14px);}
-.principle-box:hover .pb-title{opacity:0;transform:translateY(-14px);}
-.principle-box:hover .pb-text{opacity:1;transform:translateY(0);}
+.principle-box:hover .pb-title,.principle-box.active .pb-title{opacity:0;transform:translateY(-14px);}
+.principle-box:hover .pb-text,.principle-box.active .pb-text{opacity:1;transform:translateY(0);}
 .pb-title-text{font-family:var(--bebas);font-size:clamp(1.5rem,2.2vw,2.4rem);line-height:1.1;text-align:center;}
 .pb-text p{font-family:var(--inter);font-size:.95rem;font-weight:400;line-height:1.65;margin:0;}
 .pb1:hover,.pb4:hover{background:var(--yellow);}
@@ -1642,8 +1642,8 @@ section{
   /* Capital / Principles / Trust Cycle */
   .principles-inner{grid-template-columns:1fr !important;gap:2rem}
   .trust-wrap{grid-template-columns:1fr !important;gap:calc(1.6rem + 10px)}
-  .fund-rotator{height:clamp(4.8rem,8vw,7.2rem)}
-  .fund-phrase{font-size:clamp(4rem,6vw,6rem)}
+  .fund-rotator{height:clamp(3.84rem,6.4vw,5.76rem);margin-top:-15px}
+  .fund-phrase{font-size:clamp(3.2rem,4.8vw,4.8rem)}
   .trust-copy h3{font-size:clamp(2.4rem,10vw,4rem)}
   .trust-copy .copy-doodles{display:none}
   .trust-cycle{max-width:320px}
@@ -1656,8 +1656,8 @@ section{
   .pc-slide--brand .pc-left,.pc-slide--brand .pc-right{padding-bottom:1.6rem !important}
   .pc-left h3{font-size:clamp(1.8rem,7.5vw,2.6rem)}
   .pc-marquee{height:clamp(72px,18vw,96px)}
-  .partnerships-heading-row{flex-direction:column;gap:1.2rem;align-items:flex-start}
-  .partnerships-header-img{align-self:flex-end;width:72%;max-width:none;margin-right:calc(50% - 50vw);position:static;top:auto;transform:none}
+  .partnerships-heading-row{flex-direction:column;gap:1.2rem;align-items:stretch}
+  .partnerships-header-img{width:100vw;max-width:none;align-self:stretch;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;top:-10px;transform:none}
   .partnerships h2{max-width:none}
 
   /* Numbers / catalytic / Global reach */
@@ -2781,6 +2781,15 @@ section{
   /* ---------- Nav solid + active link ---------- */
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('.nav-links a');
+
+  /* ---------- Principle-box tap toggle (iOS fix) ---------- */
+  document.querySelectorAll('.principle-box').forEach(box=>{
+    box.addEventListener('click',()=>{
+      const wasOpen = box.classList.contains('active');
+      document.querySelectorAll('.principle-box.active').forEach(b=>b.classList.remove('active'));
+      if (!wasOpen) box.classList.add('active');
+    });
+  });
 
   /* ---------- Mobile menu toggle ---------- */
   const navToggle = document.getElementById('navToggle');

@@ -1831,7 +1831,8 @@ section{
   text-decoration:none;font-size:24px;line-height:1;
 }
 </style>
-  <link rel="preload" as="image" href="/_vercel/image?url=%2FHero-Image.png&w=1920&q=85" fetchpriority="high" imagesrcset="/_vercel/image?url=%2FHero-Image.png&w=1920&q=85 1x">
+  <link rel="preload" as="image" href="/_vercel/image?url=%2Fhero-image-hd.png&w=1920&q=85" fetchpriority="high" media="(min-width:861px)">
+  <link rel="preload" as="image" href="/_vercel/image?url=%2FHero-Image.png&w=1920&q=85" fetchpriority="high" media="(max-width:860px)">
   <link rel="preload" as="image" href="eric-final-photo.png">
 </head>
 <body>
@@ -1898,7 +1899,10 @@ section{
     </div>
     <div class="scroll-hint scroll-hint--inline">Scroll down to begin</div>
   </div>
-  <img decoding="async" loading="eager" fetchpriority="high" class="hero-image" src="/_vercel/image?url=%2FHero-Image.png&w=1920&q=85" alt="" aria-hidden="true">
+  <picture>
+    <source media="(min-width:861px)" srcset="/_vercel/image?url=%2Fhero-image-hd.png&w=1920&q=85">
+    <img decoding="async" loading="eager" fetchpriority="high" class="hero-image" src="/_vercel/image?url=%2FHero-Image.png&w=1920&q=85" alt="" aria-hidden="true">
+  </picture>
   <div class="hero-meta"></div>
   <div class="hero-strip" aria-hidden="true">
     <div class="hero-strip-track">

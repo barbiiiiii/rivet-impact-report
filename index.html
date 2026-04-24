@@ -204,16 +204,14 @@ section{
   right:-30px;
   bottom:clamp(48px,5vw,72px);
   z-index:1;
-  height:clamp(417px,72vh,820px);
+  height:clamp(417px,81.93vh,953px);
   width:auto;
-  max-width:52vw;
-  object-fit:contain;
-  object-position:right bottom;
   pointer-events:none;
   user-select:none;
 }
+@media(max-width:1400px){.hero-image{max-width:58vw;object-fit:contain;object-position:right bottom}}
+@media(max-width:1200px){.hero-image{max-width:52vw;height:clamp(380px,70vh,780px)}}
 @media(max-width:900px){.hero-image{display:none}}
-@media(max-width:1280px){.hero-image{max-width:48vw;height:clamp(360px,62vh,700px)}}
 .hero-sub{
   position:relative;
   max-width:640px;

@@ -1731,6 +1731,41 @@ section{
   .trust-node{width:clamp(80px,22vw,120px);font-size:.62rem}
   .trust-node .num{width:42px;height:42px;font-size:1.1rem}
 }
+
+/* ============================================
+   TABLET OVERRIDES (861–1199px) — iPad-range fixes
+   ============================================ */
+@media (min-width:861px) and (max-width:1199px){
+  /* Partnerships: image beside title, flush right */
+  .partnerships-heading-row{flex-wrap:nowrap;align-items:center;gap:1.2rem}
+  .partnerships-header-img{
+    width:clamp(320px,44vw,560px);
+    max-width:none;
+    position:relative;top:-30px;left:0;
+    margin-right:calc(50% - 50vw);
+    transform:none;
+  }
+  .partnerships h2{max-width:16ch}
+
+  /* Global reach: paper bg extends past section padding so it covers title + last row */
+  .global-reach{isolation:isolate;margin-top:3rem}
+  .global-reach::before{top:-60px;bottom:-40px;left:calc(50% - 50vw);width:100vw}
+
+  /* CTA / Join Us: undo aggressive negative margins that overlap on tablet */
+  .cta-bg-logos{display:none}
+  .cta-close-row{flex-direction:row;align-items:center;gap:2rem;flex-wrap:wrap}
+  .cta-close{position:static;top:0;margin-bottom:1.2rem;font-size:clamp(2.4rem,5.5vw,4.2rem);max-width:14ch}
+  .cta-close-img{
+    position:static;top:0;left:0;
+    margin-right:calc(50% - 50vw + 24px);
+    width:clamp(320px,42vw,500px);max-width:none;
+    flex:0 0 auto;
+  }
+  .cta-after-1{margin:0 0 .6rem !important}
+  .cta-after-2,.cta-after-3{margin:0 0 .6rem}
+  .cta-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-intro{max-width:70ch !important}
+}
 /* ============================================
    FOREWORD LAYOUT
    ============================================ */

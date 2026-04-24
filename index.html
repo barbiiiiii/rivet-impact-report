@@ -1336,11 +1336,19 @@ section{
 /* ============================================
    §10 CTA
    ============================================ */
-.cta{background:var(--black);color:var(--white);overflow:hidden}
-.cta-inner{max-width:1400px;margin:0 auto}
+.cta{background:var(--black);color:var(--white);overflow:hidden;position:relative}
+.cta-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.cta-bg-logos{position:absolute;top:0;left:0;right:0;height:clamp(320px,40vw,560px);pointer-events:none;z-index:0;overflow:hidden}
+.cta-bg-logos svg{position:absolute;fill:#bbb;opacity:.03;animation:spin 28s linear infinite;will-change:transform}
+.cta-bg-logos svg:nth-child(1){width:260px;height:260px;top:-40px;left:4%}
+.cta-bg-logos svg:nth-child(2){width:180px;height:180px;top:30px;left:28%;animation-duration:34s;animation-direction:reverse}
+.cta-bg-logos svg:nth-child(3){width:320px;height:320px;top:-60px;left:52%;animation-duration:40s}
+.cta-bg-logos svg:nth-child(4){width:220px;height:220px;top:60px;right:6%;animation-duration:24s;animation-direction:reverse}
+.cta-bg-logos svg:nth-child(5){width:150px;height:150px;top:220px;left:14%;animation-duration:30s}
+.cta-bg-logos svg:nth-child(6){width:200px;height:200px;top:260px;right:22%;animation-duration:36s;animation-direction:reverse}
 .cta h2{color:var(--white);margin-bottom:1.6rem;max-width:18ch}
 .cta h2 em{font-style:normal;color:var(--yellow)}
-.cta-intro{color:rgba(255,255,255,.85);font-family:var(--inter);font-weight:400;font-size:1.02rem;line-height:1.65;max-width:62ch;margin-bottom:3rem}
+.cta-intro{color:rgba(255,255,255,.85);font-family:var(--inter);font-weight:400;font-size:1.02rem;line-height:1.65;max-width:none;margin-bottom:3rem}
 .cta-intro p{margin:0 0 .9rem}
 .cta-intro p:last-child{margin-bottom:0}
 .cta-intro strong{color:var(--white);font-weight:700}
@@ -2234,6 +2242,14 @@ section{
      §10 CTA
      ============================================ -->
 <section class="cta" id="cta" aria-labelledby="cta-title">
+  <div class="cta-bg-logos" aria-hidden="true">
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+    <svg viewBox="0 0 100 100"><use href="#rivet-mark"/></svg>
+  </div>
   <div class="cta-inner">
     <div class="section-label reveal" style="color:var(--yellow)">09 / Join Us</div>
     <h2 id="cta-title" class="reveal">WORK WITH<br><em>RIVET</em></h2>

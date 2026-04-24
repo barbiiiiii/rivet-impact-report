@@ -784,9 +784,36 @@ section{
 
 /* Partner carousel */
 .pc-wrap{position:relative;margin-top:2.5rem}
-.pc-slide{display:none;flex-direction:column;gap:1rem}
+.pc-slide{display:none;flex-direction:column;gap:1.4rem}
 .pc-slide.active{display:flex;animation:pcIn .45s ease}
 @keyframes pcIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+
+.pc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem;align-items:stretch}
+@media(max-width:860px){.pc-grid{grid-template-columns:1fr}}
+.pc-left{background:var(--purple);color:#fff;padding:clamp(2rem,3.5vw,3rem);border-radius:10px;display:flex;flex-direction:column;gap:1rem}
+.pc-left h3{font-family:var(--bebas);font-weight:400;font-size:clamp(2.4rem,4vw,3.6rem);line-height:.96;color:#fff;margin:0 0 .4rem;text-transform:uppercase;letter-spacing:.01em}
+.pc-left p{font-family:var(--inter);font-weight:400;color:#fff;font-size:1rem;line-height:1.6;margin:0}
+.pc-left p strong.hl-y{color:var(--yellow);font-weight:700}
+.pc-right{
+  padding:clamp(2rem,3.5vw,3rem);border-radius:10px;
+  background-color:#fff;
+  background-image:linear-gradient(to right,rgba(107,98,242,.18) 1px,transparent 1px),linear-gradient(to bottom,rgba(107,98,242,.18) 1px,transparent 1px);
+  background-size:24px 24px;
+  display:flex;flex-direction:column;justify-content:center;gap:1.2rem;
+}
+.pc-right p{font-family:var(--inter);font-style:italic;color:var(--purple);font-size:clamp(1rem,1.15vw,1.15rem);line-height:1.55;margin:0}
+.pc-right .attr{display:block;font-style:normal;font-weight:700;margin-top:1rem;color:var(--purple)}
+
+.pc-marquee{
+  background:#fff;padding:1.6rem 0;overflow:hidden;border-radius:10px;position:relative;
+  mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);
+}
+.pc-marquee-track{display:flex;gap:4rem;align-items:center;width:max-content;animation:pc-scroll 34s linear infinite}
+.pc-marquee-track img{height:clamp(40px,4.5vw,68px);width:auto;flex-shrink:0;object-fit:contain;display:block}
+.pc-marquee-track svg{height:clamp(40px,4.5vw,64px);width:auto;flex-shrink:0;display:block}
+@keyframes pc-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pc-marquee:hover .pc-marquee-track{animation-play-state:paused}
 .pc-top{display:grid;grid-template-columns:2fr 1fr;gap:1rem;align-items:stretch}
 .pc-photo{position:relative;height:320px;border-radius:4px;overflow:hidden}
 .pc-quote{height:320px;box-sizing:border-box;overflow:hidden}
@@ -1985,63 +2012,95 @@ section{
 
       <!-- Slide 1: Brand & Corporate -->
       <div class="pc-slide active">
-        <div class="pc-top">
-          <div class="pc-photo">
-            <div class="pc-photo-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="pc-photo-title">Brand &amp;<br>Corporate Partners</div>
+        <div class="pc-grid">
+          <div class="pc-left">
+            <h3>Brand &amp; Corporate Partners</h3>
+            <p>Brand partnerships within RIVET are a way to unlock early capital, visibility, and legitimacy for youth-led solutions, while ensuring youth ownership and integrity remain central. RIVET structures these partnerships so that brands enable the system, rather than define the outcomes.</p>
+            <p>Consumer research shows that <strong class="hl-y">84%</strong> of young consumers screen products based on social impact, and around <strong class="hl-y">62%</strong> want brands to offer social change initiatives with which they can become involved. This shift is shaping how companies approach social and environmental impact — and for many, encouraging them to seek out projects and leaders with whom they can work.</p>
           </div>
-          <div class="pc-quote pc-quote--y">
-            <p>"What drew us to RIVET was the clarity of the system. This wasn't about sponsoring a campaign — it was about contributing to an ecosystem where youth-led ideas are funded early, supported responsibly, and amplified with integrity. RIVET gave us a way to align our resources with real impact, without compromising youth ownership."<br><br>Brand Partner</p>
+          <div class="pc-right">
+            <p>"What drew us to RIVET was the clarity of the system. This wasn't about sponsoring a campaign — it was about contributing to an ecosystem where youth-led ideas are funded early, supported responsibly, and amplified with integrity. RIVET gave us a way to align our resources with real impact, without compromising youth ownership."<span class="attr">Brand Partner</span></p>
           </div>
         </div>
-        <div class="pc-bottom">
-          <div>
-            <p>Brand partnerships within RIVET are a way to unlock early capital, visibility, and legitimacy for youth-led solutions, while ensuring youth ownership and integrity remain central. RIVET structures these partnerships so that brands enable the system, rather than define the outcomes.</p>
-            <p>Consumer research shows that 84% of young consumers screen products based on social impact, and around 62% want brands to offer social change initiatives with which they can become involved. This shift is shaping how companies approach social and environmental impact — and for many, encouraging them to seek out projects and leaders with whom they can work.</p>
-          </div>
-          <div class="pc-logo-composite">
-            <img src="brand%20partners%20VF.png" alt="Brand partners">
+        <div class="pc-marquee" aria-label="Brand partners">
+          <div class="pc-marquee-track">
+            <img src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="Adobe">
+            <img src="brand%20partners%20logos/images.png" alt="">
+            <img src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="Crocs">
+            <img src="brand%20partners%20logos/Funko-Logo.png" alt="Funko">
+            <img src="brand%20partners%20logos/Fossil-Logo-old.png" alt="Fossil">
+            <img src="brand%20partners%20logos/images-2.png" alt="">
+            <img src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="" aria-hidden="true">
+            <img src="brand%20partners%20logos/images.png" alt="" aria-hidden="true">
+            <img src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="" aria-hidden="true">
+            <img src="brand%20partners%20logos/Funko-Logo.png" alt="" aria-hidden="true">
+            <img src="brand%20partners%20logos/Fossil-Logo-old.png" alt="" aria-hidden="true">
+            <img src="brand%20partners%20logos/images-2.png" alt="" aria-hidden="true">
           </div>
         </div>
       </div>
 
       <!-- Slide 2: Institutional & Foundation -->
       <div class="pc-slide">
-        <div class="pc-top">
-          <div class="pc-photo">
-            <div class="pc-photo-bg" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="pc-photo-title">Institutional &amp;<br>Foundation Partners</div>
-          </div>
-          <div class="pc-quote pc-quote--p">
-            <p>"Recognising their creativity, talent, and compassion, RIVET gives young social entrepreneurs access to the early investment and mentorship they need to turn ideas into action."<br><br>Emily Tow, President, The Tow Foundation</p>
-          </div>
-        </div>
-        <div class="pc-bottom">
-          <div>
+        <div class="pc-grid">
+          <div class="pc-left">
+            <h3>Institutional &amp; Foundation Partners</h3>
             <p>RIVET's institutional funders — family foundations, corporate foundations, and mission-aligned partners — don't run our programmes or deliver grants directly. Their role is to resource and strengthen the system: providing financial capital and strategic guidance in areas like governance and strategy.</p>
           </div>
-          <div></div>
+          <div class="pc-right">
+            <p>"Recognising their creativity, talent, and compassion, RIVET gives young social entrepreneurs access to the early investment and mentorship they need to turn ideas into action."<span class="attr">Emily Tow, President, The Tow Foundation</span></p>
+          </div>
+        </div>
+        <div class="pc-marquee" aria-label="Institutional partners">
+          <div class="pc-marquee-track">
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+            <svg viewBox="0 0 100 100" fill="#000" aria-hidden="true"><use href="#rivet-mark"/></svg>
+          </div>
         </div>
       </div>
 
       <!-- Slide 3: Impact Partners -->
       <div class="pc-slide">
-        <div class="pc-top">
-          <div class="pc-photo">
-            <div class="pc-photo-bg" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80')"></div>
-            <div class="pc-photo-title">Impact<br>Partners</div>
+        <div class="pc-grid">
+          <div class="pc-left">
+            <h3>Impact Partners</h3>
+            <p>Our Impact Partners are our frontline teams. Deeply embedded in the communities they serve, these youth-serving organisations boast the unique capacity to identify promising initiatives and act on our behalf to deliver resources and support locally, and to track project progress on the ground. Their involvement means we can scale without centralising decision making or stripping away local ownership.</p>
+            <p>Our Impact Partner network reaches over <strong class="hl-y">65 million</strong> young people annually across <strong class="hl-y">190 countries</strong>.</p>
           </div>
-          <div class="pc-quote pc-quote--r">
-            <p>"RIVET understands how youth-led work actually happens. The model respects local context, moves resources quickly, and strengthens, rather than replaces, the systems already supporting young leaders. For us, RIVET adds capacity, visibility, and learning without creating additional burden."<br><br>Henry, Impact Partner</p>
+          <div class="pc-right">
+            <p>"RIVET understands how youth-led work actually happens. The model respects local context, moves resources quickly, and strengthens, rather than replaces, the systems already supporting young leaders. For us, RIVET adds capacity, visibility, and learning without creating additional burden."<span class="attr">Henry, Impact Partner</span></p>
           </div>
         </div>
-        <div class="pc-bottom">
-          <div>
-            <p>Our Impact Partners are our frontline teams. Deeply embedded in the communities they serve, these youth-serving organisations boast the unique capacity to identify promising initiatives and act on our behalf to deliver resources and support locally, and to track project progress on the ground. Their involvement means we can scale without centralising decision making or stripping away local ownership.</p>
-            <p>Our Impact Partner network reaches over 65 million young people annually across 190 countries.</p>
-          </div>
-          <div class="pc-logo-composite">
-            <img src="impact%20partners%20VF.png" alt="Impact partners">
+        <div class="pc-marquee" aria-label="Impact partners">
+          <div class="pc-marquee-track">
+            <img src="impact%20partners/IFRC_logo_2020.svg.png" alt="IFRC">
+            <img src="impact%20partners/PEACEFIRST_Logo.png" alt="Peace First">
+            <img src="impact%20partners/UNLEASH_blue-1.png" alt="UNLEASH">
+            <img src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="WAFF">
+            <img src="impact%20partners/images.png" alt="">
+            <img src="impact%20partners/images-3.png" alt="">
+            <img src="impact%20partners/Impact%20Report.png" alt="">
+            <img src="impact%20partners/IFRC_logo_2020.svg.png" alt="" aria-hidden="true">
+            <img src="impact%20partners/PEACEFIRST_Logo.png" alt="" aria-hidden="true">
+            <img src="impact%20partners/UNLEASH_blue-1.png" alt="" aria-hidden="true">
+            <img src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="" aria-hidden="true">
+            <img src="impact%20partners/images.png" alt="" aria-hidden="true">
+            <img src="impact%20partners/images-3.png" alt="" aria-hidden="true">
+            <img src="impact%20partners/Impact%20Report.png" alt="" aria-hidden="true">
           </div>
         </div>
       </div>

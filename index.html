@@ -425,18 +425,22 @@ section{
   padding:2.2rem;
   display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:center;
   border-left:6px solid var(--red);
-  margin-top:110px;
   position:relative;
+  z-index:1;
+}
+.who-wrap{
+  position:relative;
+  margin-top:110px;
   isolation:isolate;
 }
-.who-box::before{
+.who-wrap::before{
   content:'';
   position:absolute;
   top:-80px;bottom:-80px;
   left:calc(50% - 50vw);
   width:100vw;
   background:url('about%20paper.png') center/cover no-repeat;
-  z-index:-1;
+  z-index:0;
   pointer-events:none;
 }
 .who-box .label{
@@ -1742,6 +1746,7 @@ section{
         <img src="about-covers/brands%20and%20funders.png" alt="Brands and funders" loading="lazy">
       </div>
     </div>
+    <div class="who-wrap">
     <div class="who-box reveal">
       <div class="label">WHO RIVET<br>IS BUILT<br>FOR</div>
       <div class="who-carousel">
@@ -1754,6 +1759,7 @@ section{
         </div>
         <button class="who-next" aria-label="Next slide">›</button>
       </div>
+    </div>
     </div>
   </div>
 </section>

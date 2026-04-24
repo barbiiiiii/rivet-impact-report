@@ -157,9 +157,35 @@ section{
 .nav-links .nav-home svg{width:22px;height:22px;display:block}
 .nav-links .nav-home:hover{transform:translateY(-2px) rotate(-6deg)}
 .nav-links .nav-home::after{display:none}
+.nav-toggle{display:none;background:none;border:0;color:inherit;cursor:pointer;padding:10px;margin-right:-10px;z-index:52}
+.nav-toggle span{display:block;width:26px;height:2.5px;background:currentColor;border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+.nav-toggle span+span{margin-top:6px}
+.nav-toggle.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:49;opacity:0;transition:opacity .3s ease}
+.nav-backdrop.open{display:block;opacity:1}
 @media (max-width:860px){
-  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .nav{padding:0 18px}
   .nav-brand .wordmark{font-size:1.35rem}
+  .nav-links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+    position:fixed;top:var(--nav-h);right:-100%;bottom:0;
+    width:min(82vw,340px);
+    background:#0a0a0a;color:#fff;
+    padding:22px 24px 32px;
+    transition:right .32s ease;
+    overflow-y:auto;
+    z-index:51;
+    border-left:1px solid rgba(255,255,255,.08);
+  }
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1rem;padding:14px 4px;width:100%;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links a::after{display:none}
+  .nav-links a.active{color:var(--yellow)}
+  .nav-links .nav-home{color:var(--yellow);padding:14px 4px}
+  .nav-links .nav-home svg{width:26px;height:26px}
 }
 
 /* ============================================
@@ -1555,6 +1581,111 @@ section{
   :root{--nav-h:56px}
   section{padding-left:18px;padding-right:18px}
 }
+
+/* ============================================
+   MOBILE OVERRIDES (<=860px) — reset desktop-only transforms so nothing spills off-screen
+   ============================================ */
+@media (max-width:860px){
+  html,body{overflow-x:hidden}
+  section{padding-top:clamp(56px,10vw,96px);padding-bottom:clamp(56px,10vw,96px)}
+
+  /* Hero: reset horizontal shifts, scale down headline */
+  .hero-inner > *{transform:none}
+  .hero-inner > .hero-sub,.hero-inner > .scroll-hint--inline{transform:none}
+  .hero h1{font-size:clamp(3rem,14vw,6rem)}
+  .hero h1 .accent{transform:translateY(-10px);font-size:.72em}
+
+  /* About section */
+  .about{padding-bottom:40px;margin-top:0}
+  .about-doodle{display:none}
+  .about-inner{max-width:100%}
+  .about h2,.about .section-label,.about p,.stats-block{margin-left:0 !important}
+  h2#about-title{margin-left:0 !important}
+  .about-title span,#about-title span{white-space:normal !important}
+  .about-grid{grid-template-columns:1fr !important}
+  .about-card{min-height:auto;padding:1.8rem 1.6rem}
+  .about-card:hover{transform:none}
+  .stats-block{margin:2rem 0}
+  .stat-closer-img{width:100%;max-width:100%;transform:none;margin:1rem 0 0}
+  .hw-grid{grid-template-columns:1fr !important}
+  .who-box{grid-template-columns:1fr;padding:1.6rem;margin-top:60px}
+  .who-box .label{font-size:clamp(1.8rem,7vw,2.6rem)}
+  .who-carousel{padding:0;gap:.6rem}
+  .who-prev,.who-next{flex-shrink:0;width:32px;height:32px}
+
+  /* Year / Impact header */
+  .year-header{grid-template-columns:1fr}
+  .year-header-img{width:100%;max-width:100%;transform:none;margin-right:0;justify-self:start}
+  .year-byline{justify-content:flex-start;text-align:left;padding:1rem 0}
+  .year-byline > span{right:0;position:static}
+  .year-byline{flex-direction:column;gap:.6rem}
+  .impact-statement{grid-template-columns:1fr !important;padding:1.8rem 1.4rem;gap:1.2rem}
+  #year-title{margin-left:0 !important}
+  #year-title span{white-space:normal !important}
+  .year-header h2{font-size:clamp(2.4rem,10vw,4rem)}
+
+  /* Capital / Principles / Trust Cycle */
+  .principles-inner{grid-template-columns:1fr !important;gap:2rem}
+  .trust-wrap{grid-template-columns:1fr !important;gap:1.6rem}
+  .trust-copy h3{font-size:clamp(2.4rem,10vw,4rem)}
+  .trust-copy .copy-doodles{display:none}
+  .trust-cycle{max-width:320px}
+  .tiers{grid-template-columns:1fr !important}
+
+  /* Partnerships carousel */
+  .pc-grid{grid-template-columns:1fr !important}
+  .pc-left,.pc-right{padding:1.6rem !important}
+  .pc-slide--inst .pc-left,.pc-slide--inst .pc-right,
+  .pc-slide--brand .pc-left,.pc-slide--brand .pc-right{padding-bottom:1.6rem !important}
+  .pc-left h3{font-size:clamp(1.8rem,7.5vw,2.6rem)}
+  .pc-marquee{height:clamp(72px,18vw,96px)}
+  .partnerships-heading-row{flex-direction:column;gap:1.2rem}
+  .partnerships-header-img{width:80%;max-width:360px;margin-right:0;position:static;top:auto;transform:none}
+  .partnerships h2{max-width:none}
+
+  /* Numbers / catalytic / Global reach */
+  .global-reach{padding:2rem 0}
+  .catalytic-img-title{margin:2rem 0 1rem 0 !important;text-align:left}
+  .catalytic-img{width:100%}
+
+  /* Stories */
+  .stories-header-img{display:none}
+  .stories-filter{flex-wrap:wrap;gap:.6rem}
+  .cards{grid-template-columns:1fr !important}
+
+  /* Ahead / priorities */
+  .priorities{grid-template-columns:1fr !important;gap:1rem}
+  .priority:hover{transform:none;box-shadow:none}
+  .ahead-close{font-size:clamp(2rem,8vw,3.2rem);max-width:none}
+
+  /* CTA */
+  .cta-bg-logos{display:none}
+  .cta-close-row{flex-direction:column;gap:1rem}
+  .cta-close-img{width:100%;max-width:100%;margin-right:0;left:0 !important;top:0 !important;position:static}
+  .cta-close{font-size:clamp(2rem,9vw,3.6rem);margin-bottom:1rem;position:static;top:0}
+  .cta-intro{max-width:100% !important}
+  .cta-grid{grid-template-columns:1fr !important}
+  .cta-card:hover{transform:none;background:inherit}
+  .cta-after-1{margin:0 0 .6rem !important}
+
+  /* Foreword */
+  .fw-layout{flex-direction:column}
+  #photo-card{width:100%;max-width:360px;margin:0 auto;height:auto;aspect-ratio:3/4}
+
+  /* Appendix */
+  .appendix-buttons{flex-direction:column;gap:1rem}
+  .appendix-btn{width:100%}
+
+  /* Universal: let big tap targets breathe */
+  a,button{touch-action:manipulation}
+}
+
+@media (max-width:560px){
+  .hero h1{font-size:clamp(2.6rem,13vw,4.4rem)}
+  .trust-cycle{max-width:280px}
+  .trust-node{width:clamp(80px,22vw,120px);font-size:.62rem}
+  .trust-node .num{width:42px;height:42px;font-size:1.1rem}
+}
 /* ============================================
    FOREWORD LAYOUT
    ============================================ */
@@ -1689,7 +1820,7 @@ section{
   <a class="nav-brand" href="https://rivet.org" target="_blank" rel="noopener noreferrer" aria-label="RIVET website">
     <img decoding="async" loading="eager" fetchpriority="high" src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
   </a>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#hero" class="nav-home" aria-label="Back to top">
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15 L16 5 L27 15" /><path d="M8 14 L8 26 L14 26 L14 19 L18 19 L18 26 L24 26 L24 14" /></svg>
     </a>
@@ -1704,7 +1835,9 @@ section{
     <a href="#cta">Join Us</a>
     <a href="#appendix">Appendix</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
 <!-- ============================================
      §01 HERO
@@ -2628,6 +2761,40 @@ section{
   /* ---------- Nav solid + active link ---------- */
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('.nav-links a');
+
+  /* ---------- Mobile menu toggle ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.getElementById('navLinks');
+  const navBackdrop = document.getElementById('navBackdrop');
+  function closeMenu(){
+    navToggle && navToggle.classList.remove('open');
+    navToggle && navToggle.setAttribute('aria-expanded','false');
+    navLinksEl && navLinksEl.classList.remove('open');
+    navBackdrop && navBackdrop.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function openMenu(){
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded','true');
+    navLinksEl.classList.add('open');
+    navBackdrop.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  if (navToggle){
+    navToggle.addEventListener('click',()=>{
+      if (navLinksEl.classList.contains('open')) closeMenu();
+      else openMenu();
+    });
+  }
+  if (navBackdrop){
+    navBackdrop.addEventListener('click', closeMenu);
+  }
+  navLinks.forEach(a=>a.addEventListener('click',()=>{
+    if (window.matchMedia('(max-width:860px)').matches) closeMenu();
+  }));
+  window.addEventListener('resize',()=>{
+    if (!window.matchMedia('(max-width:860px)').matches) closeMenu();
+  });
   const sectionIds = ['hero','foreword','year','about','capital','partnerships','numbers','stories','ahead','cta','appendix'];
   const sections = sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
 

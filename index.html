@@ -783,9 +783,10 @@ section{
 .network-quote .mark-big{width:80px;height:80px;color:var(--yellow);flex-shrink:0}
 
 /* Partner carousel */
-.pc-wrap{position:relative;margin-top:2.5rem}
-.pc-slide{display:none;flex-direction:column;gap:1.4rem}
-.pc-slide.active{display:flex;animation:pcIn .45s ease}
+.pc-wrap{position:relative;margin-top:2.5rem;display:grid;grid-template-columns:1fr;grid-auto-rows:auto}
+.pc-arrows{grid-row:1}
+.pc-slide{grid-row:2;grid-column:1;display:flex;flex-direction:column;gap:1.4rem;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .45s ease}
+.pc-slide.active{opacity:1;visibility:visible;pointer-events:auto;animation:pcIn .45s ease}
 @keyframes pcIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
 
 .pc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:1.4rem;align-items:stretch}

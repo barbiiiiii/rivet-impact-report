@@ -1640,6 +1640,8 @@ section{
   text-decoration:none;font-size:24px;line-height:1;
 }
 </style>
+  <link rel="preload" as="image" href="Hero-Image.png" fetchpriority="high">
+  <link rel="preload" as="image" href="eric-final-photo.png">
 </head>
 <body>
 
@@ -1670,7 +1672,7 @@ section{
      ============================================ -->
 <nav class="nav" id="nav" aria-label="Primary">
   <a class="nav-brand" href="#hero" aria-label="RIVET — home">
-    <img src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
+    <img decoding="async" loading="eager" fetchpriority="high" src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
   </a>
   <div class="nav-links">
     <a href="#foreword">Foreword</a>
@@ -1700,7 +1702,7 @@ section{
     </div>
     <div class="scroll-hint scroll-hint--inline">Scroll down to begin</div>
   </div>
-  <img class="hero-image" src="Hero-Image.png" alt="" aria-hidden="true">
+  <img decoding="async" loading="eager" fetchpriority="high" class="hero-image" src="Hero-Image.png" alt="" aria-hidden="true">
   <div class="hero-meta"></div>
   <div class="hero-strip" aria-hidden="true">
     <div class="hero-strip-track">
@@ -1722,7 +1724,7 @@ section{
       </div>
       <div class="fw-text-side">
         <h2 id="foreword-title" class="reveal" style="font-family:var(--bebas);font-size:clamp(3.12rem,5.85vw,5.98rem);line-height:.95;margin:0 0 1.6rem;color:#000;text-align:left;">A LETTER<br>FROM THE <em class="ceo-hl" style="font-style:normal;color:#000;padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">CEO</em></h2>
-        <div class="reveal delay-1"><img src="eric-quote.png" alt="Quote from Dr. Eric D. Dawson, CEO & Founder of RIVET: The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access." style="display:block;max-width:100%;height:auto;margin:0 0 1.6rem;transform:translateY(-20px);"></div>
+        <div class="reveal delay-1"><img decoding="async" loading="lazy" src="eric-quote.png" alt="Quote from Dr. Eric D. Dawson, CEO & Founder of RIVET: The barrier to youth-led change has never been talent. It has never been ambition. It has never been readiness. It has been access." style="display:block;max-width:100%;height:auto;margin:0 0 1.6rem;transform:translateY(-20px);"></div>
 
         <div class="reveal delay-2"><a href="#ceo-letter-modal" class="ceo-letter-btn" style="display:inline-block;background:#E9F958;color:#000;font-family:var(--bebas);font-weight:700;font-size:1.1rem;letter-spacing:0.1em;padding:14px 32px;text-decoration:none;text-transform:uppercase;cursor:pointer;border:2px solid #000;border-radius:6px;transform:translate(-70px,-40px);">Read Our CEO's Letter</a></div>
       </div>
@@ -1740,7 +1742,7 @@ section{
         <div class="section-label" style="color:var(--yellow);margin-left:20px">02 / From the Impact Team</div>
         <h2 id="year-title" style="max-width:none;margin-left:10px"><span style="white-space:nowrap">2025: A YEAR OF</span><br><span style="color:var(--yellow)">FOUNDATION</span><br>BUILDING</h2>
       </div>
-      <img src="impact-header.png" alt="" class="year-header-img">
+      <img decoding="async" loading="lazy" src="impact-header.png" alt="" class="year-header-img">
     </div>
     <div class="year-byline reveal">
       <span><strong>Hayfa Sdiri</strong> · Chief Impact Officer</span>
@@ -1768,7 +1770,7 @@ section{
      ============================================ -->
 <section class="about" id="about" aria-labelledby="about-title">
   <div class="about-inner">
-    <img src="about-doodle.png" alt="" class="about-doodle">
+    <img decoding="async" loading="lazy" src="about-doodle.png" alt="" class="about-doodle">
     <div class="section-label reveal" style="margin-left:20px">03 / About RIVET</div>
     <h2 id="about-title" class="reveal" style="max-width:none;margin-left:10px"><span style="display:block;white-space:nowrap">ACCELERATING YOUTH-LED</span><span style="display:block;white-space:nowrap">SOCIAL INNOVATION</span><span style="display:block;white-space:nowrap">AT SCALE</span></h2>
     <p class="reveal" style="max-width:60ch;font-size:1.1rem;margin:0 0 2.5rem 10px">Solutions to many of the world's most urgent social, political, and environmental challenges are being formulated right now by <strong style="color:var(--purple)">young people</strong> who stand to be most seriously affected by them. But these solutions are embryonic and diffuse, and the route from idea to deployment has never been more obstructed.</p>
@@ -1777,7 +1779,7 @@ section{
       <div class="stat-line reveal" style="transition-delay:.15s"><span class="stat-pill">85%</span> live in capital deserts, with limited access to financial or social capital.</div>
       <div class="stat-line reveal" style="transition-delay:.25s"><span class="stat-pill">Less than 0.002%</span> of global philanthropic dollars reach early-stage, youth-led initiatives.</div>
       <div class="stat-line reveal" style="transition-delay:.35s"><span class="stat-pill">$3 trillion</span> in annual spending controlled by Gen Z, reshaping how value and consumption intersect with social change.</div>
-      <img src="about%20big%20text.png" alt="This is not a talent gap. It is an infrastructure gap. RIVET exists to close it." class="stat-closer-img reveal" style="transition-delay:.45s">
+      <img decoding="async" loading="lazy" src="about%20big%20text.png" alt="This is not a talent gap. It is an infrastructure gap. RIVET exists to close it." class="stat-closer-img reveal" style="transition-delay:.45s">
     </div>
     <div class="about-grid">
       <div class="about-card reveal">
@@ -1800,13 +1802,13 @@ section{
     <p class="how-intro reveal">Existing funding systems were not designed with <strong>youth innovation</strong> in mind. They are too slow for moments that require rapid response, too risk-averse for early experimentation, too centralized to recognise local insight, and too focused on institutions rather than individuals closest to the issue. As a result, promising ideas fail before they can build the evidence base required to attract further support.<br><br>RIVET provides a toolkit of <strong>funding, support, and visibility</strong> that addresses these infrastructural gaps — giving early-stage innovators room to breathe, to build, and, where successful, to grow.<br><br><strong>RIVET connects three forces that rarely align on their own:</strong></p>
     <div class="hw-grid">
       <div class="hw-card reveal">
-        <img src="about-covers/youth%20innovators.png" alt="Youth innovators" loading="lazy">
+        <img decoding="async" src="about-covers/youth%20innovators.png" alt="Youth innovators" loading="lazy">
       </div>
       <div class="hw-card reveal delay-1">
-        <img src="about-covers/youth%20serving%20organizations.png" alt="Youth-serving organizations" loading="lazy">
+        <img decoding="async" src="about-covers/youth%20serving%20organizations.png" alt="Youth-serving organizations" loading="lazy">
       </div>
       <div class="hw-card reveal delay-2">
-        <img src="about-covers/brands%20and%20funders.png" alt="Brands and funders" loading="lazy">
+        <img decoding="async" src="about-covers/brands%20and%20funders.png" alt="Brands and funders" loading="lazy">
       </div>
     </div>
     <div class="who-wrap">
@@ -1838,13 +1840,13 @@ section{
     <p class="capital-intro reveal" style="margin-bottom:2.5rem">Our model is designed to generate and compound three forms of capital that young innovators need to succeed:</p>
     <div class="hw-grid" style="margin-bottom:1.5rem">
       <div class="hw-card reveal">
-        <img src="capitals/32.png" alt="Financial capital" loading="lazy">
+        <img decoding="async" src="capitals/32.png" alt="Financial capital" loading="lazy">
       </div>
       <div class="hw-card reveal delay-1">
-        <img src="capitals/33.png" alt="Social capital" loading="lazy">
+        <img decoding="async" src="capitals/33.png" alt="Social capital" loading="lazy">
       </div>
       <div class="hw-card reveal delay-2">
-        <img src="capitals/34.png" alt="Imagination capital" loading="lazy">
+        <img decoding="async" src="capitals/34.png" alt="Imagination capital" loading="lazy">
       </div>
     </div>
     <p class="capital-intro reveal" style="margin-bottom:0;max-width:none;font-size:1.5rem;line-height:1.5"><span class="together-highlight">Together, these forms of capital create the conditions for youth-led ideas to grow into durable solutions.</span></p>
@@ -1960,7 +1962,7 @@ section{
       <div class="principles-heading" style="color:#fff;position:static;margin-bottom:0">
         <span>The Capital</span><span>Pathway</span>
       </div>
-      <img src="capital%20pathways%20doodle.png" alt="" class="pathway-doodle" aria-hidden="true">
+      <img decoding="async" loading="lazy" src="capital%20pathways%20doodle.png" alt="" class="pathway-doodle" aria-hidden="true">
     </div>
     <p class="reveal" style="font-family:var(--inter);font-size:1.1rem;color:rgba(255,255,255,.78);max-width:62ch;margin-bottom:2.5rem">RIVET structures funding across three tiers that reflect how youth-led innovation actually grows:</p>
     <div class="tiers">
@@ -2004,7 +2006,7 @@ section{
     <div class="section-label reveal">05 / Partnerships &amp; Ecosystems</div>
     <div class="partnerships-heading-row">
       <h2 id="partnerships-title" class="reveal">THE NETWORK<br>BEHIND RIVET'S<br>IMPACT</h2>
-      <img src="network%20header.png" alt="" class="partnerships-header-img reveal" loading="lazy">
+      <img decoding="async" src="network%20header.png" alt="" class="partnerships-header-img reveal" loading="lazy">
     </div>
     <p class="reveal" style="font-size:1.1rem;margin-bottom:1rem">Together, RIVET's brand partnerships have mobilised more than <span class="usd-highlight">$400,000 USD</span> in catalytic funding, engaged corporate teams in our impact efforts, and supported some of this generation's most innovative and inspirational youth leaders. These outputs demonstrate what is possible when the private sector engages directly with youth-led innovation in a way that is both commercially grounded and impact-oriented.</p>
 
@@ -2028,18 +2030,18 @@ section{
         </div>
         <div class="pc-marquee" aria-label="Brand partners">
           <div class="pc-marquee-track">
-            <img src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="Adobe">
-            <img src="brand%20partners%20logos/images.png" alt="">
-            <img src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="Crocs">
-            <img src="brand%20partners%20logos/Funko-Logo.png" alt="Funko">
-            <img src="brand%20partners%20logos/Fossil-Logo-old.png" alt="Fossil">
-            <img src="brand%20partners%20logos/images-2.png" alt="">
-            <img src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="" aria-hidden="true">
-            <img src="brand%20partners%20logos/images.png" alt="" aria-hidden="true">
-            <img src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="" aria-hidden="true">
-            <img src="brand%20partners%20logos/Funko-Logo.png" alt="" aria-hidden="true">
-            <img src="brand%20partners%20logos/Fossil-Logo-old.png" alt="" aria-hidden="true">
-            <img src="brand%20partners%20logos/images-2.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="Adobe">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/images.png" alt="">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="Crocs">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Funko-Logo.png" alt="Funko">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Fossil-Logo-old.png" alt="Fossil">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/images-2.png" alt="">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Adobe_Corporate_logo.svg.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/images.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/crocs-logo-png-transparent.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Funko-Logo.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/Fossil-Logo-old.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="brand%20partners%20logos/images-2.png" alt="" aria-hidden="true">
           </div>
         </div>
       </div>
@@ -2091,20 +2093,20 @@ section{
         </div>
         <div class="pc-marquee" aria-label="Impact partners">
           <div class="pc-marquee-track">
-            <img src="impact%20partners/IFRC_logo_2020.svg.png" alt="IFRC">
-            <img src="impact%20partners/PEACEFIRST_Logo.png" alt="Peace First">
-            <img src="impact%20partners/UNLEASH_blue-1.png" alt="UNLEASH">
-            <img src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="WAFF">
-            <img src="impact%20partners/images.png" alt="">
-            <img src="impact%20partners/images-3.png" alt="">
-            <img src="impact%20partners/Impact%20Report.png" alt="">
-            <img src="impact%20partners/IFRC_logo_2020.svg.png" alt="" aria-hidden="true">
-            <img src="impact%20partners/PEACEFIRST_Logo.png" alt="" aria-hidden="true">
-            <img src="impact%20partners/UNLEASH_blue-1.png" alt="" aria-hidden="true">
-            <img src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="" aria-hidden="true">
-            <img src="impact%20partners/images.png" alt="" aria-hidden="true">
-            <img src="impact%20partners/images-3.png" alt="" aria-hidden="true">
-            <img src="impact%20partners/Impact%20Report.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/IFRC_logo_2020.svg.png" alt="IFRC">
+            <img decoding="async" loading="lazy" src="impact%20partners/PEACEFIRST_Logo.png" alt="Peace First">
+            <img decoding="async" loading="lazy" src="impact%20partners/UNLEASH_blue-1.png" alt="UNLEASH">
+            <img decoding="async" loading="lazy" src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="WAFF">
+            <img decoding="async" loading="lazy" src="impact%20partners/images.png" alt="">
+            <img decoding="async" loading="lazy" src="impact%20partners/images-3.png" alt="">
+            <img decoding="async" loading="lazy" src="impact%20partners/Impact%20Report.png" alt="">
+            <img decoding="async" loading="lazy" src="impact%20partners/IFRC_logo_2020.svg.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/PEACEFIRST_Logo.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/UNLEASH_blue-1.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/WAFF_Logo_Stacked_RegMarkNEW.png.webp" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/images.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/images-3.png" alt="" aria-hidden="true">
+            <img decoding="async" loading="lazy" src="impact%20partners/Impact%20Report.png" alt="" aria-hidden="true">
           </div>
         </div>
       </div>
@@ -2171,7 +2173,7 @@ section{
           <span class="nb">Non-binary · 3%</span>
           <span class="p">Prefer not to say · 2%</span>
         </div>
-        <img src="by%20the%20numbers.png" alt="" class="gender-extra-img" loading="lazy">
+        <img decoding="async" src="by%20the%20numbers.png" alt="" class="gender-extra-img" loading="lazy">
       </div>
       <div class="breakdown reveal delay-1">
         <h3 style="margin-bottom:.42rem">PRIMARY IMPACT AREAS</h3>
@@ -2223,7 +2225,7 @@ section{
       </div>
       <div class="map-wrap reveal delay-1" id="mapWrap" aria-hidden="true">
         <div style="position:relative;width:100%;line-height:0;">
-          <img src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
+          <img decoding="async" loading="lazy" src="world_map.svg" alt="World map" style="width:100%;height:auto;display:block;"/>
           <svg viewBox="0 0 1280 640" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;">
             <!-- equirectangular: cx=(lon+180)/360*1280  cy=(90-lat)/180*640 -->
             <circle class="map-dot" data-region="north-america" cx="214" cy="173" r="14"/>
@@ -2238,7 +2240,7 @@ section{
     </div>
 
     <h3 class="catalytic-img-title reveal">THE CATALYTIC EFFECT</h3>
-    <img src="CATALYTIC%20EFFECT%20VF.png" alt="The Catalytic Effect: $400K → $3M. $400,000+ in catalytic capital has unlocked nearly $3 million in follow-on funding. When youth are trusted early, ideas launch, leaders grow, capital compounds, systems begin to shift." class="catalytic-img reveal">
+    <img decoding="async" loading="lazy" src="CATALYTIC%20EFFECT%20VF.png" alt="The Catalytic Effect: $400K → $3M. $400,000+ in catalytic capital has unlocked nearly $3 million in follow-on funding. When youth are trusted early, ideas launch, leaders grow, capital compounds, systems begin to shift." class="catalytic-img reveal">
   </div>
 </section>
 
@@ -2246,7 +2248,7 @@ section{
      §07 STORIES OF CHANGE
      ============================================ -->
 <section class="stories" id="stories" aria-labelledby="stories-title">
-  <img src="stories%20header.png" alt="" class="stories-header-img" loading="lazy">
+  <img decoding="async" src="stories%20header.png" alt="" class="stories-header-img" loading="lazy">
   <div class="stories-inner">
     <div class="section-label reveal">07 / Stories</div>
     <h2 id="stories-title" class="reveal">STORIES OF <span style="color:var(--purple)">CHANGE</span></h2>
@@ -2272,71 +2274,71 @@ section{
 
     <div class="cards" id="cards" data-filter="all">
       <article class="card reveal" data-area="sustainability">
-        <img class="card-cover" src="stories-covers/01-joshua.png" alt="Joshua Ichor — Geotek Water Project, Nigeria">
-        <img class="card-story" src="stories-VF/1.%20Joshua%20story.png" alt="Joshua's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/01-joshua.png" alt="Joshua Ichor — Geotek Water Project, Nigeria">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/1.%20Joshua%20story.png" alt="Joshua's story">
         <button type="button" class="card-link" aria-label="Read Joshua's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="sustainability">
-        <img class="card-cover" src="stories-covers/02-laraib.png" alt="Laraib Khan Tahir — The Green Root Project, Pakistan">
-        <img class="card-story" src="stories-VF/2.%20Laraib%20story.png" alt="Laraib's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/02-laraib.png" alt="Laraib Khan Tahir — The Green Root Project, Pakistan">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/2.%20Laraib%20story.png" alt="Laraib's story">
         <button type="button" class="card-link" aria-label="Read Laraib's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="health">
-        <img class="card-cover" src="stories-covers/03-hakim.png" alt="Hakim Kakooza — MariTest, UK & East Africa">
-        <img class="card-story" src="stories-VF/3.%20hakim%20story.png" alt="Hakim's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/03-hakim.png" alt="Hakim Kakooza — MariTest, UK & East Africa">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/3.%20hakim%20story.png" alt="Hakim's story">
         <button type="button" class="card-link" aria-label="Read Hakim's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="health">
-        <img class="card-cover" src="stories-covers/04-emi-v2.png" alt="Emi Gaçaj — Tessering Biosciences, USA">
-        <img class="card-story" src="stories-VF/4.%20emi%20story.png" alt="Emi's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/04-emi-v2.png" alt="Emi Gaçaj — Tessering Biosciences, USA">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/4.%20emi%20story.png" alt="Emi's story">
         <button type="button" class="card-link" aria-label="Read Emi's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="education">
-        <img class="card-cover" src="stories-covers/05-rayen.png" alt="Rayen Bouajaja — Lyceena, Tunisia">
-        <img class="card-story" src="stories-VF/5.%20rayen%20story.png" alt="Rayen's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/05-rayen.png" alt="Rayen Bouajaja — Lyceena, Tunisia">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/5.%20rayen%20story.png" alt="Rayen's story">
         <button type="button" class="card-link" aria-label="Read Rayen's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="education">
-        <img class="card-cover" src="stories-covers/06-victoria.png" alt="Victoria Flores Almazan — Take Charge with Victoria, USA">
-        <img class="card-story" src="stories-VF/6.%20victoria%20story.png" alt="Victoria's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/06-victoria.png" alt="Victoria Flores Almazan — Take Charge with Victoria, USA">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/6.%20victoria%20story.png" alt="Victoria's story">
         <button type="button" class="card-link" aria-label="Read Victoria's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="poverty">
-        <img class="card-cover" src="stories-covers/07-stanley.png" alt="Stanley Anigbogu — LightEd, Nigeria">
-        <img class="card-story" src="stories-VF/7.%20stanley%20story.png" alt="Stanley's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/07-stanley.png" alt="Stanley Anigbogu — LightEd, Nigeria">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/7.%20stanley%20story.png" alt="Stanley's story">
         <button type="button" class="card-link" aria-label="Read Stanley's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-1" data-area="poverty">
-        <img class="card-cover" src="stories-covers/08-walter.png" alt="Walter Okwir — YIEN, Uganda">
-        <img class="card-story" src="stories-VF/8.%20walter%20story.png" alt="Walter's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/08-walter.png" alt="Walter Okwir — YIEN, Uganda">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/8.%20walter%20story.png" alt="Walter's story">
         <button type="button" class="card-link" aria-label="Read Walter's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal delay-2" data-area="inclusion">
-        <img class="card-cover" src="stories-covers/09-andrew.png" alt="Andrew Chang — Nunchi Health, USA">
-        <img class="card-story" src="stories-VF/9.%20andrew%20story.png" alt="Andrew's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/09-andrew.png" alt="Andrew Chang — Nunchi Health, USA">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/9.%20andrew%20story.png" alt="Andrew's story">
         <button type="button" class="card-link" aria-label="Read Andrew's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
 
       <article class="card reveal" data-area="inclusion">
-        <img class="card-cover" src="stories-covers/10-melany.png" alt="Melany Ávila — Latin Girls at Work, Argentina & UK">
-        <img class="card-story" src="stories-VF/10.%20melany%20story.png" alt="Melany's story">
+        <img decoding="async" loading="lazy" class="card-cover" src="stories-covers/10-melany.png" alt="Melany Ávila — Latin Girls at Work, Argentina & UK">
+        <img decoding="async" loading="lazy" class="card-story" src="stories-VF/10.%20melany%20story.png" alt="Melany's story">
         <button type="button" class="card-link" aria-label="Read Melany's story">READ MY STORY</button>
         <button type="button" class="card-close" aria-label="Close story">&#x2715;</button>
       </article>
@@ -2423,7 +2425,7 @@ section{
     <p class="cta-truth reveal">Because this is the truth:</p>
     <div class="cta-close-row">
       <p class="cta-close reveal">When youth are trusted early, <em>everything changes.</em></p>
-      <img src="join%20us%20photo.png" alt="" class="cta-close-img reveal" loading="lazy">
+      <img decoding="async" src="join%20us%20photo.png" alt="" class="cta-close-img reveal" loading="lazy">
     </div>
     <p class="cta-after-1 reveal">Ideas launch. Leaders grow. Capital compounds. Systems start to shift.</p>
     <p class="cta-after-2 reveal">2026 is the year we take what works and scale it.</p>
@@ -2456,7 +2458,7 @@ section{
 <footer class="foot">
   <div class="foot-inner">
     <a class="nav-brand" href="#hero" aria-label="RIVET — home">
-      <img src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
+      <img decoding="async" loading="eager" fetchpriority="high" src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
     </a>
     <div class="copy">© 2025 RIVET. All rights reserved. · <a href="https://rivet.org" target="_blank" rel="noopener noreferrer">rivet.org</a></div>
   </div>

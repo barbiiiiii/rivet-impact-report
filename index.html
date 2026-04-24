@@ -153,6 +153,10 @@ section{
 }
 .nav-links a.active::after,.nav-links a:hover::after{transform:scaleX(1)}
 .nav-links a.active{opacity:1}
+.nav-links .nav-home{padding:4px 4px;display:inline-flex;align-items:center;color:var(--yellow);opacity:1;transition:transform .25s ease}
+.nav-links .nav-home svg{width:22px;height:22px;display:block}
+.nav-links .nav-home:hover{transform:translateY(-2px) rotate(-6deg)}
+.nav-links .nav-home::after{display:none}
 @media (max-width:860px){
   .nav-links{display:none}
   .nav-brand .wordmark{font-size:1.35rem}
@@ -1312,7 +1316,7 @@ section{
   color:rgba(255,255,255,.78);margin-bottom:3.5rem;
   border-top:1px solid rgba(255,255,255,.2);
   border-bottom:1px solid rgba(255,255,255,.2);
-  padding:1rem 0;
+  padding:1rem 15px 1rem 0;
   text-align:right;
 }
 .year-byline strong{color:var(--yellow)}
@@ -1681,10 +1685,13 @@ section{
      NAV
      ============================================ -->
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="nav-brand" href="#hero" aria-label="RIVET — home">
+  <a class="nav-brand" href="https://rivet.org" target="_blank" rel="noopener noreferrer" aria-label="RIVET website">
     <img decoding="async" loading="eager" fetchpriority="high" src="rivet-logo-vf.png" alt="RIVET" class="nav-logo" width="960" height="300">
   </a>
   <div class="nav-links">
+    <a href="#hero" class="nav-home" aria-label="Back to top">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15 L16 5 L27 15" /><path d="M8 14 L8 26 L14 26 L14 19 L18 19 L18 26 L24 26 L24 14" /></svg>
+    </a>
     <a href="#foreword">Foreword</a>
     <a href="#year">2025</a>
     <a href="#about">About</a>

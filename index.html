@@ -485,6 +485,7 @@ section{
   color:var(--yellow);
   line-height:1;
 }
+.who-box .label span{display:block}
 .who-box p{font-size:1rem;line-height:1.55;color:#eee}
 .who-box strong{color:var(--white)}
 .who-carousel{display:flex;align-items:center;gap:1.2rem;min-height:120px;padding:0 10%;}
@@ -1618,7 +1619,10 @@ section{
   .stat-closer-img{width:100%;max-width:100%;transform:none;margin:1rem 0 0}
   .hw-grid{grid-template-columns:1fr !important}
   .who-box{grid-template-columns:1fr;padding:1.6rem;margin-top:60px}
-  .who-box .label{font-size:clamp(1.8rem,7vw,2.6rem)}
+  .who-box .label{font-size:clamp(2rem,7.7vw,2.86rem)}
+  .who-box .label .l2{display:inline}
+  .who-box .label .l3{display:inline}
+  .who-box .label .l2::after{content:" "}
   .who-carousel{padding:0;gap:.6rem}
   .who-prev,.who-next{flex-shrink:0;width:32px;height:32px}
 
@@ -1627,7 +1631,7 @@ section{
   .year-header .section-label{margin-left:0 !important}
   .year-header-text .reveal{transform:none !important}
   .year-header-img{width:100%;max-width:100%;transform:none;margin-right:0;margin-top:-15px;justify-self:start}
-  .year-byline{justify-content:flex-start;text-align:left;padding:1rem 0}
+  .year-byline{justify-content:flex-start;text-align:left;padding:1rem 0 1rem 10px}
   .year-byline > span{right:0;position:static}
   .year-byline{flex-direction:column;gap:.6rem}
   .impact-statement{grid-template-columns:1fr !important;padding:1.8rem 1.4rem;gap:1.2rem}
@@ -1637,7 +1641,9 @@ section{
 
   /* Capital / Principles / Trust Cycle */
   .principles-inner{grid-template-columns:1fr !important;gap:2rem}
-  .trust-wrap{grid-template-columns:1fr !important;gap:1.6rem}
+  .trust-wrap{grid-template-columns:1fr !important;gap:calc(1.6rem + 10px)}
+  .fund-rotator{height:clamp(4.8rem,8vw,7.2rem)}
+  .fund-phrase{font-size:clamp(4rem,6vw,6rem)}
   .trust-copy h3{font-size:clamp(2.4rem,10vw,4rem)}
   .trust-copy .copy-doodles{display:none}
   .trust-cycle{max-width:320px}
@@ -1650,8 +1656,8 @@ section{
   .pc-slide--brand .pc-left,.pc-slide--brand .pc-right{padding-bottom:1.6rem !important}
   .pc-left h3{font-size:clamp(1.8rem,7.5vw,2.6rem)}
   .pc-marquee{height:clamp(72px,18vw,96px)}
-  .partnerships-heading-row{flex-direction:column;gap:1.2rem}
-  .partnerships-header-img{width:80%;max-width:360px;margin-right:0;position:static;top:auto;transform:none}
+  .partnerships-heading-row{flex-direction:column;gap:1.2rem;align-items:flex-start}
+  .partnerships-header-img{align-self:flex-end;width:72%;max-width:none;margin-right:calc(50% - 50vw);position:static;top:auto;transform:none}
   .partnerships h2{max-width:none}
 
   /* Numbers / catalytic / Global reach */
@@ -1684,6 +1690,7 @@ section{
   #photo-card{width:100%;max-width:360px;margin:0 auto;height:auto;aspect-ratio:3/4}
   .fw-text-side{text-align:center}
   .fw-text-side .ceo-letter-btn{display:inline-block;margin:0 auto;transform:none !important}
+  #foreword-title{margin-left:10px !important;text-align:left !important}
 
   /* Appendix */
   .appendix-buttons{flex-direction:column;gap:1rem}
@@ -1977,7 +1984,7 @@ section{
     </div>
     <div class="who-wrap">
     <div class="who-box reveal">
-      <div class="label">WHO RIVET<br>IS BUILT<br>FOR</div>
+      <div class="label"><span class="l1">WHO RIVET</span><span class="l2">IS BUILT</span><span class="l3">FOR</span></div>
       <div class="who-carousel">
         <button class="who-prev" aria-label="Previous slide">‹</button>
         <div class="who-slides">

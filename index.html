@@ -811,6 +811,8 @@ section{
 }
 .pc-marquee-track{display:flex;gap:clamp(2.5rem,5vw,5rem);align-items:center;width:max-content;animation:pc-scroll 34s linear infinite}
 .pc-marquee-track img{height:auto;width:auto;max-height:clamp(36px,4vw,56px);max-width:clamp(120px,14vw,180px);flex-shrink:0;object-fit:contain;display:block}
+.pc-marquee-track img[src*="brand%20partners"]{max-height:clamp(39.6px,4.4vw,61.6px);max-width:clamp(132px,15.4vw,198px)}
+.pc-marquee-track img[src*="Adobe"]{max-height:clamp(34.2px,3.8vw,53.2px);max-width:clamp(114px,13.3vw,171px)}
 .pc-marquee-track svg{height:clamp(40px,4.5vw,60px);width:auto;flex-shrink:0;display:block}
 @keyframes pc-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .pc-marquee:hover .pc-marquee-track{animation-play-state:paused}

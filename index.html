@@ -827,6 +827,7 @@ section{
 /* Partner carousel */
 .pc-wrap{position:relative;margin-top:2.5rem}
 .pc-slide{display:none;flex-direction:column;gap:1.4rem}
+@media (min-width:861px){.pc-slide .pc-grid{grid-template-rows:360px}.pc-slide .pc-left,.pc-slide .pc-right{height:360px;overflow:hidden}}
 .pc-slide.active{display:flex;animation:pcIn .45s ease}
 @keyframes pcIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
 

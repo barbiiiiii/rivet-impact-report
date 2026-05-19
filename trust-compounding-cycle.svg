@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-44 -28 488 496" width="976" height="992" font-family="'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@700&amp;display=swap');
+      .ring{
+        fill:none;stroke:#E9F958;stroke-width:3;
+        stroke-dasharray:8 10;stroke-linecap:round;opacity:.55;
+        transform-origin:200px 200px;
+        animation:ring-spin 60s linear infinite;
+      }
+      @keyframes ring-spin{to{transform:rotate(360deg)}}
+      .sparkle{animation:twinkle 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      .sparkle:nth-of-type(1){animation-delay:0s}
+      .sparkle:nth-of-type(2){animation-delay:.4s}
+      .sparkle:nth-of-type(3){animation-delay:.8s}
+      .sparkle:nth-of-type(4){animation-delay:1.2s}
+      .sparkle:nth-of-type(5){animation-delay:1.6s}
+      .sparkle:nth-of-type(6){animation-delay:2s}
+      @keyframes twinkle{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.55}}
+      .num-txt{font-family:'Bebas Neue',Impact,Haettenschweiler,sans-serif;font-size:26px;letter-spacing:1px;fill:#000}
+      .label{font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:13px;letter-spacing:.6px;fill:#fff;text-transform:uppercase}
+      .tag{font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:10px;letter-spacing:1px;fill:#000}
+      .node{animation:node-pop 12s ease-in-out infinite}
+      .node[data-step="1"]{animation-delay:0s}
+      .node[data-step="2"]{animation-delay:.4s}
+      .node[data-step="3"]{animation-delay:.8s}
+      .node[data-step="4"]{animation-delay:1.2s}
+      .node[data-step="5"]{animation-delay:1.6s}
+      .node[data-step="6"]{animation-delay:2s}
+      @keyframes node-pop{0%,70%,100%{transform:scale(1)}10%{transform:scale(1.06)}}
+      .node{transform-box:fill-box;transform-origin:center}
+    </style>
+  </defs>
+
+  <!-- rotating dashed ring -->
+  <circle class="ring" cx="200" cy="200" r="160"/>
+
+  <!-- chevrons along the ring -->
+  <g opacity=".95">
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#ff8a3d" transform="translate(280,61) rotate(30)"/>
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#f55a5a" transform="translate(360,200) rotate(90)"/>
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#c7b6ff" transform="translate(280,339) rotate(150)"/>
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#2dbe5f" transform="translate(120,339) rotate(210)"/>
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#59d7ff" transform="translate(40,200) rotate(270)"/>
+    <path d="M-9,-6 L9,0 L-9,6 Z" fill="#E9F958" transform="translate(120,61) rotate(330)"/>
+  </g>
+
+  <!-- twinkling doodles -->
+  <g>
+    <g class="sparkle" transform="translate(200,200)" fill="#E9F958"><path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z"/></g>
+    <g class="sparkle" transform="translate(68,115)" fill="#ff8a3d"><path d="M0,-8 L1.6,-1.6 L8,0 L1.6,1.6 L0,8 L-1.6,1.6 L-8,0 L-1.6,-1.6 Z"/></g>
+    <g class="sparkle" transform="translate(336,120)" fill="#c7b6ff"><path d="M0,-7 L1.4,-1.4 L7,0 L1.4,1.4 L0,7 L-1.4,1.4 L-7,0 L-1.4,-1.4 Z"/></g>
+    <g class="sparkle" transform="translate(75,290)" fill="#59d7ff"><path d="M0,-9 L1.8,-1.8 L9,0 L1.8,1.8 L0,9 L-1.8,1.8 L-9,0 L-1.8,-1.8 Z"/></g>
+    <g class="sparkle" transform="translate(330,300)" fill="#2dbe5f"><path d="M0,-7 L1.4,-1.4 L7,0 L1.4,1.4 L0,7 L-1.4,1.4 L-7,0 L-1.4,-1.4 Z"/></g>
+    <g class="sparkle" transform="translate(200,360)" fill="#f55a5a"><path d="M0,-8 L1.6,-1.6 L8,0 L1.6,1.6 L0,8 L-1.6,1.6 L-8,0 L-1.6,-1.6 Z"/></g>
+    <path d="M40,50 Q48,42 56,50 Q64,58 72,50" fill="none" stroke="#c7b6ff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M330,55 L338,48 M338,55 L330,48 M334,60 L334,42" stroke="#E9F958" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M352,340 Q360,332 368,340" fill="none" stroke="#59d7ff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- orbiting pulse dot -->
+  <circle cx="200" cy="40" r="10" fill="#E9F958">
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ===== NODES ===== -->
+  <!-- 01 Microgrant awarded -->
+  <g class="node" data-step="1">
+    <text class="tag" x="200" y="-14" text-anchor="middle">START HERE</text>
+    <g transform="rotate(-6 200 24)">
+      <circle cx="200" cy="24" r="30" fill="#E9F958" stroke="#E9F958" stroke-width="3"/>
+      <circle cx="200" cy="24" r="36" fill="none" stroke="#E9F958" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="200" y="33" text-anchor="middle">01</text>
+    </g>
+    <text class="label" x="200" y="74" text-anchor="middle">MICROGRANT</text>
+    <text class="label" x="200" y="90" text-anchor="middle">AWARDED</text>
+  </g>
+
+  <!-- 02 Idea launched -->
+  <g class="node" data-step="2">
+    <g transform="rotate(4 356 108)">
+      <circle cx="356" cy="108" r="30" fill="#ff8a3d" stroke="#ff8a3d" stroke-width="3"/>
+      <circle cx="356" cy="108" r="36" fill="none" stroke="#ff8a3d" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="356" y="117" text-anchor="middle">02</text>
+    </g>
+    <text class="label" x="356" y="158" text-anchor="middle">IDEA</text>
+    <text class="label" x="356" y="174" text-anchor="middle">LAUNCHED</text>
+  </g>
+
+  <!-- 03 Confidence built -->
+  <g class="node" data-step="3">
+    <g transform="rotate(-3 356 292)">
+      <circle cx="356" cy="292" r="30" fill="#f55a5a" stroke="#f55a5a" stroke-width="3"/>
+      <circle cx="356" cy="292" r="36" fill="none" stroke="#f55a5a" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="356" y="301" text-anchor="middle">03</text>
+    </g>
+    <text class="label" x="356" y="342" text-anchor="middle">CONFIDENCE</text>
+    <text class="label" x="356" y="358" text-anchor="middle">BUILT</text>
+  </g>
+
+  <!-- 04 Follow-on funding secured -->
+  <g class="node" data-step="4">
+    <g transform="rotate(5 200 376)">
+      <circle cx="200" cy="376" r="30" fill="#c7b6ff" stroke="#c7b6ff" stroke-width="3"/>
+      <circle cx="200" cy="376" r="36" fill="none" stroke="#c7b6ff" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="200" y="385" text-anchor="middle">04</text>
+    </g>
+    <text class="label" x="200" y="426" text-anchor="middle">FOLLOW-ON</text>
+    <text class="label" x="200" y="442" text-anchor="middle">FUNDING SECURED</text>
+  </g>
+
+  <!-- 05 Institutions pay attention -->
+  <g class="node" data-step="5">
+    <g transform="rotate(-4 44 292)">
+      <circle cx="44" cy="292" r="30" fill="#2dbe5f" stroke="#2dbe5f" stroke-width="3"/>
+      <circle cx="44" cy="292" r="36" fill="none" stroke="#2dbe5f" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="44" y="301" text-anchor="middle">05</text>
+    </g>
+    <text class="label" x="44" y="342" text-anchor="middle">INSTITUTIONS</text>
+    <text class="label" x="44" y="358" text-anchor="middle">PAY ATTENTION</text>
+  </g>
+
+  <!-- 06 Next leader funded faster -->
+  <g class="node" data-step="6">
+    <g transform="rotate(3 44 108)">
+      <circle cx="44" cy="108" r="30" fill="#59d7ff" stroke="#59d7ff" stroke-width="3"/>
+      <circle cx="44" cy="108" r="36" fill="none" stroke="#59d7ff" stroke-opacity=".25" stroke-width="6"/>
+      <text class="num-txt" x="44" y="117" text-anchor="middle">06</text>
+    </g>
+    <text class="label" x="44" y="158" text-anchor="middle">NEXT LEADER</text>
+    <text class="label" x="44" y="174" text-anchor="middle">FUNDED FASTER</text>
+  </g>
+</svg>

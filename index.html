@@ -1561,9 +1561,22 @@ section{
   font-family:var(--bebas);font-size:1.6rem;letter-spacing:.08em;font-weight:700;
   border-radius:10px;
   transition:transform .3s var(--ease),background .3s var(--ease);
+  cursor:pointer;border:0;
 }
 .cta-btn:hover{transform:translateY(-3px);background:var(--white)}
 .cta-btn svg{width:22px;height:22px}
+.partner-form{display:block;max-width:640px;margin:1.5rem auto 0;padding:clamp(1.6rem,3vw,2.6rem);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;text-align:left;backdrop-filter:blur(2px)}
+.partner-form h3{font-family:var(--bebas);font-size:clamp(2rem,3.4vw,2.6rem);letter-spacing:.04em;color:var(--yellow);margin:0 0 1.4rem;line-height:.95;text-transform:uppercase}
+.partner-form .field{margin:0 0 1rem;display:flex;flex-direction:column;gap:.4rem}
+.partner-form label{font-family:var(--inter);font-weight:700;font-size:.75rem;letter-spacing:.08em;color:rgba(255,255,255,.78);text-transform:uppercase}
+.partner-form input,.partner-form textarea{font-family:var(--inter);font-size:1rem;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:.7rem .85rem;outline:none;transition:border-color .2s ease,background .2s ease}
+.partner-form input:focus,.partner-form textarea:focus{border-color:var(--yellow);background:rgba(0,0,0,.55)}
+.partner-form textarea{min-height:140px;resize:vertical;line-height:1.5}
+.partner-form .word-count{font-family:var(--inter);font-size:.72rem;color:rgba(255,255,255,.55);align-self:flex-end;margin-top:.3rem}
+.partner-form .word-count.over{color:#ff8a8a}
+.partner-form .honey{position:absolute;left:-5000px;opacity:0;pointer-events:none}
+.partner-form .submit-row{margin-top:1.2rem;display:flex;justify-content:flex-start}
+.partner-form .form-status{font-family:var(--inter);font-size:.85rem;color:var(--yellow);margin:.6rem 0 0;min-height:1.2em}
 
 @media (max-width:1000px){.cta-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.cta-grid{grid-template-columns:1fr}}
@@ -2709,10 +2722,38 @@ section{
     <p class="cta-after-2 reveal">2026 is the year we take what works and scale it.</p>
     <p class="cta-after-3 reveal">Not quietly. Not cautiously. Not someday.</p>
     <p class="cta-now reveal"><span>Now.</span></p>
-    <a class="cta-btn reveal" href="https://rivet.org" target="_blank" rel="noopener noreferrer">
-      Partner with RIVET
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
+    <form class="partner-form reveal" id="partnerForm" action="https://formsubmit.co/barbi.ierone@gmail.com" method="POST" novalidate>
+      <h3>Partner with RIVET</h3>
+      <div class="field">
+        <label for="pf-name">Full Name</label>
+        <input id="pf-name" name="Full Name" type="text" required>
+      </div>
+      <div class="field">
+        <label for="pf-org">Organization</label>
+        <input id="pf-org" name="Organization" type="text" required>
+      </div>
+      <div class="field">
+        <label for="pf-email">Email Address</label>
+        <input id="pf-email" name="Email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="pf-message">Message <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(255,255,255,.5)">(max 150 words)</span></label>
+        <textarea id="pf-message" name="Message" required></textarea>
+        <span class="word-count" id="pfWordCount">0 / 150 words</span>
+      </div>
+      <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Partner with RIVET — new inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://rivet-impact-report-2025.vercel.app/#cta">
+      <div class="submit-row">
+        <button class="cta-btn" type="submit">
+          Send
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <p class="form-status" id="pfStatus" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -2950,6 +2991,38 @@ section{
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  /* ---------- Partner form: 150-word limit on Message ---------- */
+  const pfMessage = document.getElementById('pf-message');
+  const pfWordCount = document.getElementById('pfWordCount');
+  const pfForm = document.getElementById('partnerForm');
+  const pfStatus = document.getElementById('pfStatus');
+  const PF_LIMIT = 150;
+  function countWords(s){return (s.trim().match(/\S+/g) || []).length}
+  function pfUpdate(){
+    if (!pfMessage) return;
+    let n = countWords(pfMessage.value);
+    if (n > PF_LIMIT){
+      // truncate to first 150 words
+      const words = pfMessage.value.trim().split(/\s+/).slice(0, PF_LIMIT);
+      pfMessage.value = words.join(' ');
+      n = PF_LIMIT;
+    }
+    if (pfWordCount){
+      pfWordCount.textContent = n + ' / ' + PF_LIMIT + ' words';
+      pfWordCount.classList.toggle('over', n >= PF_LIMIT);
+    }
+  }
+  if (pfMessage){
+    pfMessage.addEventListener('input', pfUpdate);
+    pfMessage.addEventListener('paste', () => setTimeout(pfUpdate, 0));
+    pfUpdate();
+  }
+  if (pfForm){
+    pfForm.addEventListener('submit', () => {
+      if (pfStatus) pfStatus.textContent = 'Sending…';
+    });
+  }
 
   /* ---------- Photo card hover zoom ---------- */
   /* ---------- Who carousel ---------- */

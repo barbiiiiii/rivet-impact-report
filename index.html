@@ -3044,27 +3044,38 @@ section{
       if (pfStatus){ pfStatus.style.color = ''; pfStatus.textContent = 'Sending…'; }
       const submitBtn = pfForm.querySelector('button[type=submit]');
       if (submitBtn) submitBtn.disabled = true;
+      let res, json;
       try {
         const data = {};
         new FormData(pfForm).forEach((v,k)=>{ if(!k.startsWith('_') && k!=='_honey') data[k]=v; });
         data._subject = 'Partner with RIVET — new inquiry';
         data._template = 'table';
-        const res = await fetch(pfForm.action, {
+        res = await fetch(pfForm.action, {
           method:'POST',
           headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify(data)
         });
-        const json = await res.json().catch(()=>null);
-        if (res.ok && json && (json.success === 'true' || json.success === true)){
+        json = await res.json().catch(()=>null);
+        console.log('[partner-form] status', res.status, 'body', json);
+        const isSuccess = res.ok && json && (json.success === 'true' || json.success === true);
+        const serverMsg = json && json.message;
+        if (isSuccess){
           if (pfStatus){ pfStatus.style.color = 'var(--yellow)'; pfStatus.textContent = 'Thanks! Your message has been sent.'; }
           pfForm.reset(); pfUpdate();
+        } else if (serverMsg){
+          // FormSubmit responded but flagged something — most commonly the one-time email activation
+          if (pfStatus){
+            pfStatus.style.color = 'var(--yellow)';
+            pfStatus.innerHTML = serverMsg + '<br><small style="opacity:.7">(server response — your message is queued; it will deliver once activation is confirmed.)</small>';
+          }
         } else {
-          throw new Error((json && json.message) || 'submit_failed');
+          throw new Error('no_response');
         }
       } catch(err){
+        console.error('[partner-form] fetch failed', err, 'res:', res, 'json:', json);
         if (pfStatus){
           pfStatus.style.color = '#ff8a8a';
-          pfStatus.innerHTML = 'Something went wrong sending the form. Please email <a href="mailto:info@rivet.org?subject=Partner%20with%20RIVET" style="color:var(--yellow);text-decoration:underline">info@rivet.org</a> directly.';
+          pfStatus.innerHTML = 'Could not reach the form service. Please email <a href="mailto:info@rivet.org?subject=Partner%20with%20RIVET" style="color:var(--yellow);text-decoration:underline">info@rivet.org</a> directly.';
         }
       } finally {
         if (submitBtn) submitBtn.disabled = false;

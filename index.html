@@ -1126,6 +1126,12 @@ section{
   margin:5rem 0 1rem 50px;
 }
 .catalytic-img-title ~ .numbers-intro{margin-left:50px;margin-bottom:2rem}
+.catalytic-wrap{position:relative}
+.catalytic-growth{position:absolute;top:5rem;right:0;width:clamp(220px,26vw,340px);pointer-events:none}
+.catalytic-growth svg{width:100%;height:auto;display:block}
+.catalytic-growth .cg-arrow{transform-box:fill-box;transform-origin:center;animation:cg-arrow-bob 2.6s ease-in-out infinite}
+@keyframes cg-arrow-bob{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-4px)}}
+@media (max-width:1100px){.catalytic-growth{display:none}}
 .catalytic-divider{border:0;height:2px;background:var(--yellow);width:100vw;margin:80px 0 24px calc(50% - 50vw)}
 .catalytic-footnote{max-width:none !important;margin-right:clamp(1.5rem,3vw,3rem)}
 .catalytic-img{display:block;width:100%;height:auto}
@@ -2543,9 +2549,23 @@ section{
       </div>
     </div>
 
-    <h3 class="catalytic-img-title reveal">THE CATALYTIC EFFECT</h3>
-    <p class="numbers-intro reveal" style="color:#fff">RIVET's catalytic funding model is already demonstrating strong early results. Two RIVET-supported innovators have gone on to secure more than $1 million in follow-on investment combined after receiving initial support. These early successes illustrate the multiplier effect that trust-based, early-stage capital can generate, helping promising innovators unlock significantly larger funding opportunities and accelerate their impact.</p>
-    <p class="numbers-intro reveal" style="font-weight:700"><span style="color:#fff">When youth are trusted early:</span> <span style="color:var(--yellow)">ideas launch, leaders grow, capital compounds, systems begin to shift.</span></p>
+    <div class="catalytic-wrap">
+      <h3 class="catalytic-img-title reveal">THE CATALYTIC EFFECT</h3>
+      <p class="numbers-intro reveal" style="color:#fff">RIVET's catalytic funding model is already demonstrating strong early results. Two RIVET-supported innovators have gone on to secure more than $1 million in follow-on investment combined after receiving initial support. These early successes illustrate the multiplier effect that trust-based, early-stage capital can generate, helping promising innovators unlock significantly larger funding opportunities and accelerate their impact.</p>
+      <p class="numbers-intro reveal" style="font-weight:700"><span style="color:#fff">When youth are trusted early:</span> <span style="color:var(--yellow)">ideas launch, leaders grow, capital compounds, systems begin to shift.</span></p>
+      <div class="catalytic-growth" aria-hidden="true">
+        <svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+          <g class="cg-arrow">
+            <path d="M30,220 L120,180 L180,200 L240,120 L320,50" fill="none" stroke="#E9F958" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M320,50 L298,54 M320,50 L316,72" fill="none" stroke="#E9F958" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <rect x="30" y="250" width="60" height="60" rx="4" fill="#FF4A53"/>
+          <rect x="110" y="210" width="60" height="100" rx="4" fill="#C4313A"/>
+          <rect x="190" y="160" width="60" height="150" rx="4" fill="#6B62F2"/>
+          <rect x="270" y="100" width="60" height="210" rx="4" fill="#4A42C4"/>
+        </svg>
+      </div>
+    </div>
     <hr class="catalytic-divider reveal">
     <p class="numbers-intro reveal catalytic-footnote" style="font-style:italic">Footnote: Unless otherwise noted, demographic and beneficiary reach figures are based on available self-reported and evaluation data from representative samples of RIVET-supported projects and grantees. Where complete portfolio-wide data is unavailable, estimates are derived using sample-based analysis and extrapolation methodologies. RIVET continues to strengthen its data collection and impact measurement systems to improve the completeness and precision of future reporting.</p>
   </div>

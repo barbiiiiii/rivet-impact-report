@@ -1126,38 +1126,8 @@ section{
   margin:5rem 0 1rem 50px;
 }
 .catalytic-img-title ~ .numbers-intro{margin-left:50px;margin-bottom:2rem}
-.catalytic-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:2.5rem;align-items:start}
-.catalytic-row .catalytic-img-title{margin-top:0}
-.growth-graphic{position:relative;align-self:end;padding:0 0 0 1rem}
-.growth-graphic svg{width:100%;height:auto;display:block;max-width:520px;margin-left:auto}
-.growth-graphic .gg-bar{transform-origin:center bottom;animation:gg-bar-grow 1.4s cubic-bezier(.22,1,.36,1) both}
-.growth-graphic .gg-bar-1{animation-delay:.1s}
-.growth-graphic .gg-bar-2{animation-delay:.3s}
-.growth-graphic .gg-bar-3{animation-delay:.5s}
-.growth-graphic .gg-bar-4{animation-delay:.7s}
-@keyframes gg-bar-grow{from{height:0;y:320}to{}}
-.growth-graphic .gg-bar-1{animation-name:gg-grow-1}
-.growth-graphic .gg-bar-2{animation-name:gg-grow-2}
-.growth-graphic .gg-bar-3{animation-name:gg-grow-3}
-.growth-graphic .gg-bar-4{animation-name:gg-grow-4}
-@keyframes gg-grow-1{from{height:0;y:320}to{height:70px;y:250}}
-@keyframes gg-grow-2{from{height:0;y:320}to{height:120px;y:200}}
-@keyframes gg-grow-3{from{height:0;y:320}to{height:180px;y:140}}
-@keyframes gg-grow-4{from{height:0;y:320}to{height:240px;y:80}}
-.growth-graphic .gg-curve{animation:gg-draw 2s cubic-bezier(.22,1,.36,1) .9s both}
-.growth-graphic .gg-arrowhead{opacity:0;animation:gg-fade 0.5s ease 2.6s both}
-.growth-graphic .gg-apex{transform-origin:center;transform-box:fill-box;animation:gg-pulse 2.4s ease-in-out 2.6s infinite}
-@keyframes gg-draw{to{stroke-dashoffset:0}}
-@keyframes gg-fade{to{opacity:1}}
-@keyframes gg-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
-.growth-graphic .gg-sparkle{transform-box:fill-box;transform-origin:center;animation:gg-twinkle 3.4s ease-in-out infinite}
-.growth-graphic .gg-sparkle:nth-of-type(2){animation-delay:.6s}
-.growth-graphic .gg-sparkle:nth-of-type(3){animation-delay:1.2s}
-.growth-graphic .gg-sparkle:nth-of-type(4){animation-delay:1.8s}
-@keyframes gg-twinkle{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.5}}
-@media(max-width:860px){.catalytic-row{grid-template-columns:1fr}.growth-graphic{order:-1;padding:0;margin:0 auto 1rem;max-width:380px}.growth-graphic svg{max-width:100%}}
 .catalytic-divider{border:0;height:2px;background:var(--yellow);width:100vw;margin:80px 0 24px calc(50% - 50vw)}
-.catalytic-footnote{max-width:none !important;margin-left:50px !important;margin-right:clamp(1.5rem,3vw,3rem)}
+.catalytic-footnote{max-width:none !important;margin-right:clamp(1.5rem,3vw,3rem)}
 .catalytic-img{display:block;width:100%;height:auto}
 .catalytic h3{
   font-family:var(--inter);font-weight:700;font-size:.78rem;
@@ -2573,46 +2543,9 @@ section{
       </div>
     </div>
 
-    <div class="catalytic-row">
-      <div class="catalytic-copy">
-        <h3 class="catalytic-img-title reveal">THE CATALYTIC EFFECT</h3>
-        <p class="numbers-intro reveal" style="color:#fff">RIVET's catalytic funding model is already demonstrating strong early results. Two RIVET-supported innovators have gone on to secure more than $1 million in follow-on investment combined after receiving initial support. These early successes illustrate the multiplier effect that trust-based, early-stage capital can generate, helping promising innovators unlock significantly larger funding opportunities and accelerate their impact.</p>
-        <p class="numbers-intro reveal" style="font-weight:700"><span style="color:#fff">When youth are trusted early:</span> <span style="color:var(--yellow)">ideas launch, leaders grow, capital compounds, systems begin to shift.</span></p>
-      </div>
-      <div class="growth-graphic reveal" aria-hidden="true">
-        <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gg-bar" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" stop-color="#E9F958"/>
-              <stop offset="1" stop-color="#E9F958" stop-opacity=".55"/>
-            </linearGradient>
-          </defs>
-          <!-- baseline -->
-          <line x1="20" y1="320" x2="380" y2="320" stroke="rgba(255,255,255,.18)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="20" y1="320" x2="20" y2="40" stroke="rgba(255,255,255,.18)" stroke-width="2" stroke-linecap="round"/>
-          <!-- ascending bars -->
-          <g class="gg-bars">
-            <rect class="gg-bar gg-bar-1" x="60" y="320" width="42" height="0" rx="6" fill="url(#gg-bar)"/>
-            <rect class="gg-bar gg-bar-2" x="130" y="320" width="42" height="0" rx="6" fill="url(#gg-bar)"/>
-            <rect class="gg-bar gg-bar-3" x="200" y="320" width="42" height="0" rx="6" fill="url(#gg-bar)"/>
-            <rect class="gg-bar gg-bar-4" x="270" y="320" width="42" height="0" rx="6" fill="url(#gg-bar)"/>
-          </g>
-          <!-- curving growth arrow -->
-          <path class="gg-curve" d="M40,290 C120,265 175,180 260,90" fill="none" stroke="#6B62F2" stroke-width="5" stroke-linecap="round" stroke-dasharray="600" stroke-dashoffset="600"/>
-          <!-- arrowhead -->
-          <path class="gg-arrowhead" d="M260,90 L246,93 M260,90 L257,104" fill="none" stroke="#6B62F2" stroke-width="5" stroke-linecap="round"/>
-          <!-- apex red dot -->
-          <circle class="gg-apex" cx="260" cy="90" r="9" fill="#FF4A53"/>
-          <!-- floating doodles -->
-          <g class="gg-sparkle" transform="translate(330,60)" fill="#E9F958"><path d="M0,-14 L2.8,-2.8 L14,0 L2.8,2.8 L0,14 L-2.8,2.8 L-14,0 L-2.8,-2.8 Z"/></g>
-          <g class="gg-sparkle" transform="translate(70,80)" fill="#FF4A53"><path d="M0,-10 L2,-2 L10,0 L2,2 L0,10 L-2,2 L-10,0 L-2,-2 Z"/></g>
-          <g class="gg-sparkle" transform="translate(180,40)" fill="#6B62F2"><path d="M0,-8 L1.6,-1.6 L8,0 L1.6,1.6 L0,8 L-1.6,1.6 L-8,0 L-1.6,-1.6 Z"/></g>
-          <g class="gg-sparkle" transform="translate(360,180)" fill="#E9F958"><path d="M0,-9 L1.8,-1.8 L9,0 L1.8,1.8 L0,9 L-1.8,1.8 L-9,0 L-1.8,-1.8 Z"/></g>
-          <!-- corner asterisk -->
-          <g transform="translate(348,40)" fill="#FF4A53" opacity=".55"><use href="#rivet-mark" transform="scale(.4)"/></g>
-        </svg>
-      </div>
-    </div>
+    <h3 class="catalytic-img-title reveal">THE CATALYTIC EFFECT</h3>
+    <p class="numbers-intro reveal" style="color:#fff">RIVET's catalytic funding model is already demonstrating strong early results. Two RIVET-supported innovators have gone on to secure more than $1 million in follow-on investment combined after receiving initial support. These early successes illustrate the multiplier effect that trust-based, early-stage capital can generate, helping promising innovators unlock significantly larger funding opportunities and accelerate their impact.</p>
+    <p class="numbers-intro reveal" style="font-weight:700"><span style="color:#fff">When youth are trusted early:</span> <span style="color:var(--yellow)">ideas launch, leaders grow, capital compounds, systems begin to shift.</span></p>
     <hr class="catalytic-divider reveal">
     <p class="numbers-intro reveal catalytic-footnote" style="font-style:italic">Footnote: Unless otherwise noted, demographic and beneficiary reach figures are based on available self-reported and evaluation data from representative samples of RIVET-supported projects and grantees. Where complete portfolio-wide data is unavailable, estimates are derived using sample-based analysis and extrapolation methodologies. RIVET continues to strengthen its data collection and impact measurement systems to improve the completeness and precision of future reporting.</p>
   </div>

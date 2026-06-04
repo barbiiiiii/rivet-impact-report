@@ -2735,7 +2735,7 @@ section{
     <p class="cta-after-3 reveal">Not quietly. Not cautiously. Not someday.</p>
     <p class="cta-now reveal"><span>Now.</span></p>
     <div class="partner-row reveal">
-    <form class="partner-form" id="partnerForm" action="https://formsubmit.co/ajax/info@rivet.org" method="POST" novalidate>
+    <form class="partner-form" id="partnerForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
       <h3>Partner with RIVET</h3>
       <div class="field">
         <label for="pf-name">Full Name</label>
@@ -2754,11 +2754,11 @@ section{
         <textarea id="pf-message" name="Message" required></textarea>
         <span class="word-count" id="pfWordCount">0 / 150 words</span>
       </div>
-      <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="_subject" value="Partner with RIVET — new inquiry">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://rivet-impact-report-2025.vercel.app/#cta">
+      <input class="honey" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+      <input type="hidden" name="access_key" value="3d186bbc-4801-4ac5-97f3-91db98b00395">
+      <input type="hidden" name="subject" value="Partner with RIVET — new inquiry">
+      <input type="hidden" name="from_name" value="RIVET Impact Report — Partner Form">
+      <input type="hidden" name="redirect" value="false">
       <div class="submit-row">
         <button class="cta-btn" type="submit">
           Send
@@ -3046,10 +3046,9 @@ section{
       if (submitBtn) submitBtn.disabled = true;
       let res, json;
       try {
-        const data = {};
-        new FormData(pfForm).forEach((v,k)=>{ if(!k.startsWith('_') && k!=='_honey') data[k]=v; });
-        data._subject = 'Partner with RIVET — new inquiry';
-        data._template = 'table';
+        const data = Object.fromEntries(new FormData(pfForm).entries());
+        // ensure reply-to is the visitor's email so replies go back to them
+        data.replyto = data.Email || '';
         res = await fetch(pfForm.action, {
           method:'POST',
           headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -3057,17 +3056,12 @@ section{
         });
         json = await res.json().catch(()=>null);
         console.log('[partner-form] status', res.status, 'body', json);
-        const isSuccess = res.ok && json && (json.success === 'true' || json.success === true);
-        const serverMsg = json && json.message;
+        const isSuccess = res.ok && json && json.success === true;
         if (isSuccess){
           if (pfStatus){ pfStatus.style.color = 'var(--yellow)'; pfStatus.textContent = 'Thanks! Your message has been sent.'; }
           pfForm.reset(); pfUpdate();
-        } else if (serverMsg){
-          // FormSubmit responded but flagged something — most commonly the one-time email activation
-          if (pfStatus){
-            pfStatus.style.color = 'var(--yellow)';
-            pfStatus.innerHTML = serverMsg + '<br><small style="opacity:.7">(server response — your message is queued; it will deliver once activation is confirmed.)</small>';
-          }
+        } else if (json && json.message){
+          if (pfStatus){ pfStatus.style.color = '#ff8a8a'; pfStatus.textContent = json.message; }
         } else {
           throw new Error('no_response');
         }

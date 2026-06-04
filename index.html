@@ -1127,7 +1127,7 @@ section{
 }
 .catalytic-img-title ~ .numbers-intro{margin-left:50px;margin-bottom:2rem}
 .catalytic-wrap{position:relative}
-.catalytic-growth{position:absolute;top:5rem;right:0;width:clamp(220px,26vw,340px);pointer-events:none}
+.catalytic-growth{position:absolute;top:1rem;right:0;width:clamp(220px,26vw,340px);pointer-events:none}
 .catalytic-growth svg{width:100%;height:auto;display:block}
 .catalytic-growth .cg-arrow{transform-box:fill-box;transform-origin:center;animation:cg-arrow-bob 2.6s ease-in-out infinite}
 @keyframes cg-arrow-bob{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-4px)}}
@@ -2555,9 +2555,13 @@ section{
       <p class="numbers-intro reveal" style="font-weight:700"><span style="color:#fff">When youth are trusted early:</span> <span style="color:var(--yellow)">ideas launch, leaders grow, capital compounds, systems begin to shift.</span></p>
       <div class="catalytic-growth" aria-hidden="true">
         <svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="cg-arrowhead" viewBox="0 0 12 12" refX="2" refY="6" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse">
+              <polygon points="0,0 12,6 0,12" fill="#E9F958"/>
+            </marker>
+          </defs>
           <g class="cg-arrow">
-            <path d="M30,220 L120,180 L180,200 L240,120 L320,50" fill="none" stroke="#E9F958" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M320,50 L298,54 M320,50 L316,72" fill="none" stroke="#E9F958" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="30,230 90,170 135,200 185,140 230,170 310,60" fill="none" stroke="#E9F958" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cg-arrowhead)"/>
           </g>
           <rect x="30" y="250" width="60" height="60" rx="4" fill="#FF4A53"/>
           <rect x="110" y="210" width="60" height="100" rx="4" fill="#C4313A"/>

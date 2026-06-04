@@ -1127,7 +1127,7 @@ section{
 }
 .catalytic-img-title ~ .numbers-intro{margin-left:50px;margin-bottom:2rem}
 .catalytic-wrap{position:relative}
-.catalytic-growth{position:absolute;top:1rem;right:0;width:clamp(220px,26vw,340px);pointer-events:none}
+.catalytic-growth{position:absolute;top:calc(1rem - 30px);right:0;width:clamp(220px,26vw,340px);pointer-events:none}
 .catalytic-growth svg{width:100%;height:auto;display:block}
 .catalytic-growth .cg-arrow{transform-box:fill-box;transform-origin:center;animation:cg-arrow-bob 2.6s ease-in-out infinite}
 @keyframes cg-arrow-bob{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-4px)}}
@@ -2561,7 +2561,7 @@ section{
             </marker>
           </defs>
           <g class="cg-arrow">
-            <polyline points="30,230 90,170 135,200 185,140 230,170 310,60" fill="none" stroke="#E9F958" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#cg-arrowhead)"/>
+            <path d="M 30,260 C 180,265 235,200 310,50" fill="none" stroke="#E9F958" stroke-width="14" stroke-linecap="round" marker-end="url(#cg-arrowhead)"/>
           </g>
           <rect x="30" y="250" width="60" height="60" rx="4" fill="#FF4A53"/>
           <rect x="110" y="210" width="60" height="100" rx="4" fill="#C4313A"/>

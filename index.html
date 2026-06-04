@@ -965,6 +965,8 @@ section{
   letter-spacing:.01em;
   color:var(--yellow);
 }
+.stat .counter-row{display:flex;align-items:baseline;gap:.18em;white-space:nowrap;flex-wrap:nowrap}
+.stat .counter-unit{font-family:var(--bebas);font-size:clamp(1.6rem,3.6vw,3.2rem);letter-spacing:.04em;color:var(--yellow);line-height:1;text-transform:lowercase}
 .stat:nth-child(2) .counter{color:var(--white)}
 .stat:nth-child(3) .counter{color:var(--red)}
 .stat:nth-child(4) .counter{color:var(--purple)}
@@ -2441,7 +2443,10 @@ section{
       </div>
       <div class="stat reveal delay-1">
         <span class="tag">Follow-on</span>
-        <span class="counter" data-target="1" data-prefix="~$" data-suffix=" million">0</span>
+        <span class="counter-row">
+          <span class="counter" data-target="1" data-prefix="~$">0</span>
+          <span class="counter-unit">million</span>
+        </span>
         <span class="label">In follow-on funding unlocked</span>
       </div>
       <div class="stat reveal delay-2">
